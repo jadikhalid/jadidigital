@@ -1,3 +1,14 @@
+<?php
+$user_ip = $_SERVER['REMOTE_ADDR'];
+// 2. Interroger l'API de géolocalisation
+$api_url = "http://ip-api.com/json/" . $user_ip;
+$response = file_get_contents($api_url);
+$details = json_decode($response);
+
+// 3. Vérifier si le pays est le Maroc (code "MA")
+$is_morocco = ($details && $details->status !== 'fail' && $details->countryCode === 'CN');
+?>
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -11,6 +22,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <?php if ($is_morocco): ?>
+        <div  style="background-color: #000000; width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
+            <h1>Bienvenue ...</h1>
+        </div>
+    <?php else: ?>
     <nav>
       <a href="#" class="logo">JADI<span> DIGITAL</span></a>
       <a
@@ -76,7 +92,8 @@
           <h3>Expertise Full Stack</h3>
           <p>
             Maîtrise avancée des écosystèmes de développement web modernes
-            (Front & Back End) pour des applications performantes et scalables.
+            (React, Node.js, Python, etc...) pour des applications performantes
+            et scalables.
           </p>
         </div>
         <div class="card">
@@ -249,5 +266,6 @@
         &copy; 2026 JADI DIGITAL | Casablanca | Paris | New York
       </div>
     </footer>
+    <?php endif; ?>
   </body>
 </html>
