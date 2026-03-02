@@ -1,12 +1,13 @@
 <?php
-$user_ip = $_SERVER['REMOTE_ADDR'];
+// $user_ip = $_SERVER['REMOTE_ADDR'];
+$user_ip = $_GET['test_ip'] ?? $_SERVER['REMOTE_ADDR'];
 // 2. Interroger l'API de géolocalisation
 $api_url = "http://ip-api.com/json/" . $user_ip;
 $response = file_get_contents($api_url);
 $details = json_decode($response);
 
 // 3. Vérifier si le pays est le Maroc (code "MA")
-$is_morocco = ($details && $details->status !== 'fail' && $details->countryCode === 'CN');
+$is_morocco = ($details && $details->status !== 'fail' && $details->countryCode === 'MA');
 ?>
 
 <!doctype html>
