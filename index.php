@@ -31,7 +31,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
     <nav>
       <a href="#" class="logo">JADI<span> DIGITAL</span></a>
       <a
-        href="mailto:jadikhalid@gmail.com"
+        href="contact.php"
         class="btn"
         style="padding: 10px 25px"
         >Me contacter</a
