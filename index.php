@@ -93,7 +93,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           <h3>Expertise Full Stack</h3>
           <p>
             Maîtrise avancée des écosystèmes de développement web modernes
-            (React, Node.js, Python, etc...) pour des applications performantes
+            (Front & Back End) pour des applications performantes
             et scalables.
           </p>
         </div>
@@ -170,7 +170,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
     </section>
 
     <button id="portfolio-trigger" onclick="openPortfolio()">
-      <i data-lucide="layers" size="20"></i> Mon Portfolio
+      <i data-lucide="layers" size="20"></i> <span class="btn-text">Mon Portfolio</span>
     </button>
 
     <div id="portfolioModal">
@@ -268,5 +268,9 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
       </div>
     </footer>
     <?php endif; ?>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
