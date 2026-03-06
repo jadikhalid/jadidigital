@@ -36,8 +36,8 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
       <div class="nav-right">
         <div class="lang-switcher">
-          <a href="?lang=fr">🇫🇷</a>
-          <a href="?lang=en">🇬🇧</a>
+          <a href="?lang=fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" width="24" height="18" style="border-radius: 2px;"></a>
+          <a href="?lang=en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" width="24" height="18" style="border-radius: 2px;"></a>
         </div>
         <a
           href="contact.php?lang=<?= $lang ?>"
