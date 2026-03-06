@@ -1,4 +1,5 @@
 <?php
+include 'lang.php';
 // $user_ip = $_SERVER['REMOTE_ADDR'];
 $user_ip = $_GET['test_ip'] ?? $_SERVER['REMOTE_ADDR'];
 // 2. Interroger l'API de géolocalisation
@@ -12,45 +13,47 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
-    <title>
-      JADI DIGITAL | Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack
-    </title>
-    <script src="app.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <?php if ($is_morocco): ?>
-        <div  style="background-color: #000000; width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
-            <h1>Bienvenue ...</h1>
-        </div>
-    <?php else: ?>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+  <title>
+    JADI DIGITAL | Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack
+  </title>
+  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <?php if ($is_morocco): ?>
+    <div style="background-color: #000000; width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
+      <h1>Bienvenue ...</h1>
+    </div>
+  <?php else: ?>
     <nav>
-      <a href="#" class="logo">JADI<span> DIGITAL</span></a>
-      <a
-        href="contact.php"
-        class="btn"
-        style="padding: 10px 25px"
-        >Me contacter</a
-      >
+      <a href="#" class="logo" onclick="event.preventDefault();">JADI<span> DIGITAL</span></a>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <a href="?lang=fr">🇫🇷</a>
+          <a href="?lang=en">🇬🇧</a>
+        </div>
+        <a
+          href="contact.php?lang=<?= $lang ?>"
+          class="btn"><?= __('contact') ?></a>
+      </div>
     </nav>
 
     <header class="hero">
       <div>
-        <span class="section-tag"
-          >Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack</span
-        >
-        <h1>Je conçois vos outils numériques de demain.</h1>
+        <span class="section-tag"><?= __('auteur') ?></span>
+        <h1><?= __('hero_title') ?></h1>
         <p>
-          Ancien cadre dirigeant reconverti dans l'ingénierie logicielle, je
-          mets 20 ans d'expertise métier au service de vos projets digitaux les
-          plus ambitieux.
+          <?= __('hero_desc') ?>
         </p>
         <button class="btn" onclick="openPortfolio()">
-          Explorer mon Portfolio
+          <?= __('portfolio') ?>
         </button>
       </div>
       <div style="text-align: right">
@@ -68,33 +71,27 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             /* border: 2px dashed #cbd5e1; */
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-          "
-        >
+          ">
           <img
             src="./img/jadidigitalmeeting.jpg"
             alt=""
-            style="width: 100%; height: 100%; object-fit: cover"
-          />
-          <!-- <i data-lucide="user" size="80"></i> -->
+            style="width: 100%; height: 100%; object-fit: cover" />
+          <i data-lucide="user" size="80"></i>
         </div>
       </div>
     </header>
 
     <section class="expertise">
-      <span class="section-tag" style="text-align: center"
-        >Mon Savoir-Faire</span
-      >
+      <span class="section-tag" style="text-align: center"><?= __('expertise_mini_title') ?></span>
       <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary)">
-        Expertise Technique & Métier
+        <?= __('expertise_title') ?>
       </h2>
       <div class="grid">
         <div class="card">
           <i data-lucide="code-2" size="32" color="#b5935b"></i>
-          <h3>Expertise Full Stack</h3>
+          <h3><?= __('expertise_descr1_title') ?></h3>
           <p>
-            Maîtrise avancée des écosystèmes de développement web modernes
-            (Front & Back End) pour des applications performantes
-            et scalables.
+            <?= __('expertise_descr1_desc') ?>
           </p>
         </div>
         <div class="card">
@@ -185,16 +182,14 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-          "
-        >
+          ">
           <div
             style="
               background: #f8fafc;
               padding: 25px;
               border-radius: 12px;
               border: 1px solid #e2e8f0;
-            "
-          >
+            ">
             <h4>Scoring Bancaire</h4>
             <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
               Analyse de risque crédit en temps réel avec moteur de règles.
@@ -206,8 +201,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
               padding: 25px;
               border-radius: 12px;
               border: 1px solid #e2e8f0;
-            "
-          >
+            ">
             <h4>ERP Maintenance</h4>
             <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
               Gestion prédictive des actifs industriels métallurgiques.
@@ -219,8 +213,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
               padding: 25px;
               border-radius: 12px;
               border: 1px solid #e2e8f0;
-            "
-          >
+            ">
             <h4>ERP Maintenance</h4>
             <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
               Gestion prédictive des actifs industriels métallurgiques.
@@ -232,8 +225,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
               padding: 25px;
               border-radius: 12px;
               border: 1px solid #e2e8f0;
-            "
-          >
+            ">
             <h4>ERP Maintenance</h4>
             <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
               Gestion prédictive des actifs industriels métallurgiques.
@@ -245,8 +237,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
               padding: 25px;
               border-radius: 12px;
               border: 1px solid #e2e8f0;
-            "
-          >
+            ">
             <h4>ERP Maintenance</h4>
             <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
               Gestion prédictive des actifs industriels métallurgiques.
@@ -257,9 +248,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
     </div>
 
     <footer>
-      <a href="#" class="logo" style="color: white; font-size: 2rem"
-        >JADI<span> DIGITAL</span></a
-      >
+      <a href="#" class="logo" style="color: white; font-size: 2rem">JADI<span> DIGITAL</span></a>
       <p style="margin: 20px 0; opacity: 0.7">
         Expertise Tech & Conseil Stratégique.
       </p>
@@ -267,10 +256,11 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
         &copy; 2026 JADI DIGITAL | Casablanca | Paris | New York
       </div>
     </footer>
-    <?php endif; ?>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      lucide.createIcons();
-    </script>
-  </body>
+  <?php endif; ?>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
 </html>

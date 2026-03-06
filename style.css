@@ -43,6 +43,58 @@ nav {
   color: var(--gold);
 }
 
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
+.lang-switcher a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+.lang-switcher a:hover {
+  transform: scale(1.2);
+}
+
+/* Container pour le côté droit de la nav */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+}
+
+/* --- RESPONSIVITÉ MOBILE --- */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 5%; /* Réduction du padding pour gagner de la place */
+    flex-wrap: wrap; /* Autorise le retour à la ligne si besoin */
+    justify-content: center; /* Centre le logo */
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem; /* Réduction légère du logo */
+  }
+
+  .nav-right {
+    width: 100%; /* Force le passage à la ligne */
+    justify-content: space-between; /* Espace les drapeaux et le bouton */
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .btn {
+    padding: 8px 16px !important; /* Bouton plus compact sur mobile */
+    font-size: 0.9rem;
+  }
+}
+
 /* Hero Section */
 .hero {
   padding: 100px 8%;
