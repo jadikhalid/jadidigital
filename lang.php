@@ -1,6 +1,6 @@
 <?php
 // Détection ou définition de la langue
-$lang = isset($_GET['lang']) && $_GET['lang'] === 'fr' ? 'fr' : 'en';
+$lang = isset($_GET['lang']) && $_GET['lang'] === 'en' ? 'en' : 'fr';
 
 $translations = [
     'fr' => [
