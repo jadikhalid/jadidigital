@@ -42,21 +42,6 @@ nav {
 .logo span {
   color: var(--gold);
 }
-
-.lang-switcher {
-  display: flex;
-  gap: 10px;
-  margin-right: 20px;
-}
-.lang-switcher a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: transform 0.2s;
-}
-.lang-switcher a:hover {
-  transform: scale(1.2);
-}
-
 /* Container pour le côté droit de la nav */
 .nav-right {
   display: flex;
@@ -67,8 +52,19 @@ nav {
 .lang-switcher {
   display: flex;
   gap: 8px;
+  margin-right: 10px;
+}
+.lang-switcher a {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0px;
+  overflow: hidden; /* Pour garder les coins propres */
+  transition: transform 0.2s;
 }
 
+.lang-switcher a:hover {
+  transform: scale(1.1);
+}
 /* --- RESPONSIVITÉ MOBILE --- */
 @media (max-width: 768px) {
   nav {
@@ -265,15 +261,19 @@ nav {
   padding: 50px;
   width: 90%;
   max-width: 1100px;
-  border-radius: 24px;
+  /* On force le border-radius à 0 */
+  border-radius: 7px;
+
   max-height: 85vh;
   overflow-y: auto;
   position: relative;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.4s ease;
-}
 
+  /* Optionnel : Ajoute une bordure fine pour souligner le côté tranchant */
+  border: 1px solid #e2e8f0;
+}
 #portfolioModal.active .modal-content {
   opacity: 1;
   transform: translateY(0);
@@ -416,7 +416,232 @@ footer {
   border: none;
   font-size: 1rem;
 }
+
+/* Grille de projets dans la modale */
+/* Style du lien vers le détail du projet */
+.project-link {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 18px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.project-link i {
+  transition: transform 0.3s ease;
+}
+
+/* Animation au survol de la CARTE (plus intuitif) */
+.project-card:hover .project-link {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+  box-shadow: 0 4px 12px rgba(181, 147, 91, 0.2);
+}
+
+.project-card:hover .project-link i {
+  transform: translateX(5px); /* La flèche bouge vers la droite */
+}
+
+/* Optionnel : Changement d'icône Lucide au survol si besoin via JS, 
+   mais le mouvement de translation CSS suffit généralement pour le dynamisme */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: var(--light-bg);
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  background: white;
+  border-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-icon {
+  color: var(--gold);
+  width: 28px;
+  height: 28px;
+}
+
+.tech-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  color: var(--text);
+}
+
+.project-card h4 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 20px;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+.project-features {
+  list-style: none;
+  padding: 15px 0 0 0;
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto;
+}
+
+.project-features li {
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.project-features li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+/* --- STYLISATION DE LA BARRE DE DÉFILEMENT (MODALE) --- */
+
+/* 1. On cible le conteneur qui a le overflow-y */
+.modal-content::-webkit-scrollbar {
+  width: 10px; /* Barre très fine */
+}
+
+/* 2. Le "fond" de la barre : on le laisse transparent pour éviter le conflit avec le border-radius */
+.modal-content::-webkit-scrollbar-track {
+  background: #f8fafc; /* Un gris très léger pour marquer la zone */
+  margin: 0; /* Plus besoin de marge en haut/bas */
+}
+
+/* 3. Le curseur (la partie qui bouge) */
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+  /* On peut garder un petit arrondi sur le curseur lui-même pour le confort visuel */
+  border-radius: 0;
+}
+
+/* 4. Effet au survol du curseur */
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gold); /* Devient opaque au survol */
+}
+
+/* Pour Firefox (plus limité en stylisation) */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(181, 147, 91, 0.4) transparent;
+}
+
+/* --- STYLES POUR PAGES DÉTAILS PROJETS (À AJOUTER À STYLE.CSS) --- */
+
+/* Conteneur principal blanc qui contient tout le texte */
+.project-detail-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0; /* On garde le style sans arrondis */
+}
+
+/* En-tête avec le titre et les technos */
+.project-detail-header {
+  border-bottom: 2px solid var(--light-bg);
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.project-detail-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* Grille : texte à gauche (1.5 part), encadré à droite (1 part) */
+.project-main-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+}
+
+/* Petit encadré gris/or sur le côté */
+.project-sidebar {
+  background: var(--light-bg);
+  padding: 30px;
+  border: 1px dashed var(--gold);
+}
+
+.project-sidebar h4 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+/* Ligne de retour en bas */
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Adaptation pour téléphone */
 @media (max-width: 768px) {
+  .project-main-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+  }
+  .project-detail-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .modal-content {
+    padding: 30px 20px;
+    border-radius: 0;
+  }
   /* ACTION I */
   /* 1. On remet le Hero sur une colonne */
   .hero {

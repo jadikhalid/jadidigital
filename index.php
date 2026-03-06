@@ -34,26 +34,25 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
     <nav>
       <a href="#" class="logo" onclick="event.preventDefault();">JADI<span> DIGITAL</span></a>
 
-      <div class="nav-right">
+      <div class=" nav-right">
         <div class="lang-switcher">
-          <a href="?lang=fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" width="24" height="18" style="border-radius: 2px;"></a>
-          <a href="?lang=en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" width="24" height="18" style="border-radius: 2px;"></a>
+          <a href="?lang=fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
+          <a href="?lang=en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
         </div>
-        <a
-          href="contact.php?lang=<?= $lang ?>"
-          class="btn"><?= __('contact') ?></a>
+        <a href="contact.php" class="btn"><?= __('contact') ?></a>
       </div>
     </nav>
-
     <header class="hero">
       <div>
-        <span class="section-tag"><?= __('auteur') ?></span>
-        <h1><?= __('hero_title') ?></h1>
+        <span class="section-tag">Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack</span>
+        <h1>Je conçois vos outils numériques de demain.</h1>
         <p>
-          <?= __('hero_desc') ?>
+          Ancien cadre dirigeant reconverti dans l'ingénierie logicielle, je
+          mets 20 ans d'expertise métier au service de vos projets digitaux les
+          plus ambitieux.
         </p>
         <button class="btn" onclick="openPortfolio()">
-          <?= __('portfolio') ?>
+          Explorer mon Portfolio
         </button>
       </div>
       <div style="text-align: right">
@@ -76,22 +75,24 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             src="./img/jadidigitalmeeting.jpg"
             alt=""
             style="width: 100%; height: 100%; object-fit: cover" />
-          <i data-lucide="user" size="80"></i>
+          <!-- <i data-lucide="user" size="80"></i> -->
         </div>
       </div>
     </header>
 
     <section class="expertise">
-      <span class="section-tag" style="text-align: center"><?= __('expertise_mini_title') ?></span>
+      <span class="section-tag" style="text-align: center">Mon Savoir-Faire</span>
       <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary)">
-        <?= __('expertise_title') ?>
+        Expertise Technique & Métier
       </h2>
       <div class="grid">
         <div class="card">
           <i data-lucide="code-2" size="32" color="#b5935b"></i>
-          <h3><?= __('expertise_descr1_title') ?></h3>
+          <h3>Expertise Full Stack</h3>
           <p>
-            <?= __('expertise_descr1_desc') ?>
+            Maîtrise avancée des écosystèmes de développement web modernes
+            (Front & Back End) pour des applications performantes
+            et scalables.
           </p>
         </div>
         <div class="card">
@@ -174,74 +175,60 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
       <div class="modal-content">
         <span class="close-modal" onclick="closePortfolio()">&times;</span>
         <span class="section-tag">Réalisations</span>
-        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 25px">
+        <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 30px; letter-spacing: -1px;">
           Projets JADI DIGITAL
         </h2>
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-          ">
-          <div
-            style="
-              background: #f8fafc;
-              padding: 25px;
-              border-radius: 12px;
-              border: 1px solid #e2e8f0;
-            ">
-            <h4>Scoring Bancaire</h4>
-            <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
-              Analyse de risque crédit en temps réel avec moteur de règles.
-            </p>
+
+        <div class="portfolio-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <i data-lucide="ticket-check" class="project-icon"></i>
+              <span class="tech-tag">PHP • MySQL</span>
+            </div>
+            <h4>SaaS Helpdesk & Ticketing</h4>
+            <p>Système de gestion de réclamations clients haute performance. Intègre une logique métier complexe.</p>
+            <ul class="project-features">
+              <li>Base de données relationnelle optimisée</li>
+              <li>Automatisation d'emails (SMTP)</li>
+            </ul>
+            <a href="projet-helpdesk.php" class="project-link">
+              <span>Voir le projet</span>
+              <i data-lucide="arrow-right" size="18"></i>
+            </a>
           </div>
-          <div
-            style="
-              background: #f8fafc;
-              padding: 25px;
-              border-radius: 12px;
-              border: 1px solid #e2e8f0;
-            ">
-            <h4>ERP Maintenance</h4>
-            <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
-              Gestion prédictive des actifs industriels métallurgiques.
-            </p>
+
+          <div class="project-card">
+            <div class="project-header">
+              <i data-lucide="bar-chart-3" class="project-icon"></i>
+              <span class="tech-tag">MERN Stack</span>
+            </div>
+            <h4>Dashboard d'Inventaire</h4>
+            <p>Interface de pilotage pour entrepôts. Visualisation dynamique des stocks critiques.</p>
+            <ul class="project-features">
+              <li>State Management avec React</li>
+              <li>Reporting graphique interactif</li>
+            </ul>
+            <a href="projet-dashboard.php" class="project-link">
+              <span>Voir le projet</span>
+              <i data-lucide="arrow-right" size="18"></i>
+            </a>
           </div>
-          <div
-            style="
-              background: #f8fafc;
-              padding: 25px;
-              border-radius: 12px;
-              border: 1px solid #e2e8f0;
-            ">
-            <h4>ERP Maintenance</h4>
-            <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
-              Gestion prédictive des actifs industriels métallurgiques.
-            </p>
-          </div>
-          <div
-            style="
-              background: #f8fafc;
-              padding: 25px;
-              border-radius: 12px;
-              border: 1px solid #e2e8f0;
-            ">
-            <h4>ERP Maintenance</h4>
-            <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
-              Gestion prédictive des actifs industriels métallurgiques.
-            </p>
-          </div>
-          <div
-            style="
-              background: #f8fafc;
-              padding: 25px;
-              border-radius: 12px;
-              border: 1px solid #e2e8f0;
-            ">
-            <h4>ERP Maintenance</h4>
-            <p style="font-size: 0.9rem; color: #64748b; margin-top: 10px">
-              Gestion prédictive des actifs industriels métallurgiques.
-            </p>
+
+          <div class="project-card">
+            <div class="project-header">
+              <i data-lucide="calendar-range" class="project-icon"></i>
+              <span class="tech-tag">POO • Clean Code</span>
+            </div>
+            <h4>Réservation de Ressources</h4>
+            <p>Moteur de réservation intelligent pour salles et équipements. Focus sur l'ingénierie logicielle.</p>
+            <ul class="project-features">
+              <li>Algorithme d'anti-chevauchement</li>
+              <li>Architecture Orientée Objet</li>
+            </ul>
+            <a href="projet-reservation.php" class="project-link">
+              <span>Voir le projet</span>
+              <i data-lucide="arrow-right" size="18"></i>
+            </a>
           </div>
         </div>
       </div>
