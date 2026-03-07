@@ -44,15 +44,13 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
     </nav>
     <header class="hero">
       <div>
-        <span class="section-tag">Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack</span>
-        <h1>Je conçois vos outils numériques de demain.</h1>
+        <span class="section-tag"><?= __('auteur') ?></span>
+        <h1><?= __("hero_title") ?></h1>
         <p>
-          Ancien cadre dirigeant reconverti dans l'ingénierie logicielle, je
-          mets 20 ans d'expertise métier au service de vos projets digitaux les
-          plus ambitieux.
+          <?= __("hero_desc") ?>
         </p>
         <button class="btn" onclick="openPortfolio()">
-          Explorer mon Portfolio
+          <?= __("portfolio") ?>
         </button>
       </div>
       <div style="text-align: right">
@@ -75,15 +73,15 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             src="./img/jadidigitalmeeting.jpg"
             alt=""
             style="width: 100%; height: 100%; object-fit: cover" />
-          <!-- <i data-lucide="user" size="80"></i> -->
+          <i data-lucide="user" size="80"></i>
         </div>
       </div>
     </header>
 
     <section class="expertise">
-      <span class="section-tag" style="text-align: center">Mon Savoir-Faire</span>
+      <span class="section-tag" style="text-align: center"><?= __("expertise_mini_title") ?></span>
       <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary)">
-        Expertise Technique & Métier
+        <?= __("expertise_title") ?>
       </h2>
       <div class="grid">
         <div class="card">
