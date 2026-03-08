@@ -75,7 +75,7 @@ nav {
   }
 
   .logo {
-    font-size: 1.2rem; /* Réduction légère du logo */
+    font-size: 2rem; /* Réduction légère du logo */
   }
 
   .nav-right {
@@ -287,6 +287,34 @@ nav {
   cursor: pointer;
   color: var(--primary);
   font-weight: bold;
+}
+
+/* Conteneur pour grouper les icônes à gauche */
+.project-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Style de l'icône GitHub cliquable */
+.github-icon-link {
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.github-icon-link:hover {
+  color: var(--gold);
+  transform: scale(1.1);
+}
+
+/* On ajuste le lien principal pour qu'il reprenne sa place naturelle */
+.project-link {
+  margin-top: 20px;
+  width: 100%;
 }
 
 /* Floating Button */

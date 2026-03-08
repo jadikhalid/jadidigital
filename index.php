@@ -73,7 +73,6 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             src="./img/jadidigitalmeeting.jpg"
             alt=""
             style="width: 100%; height: 100%; object-fit: cover" />
-          <i data-lucide="user" size="80"></i>
         </div>
       </div>
     </header>
@@ -86,27 +85,23 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
       <div class="grid">
         <div class="card">
           <i data-lucide="code-2" size="32" color="#b5935b"></i>
-          <h3>Expertise Full Stack</h3>
+          <h3><?= __("expertise_descr1_title") ?></h3>
           <p>
-            Maîtrise avancée des écosystèmes de développement web modernes
-            (Front & Back End) pour des applications performantes
-            et scalables.
+            <?= __("expertise_descr1_desc") ?>
           </p>
         </div>
         <div class="card">
           <i data-lucide="database" size="32" color="#b5935b"></i>
-          <h3>Développement "AI-First"</h3>
+          <h3><?= __("expertise_descr2_title") ?></h3>
           <p>
-            Conception d'architectures logicielles intégrant l'IA générative
-            pour des fonctionnalités prédictives et sur-mesure.
+            <?= __("expertise_descr2_desc") ?>
           </p>
         </div>
         <div class="card">
           <i data-lucide="briefcase" size="32" color="#b5935b"></i>
-          <h3>Vision Business</h3>
+          <h3><?= __("expertise_descr3_title") ?></h3>
           <p>
-            Maîtrise complète de la chaîne de valeur et des enjeux financiers
-            pour des architectures technologiques rentables et optimisées.
+            <?= __("expertise_descr3_desc") ?>
           </p>
         </div>
       </div>
@@ -114,17 +109,17 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
     <section class="bio">
       <div style="text-align: center; margin-bottom: 50px">
-        <span class="section-tag">Mon Parcours</span>
+        <span class="section-tag"><?= __('profile_title') ?></span>
         <h2 style="font-size: 2.2rem; color: var(--primary)">
-          Une trajectoire d'Ingénieur et de Dirigeant
+          <?= __('profile_big_line') ?>
         </h2>
       </div>
       <div class="timeline">
         <div class="timeline-item left">
           <div class="content-box">
-            <span class="date-tag">2023 - PRÉSENT</span>
+            <span class="date-tag"><?= __("date1") ?></span>
             <h4>JADI DIGITAL</h4>
-            <p>Ingénierie logicielle & Web, (MA, FR, US)</p>
+            <p><?= __("date1_what") ?></p>
           </div>
         </div>
         <div class="timeline-item right">
@@ -137,58 +132,67 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
         <div class="timeline-item left">
           <div class="content-box">
             <span class="date-tag">2018 - 2022</span>
-            <h4>Gérant - MPGB SARL</h4>
-            <p>Aménagement d'espaces tertiaires, MA</p>
+            <h4><?= __("date3_title") ?></h4>
+            <p><?= __("date3_what") ?></p>
           </div>
         </div>
         <div class="timeline-item right">
           <div class="content-box">
             <span class="date-tag">2005 - 2018</span>
-            <h4>Directeur des Achats Groupe</h4>
-            <p>Groupe Bancaire, MA</p>
+            <h4><?= __("date4_title") ?></h4>
+            <p><?= __("date4_where") ?>A</p>
           </div>
         </div>
         <div class="timeline-item left">
           <div class="content-box">
             <span class="date-tag">2003 - 2005</span>
-            <h4>Directeur Commercial</h4>
-            <p>Acteur Métallurgique, MA</p>
+            <h4><?= __("date5_title") ?></h4>
+            <p><?= __("date5_where") ?></p>
           </div>
         </div>
         <div class="timeline-item right">
           <div class="content-box">
             <span class="date-tag">2000 - 2003</span>
-            <h4>Ingénieur d'État, Génie Industriel</h4>
-            <p>Ecole d'Ingénieurs, EMI. Rabat, MA</p>
+            <h4><?= __("date6_title") ?></h4>
+            <p><?= __("date6_where") ?></p>
           </div>
         </div>
       </div>
     </section>
 
     <button id="portfolio-trigger" onclick="openPortfolio()">
-      <i data-lucide="layers" size="20"></i> <span class="btn-text">Mon Portfolio</span>
+      <i data-lucide="layers" size="20"></i> <span class="btn-text"><?= __("portfolio_title") ?></span>
     </button>
 
     <div id="portfolioModal">
       <div class="modal-content">
         <span class="close-modal" onclick="closePortfolio()">&times;</span>
-        <span class="section-tag">Réalisations</span>
+        <span class="section-tag"><?= __("portfolio_sub_title") ?></span>
         <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 30px; letter-spacing: -1px;">
-          Projets JADI DIGITAL
+          <?= __("portfolio_sub_title2") ?>
         </h2>
 
         <div class="portfolio-grid">
           <div class="project-card">
             <div class="project-header">
-              <i data-lucide="ticket-check" class="project-icon"></i>
-              <span class="tech-tag">PHP • MySQL</span>
+              <div class="project-icons">
+                <i data-lucide="ticket-check" class="project-icon"></i>
+                <span class="tech-tag">PHP • MySQL</span>
+              </div>
+              <a href="https://github.com/jadikhalid/helpdesk_saas" target="_blank" class="github-icon-link">
+                <i data-lucide="github" size="20"></i>
+              </a>
             </div>
+
             <h4>SaaS Helpdesk & Ticketing</h4>
             <p>Système de gestion de réclamations clients haute performance. Intègre une logique métier complexe.</p>
+
+
             <ul class="project-features">
               <li>Base de données relationnelle optimisée</li>
               <li>Automatisation d'emails (SMTP)</li>
             </ul>
+
             <a href="projet-helpdesk.php" class="project-link">
               <span>Voir le projet</span>
               <i data-lucide="arrow-right" size="18"></i>
@@ -235,7 +239,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
     <footer>
       <a href="#" class="logo" style="color: white; font-size: 2rem">JADI<span> DIGITAL</span></a>
       <p style="margin: 20px 0; opacity: 0.7">
-        Expertise Tech & Conseil Stratégique.
+        <?= __("footer_title") ?>
       </p>
       <div style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4">
         &copy; 2026 JADI DIGITAL | Casablanca | Paris | New York
