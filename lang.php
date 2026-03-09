@@ -33,6 +33,19 @@ $translations = [
         'portfolio_title' => 'Mon Portfolio',
         'portfolio_sub_title' => 'Réalisations',
         'portfolio_sub_title2' => 'Projets JADI DIGITAL',
+        'project1_desc' => 'Système de gestion de réclamations clients haute performance. Intègre une logique métier complexe.',
+        'project1_subtitle1' => 'Base de données relationnelle optimisée',
+        'project1_subtitle2' => 'Automatisation d\'emails (SMTP)',
+        'project_details' => 'Voir le projet',
+        // Page Contact
+        'contact_retour' => 'Retour',
+        'contact_mini_title' => 'Parlons de votre projet',
+        'contact_title' => 'Contactez-moi',
+        'contact_nom' => 'Nom Complet',
+        'contact_objet' => 'Objet',
+        'contact_sendButton' => 'Envoyer le message',
+        // Page Project 1
+        'project1_page_mini_title' => 'Étude de Cas',
         // ... ajoutez toutes vos clés ici
     ],
     'en' => [
@@ -65,7 +78,20 @@ $translations = [
         'portfolio_title' => 'My Portfolio',
         'portfolio_sub_title' => 'Works',
         'portfolio_sub_title2' => 'Projects JADI DIGITAL',
-        // ... traductions anglaises
+        'project1_desc' => 'High-performance claim management system. Integrates a complex business logic.',
+        'project1_subtitle1' => 'Optimized relational database',
+        'project1_subtitle2' => 'Email automation (SMTP)',
+        'project_details' => 'Project\'s details',
+        // Page Contact
+        'contact_retour' => 'Back',
+        'contact_mini_title' => 'Let\'s talk about your project',
+        'contact_title' => 'Contact Me',
+        'contact_nom' => 'Full Name',
+        'contact_objet' => 'Subject',
+        'contact_sendButton' => 'Send Message',
+        // Page Project 1
+        'project1_page_mini_title' => 'Case Study',
+        // ... ajoutez toutes vos clés ici
     ]
 ];
 

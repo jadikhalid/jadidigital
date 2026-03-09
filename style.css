@@ -5,6 +5,10 @@
   --bg: #ffffff;
   --text: #334155;
   --light-bg: #f8fafc;
+
+  --bg-label: rgba(0, 102, 204, 0.08); /* Bleu très léger pour les titres */
+  --bg-value: rgba(0, 0, 0, 0.03); /* Gris très léger pour la description */
+  --primary-dark: #2d3748;
 }
 
 * {
@@ -441,7 +445,6 @@ footer {
 }
 .btn-submit {
   width: 100%;
-  border: none;
   font-size: 1rem;
 }
 
@@ -546,25 +549,63 @@ footer {
   padding: 15px 0 0 0;
   border-top: 1px solid #e2e8f0;
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Espace entre les lignes */
 }
 
 .project-features li {
-  font-size: 0.85rem;
-  color: var(--primary);
-  margin-bottom: 8px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
+  align-items: stretch; /* Force les enfants à avoir la même hauteur */
+  font-size: 0.85rem;
+  color: var(--primary-dark);
+  border-radius: 4px;
+  overflow: hidden; /* Pour que les backgrounds respectent l'arrondi du li */
 }
 
-.project-features li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  border-radius: 50%;
-  flex-shrink: 0;
+.project-features li strong {
+  width: 30%; /* Ajusté pour laisser un peu plus de place au titre */
+  padding: 8px 12px;
+  background-color: var(--bg-label);
+  display: flex;
+  align-items: center; /* Centre le texte verticalement */
+  font-weight: 600;
+  border-right: 1px solid #fff; /* Séparateur discret blanc */
+}
+
+.project-features li span {
+  width: 70%;
+  padding: 8px 12px;
+  background-color: var(--bg-value);
+  display: flex;
+  align-items: center; /* Centre le texte verticalement */
+}
+.key-point {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .project-features li {
+    flex-direction: column; /* Empile le titre et la description */
+    align-items: stretch;
+    border-radius: 8px; /* Un peu plus arrondi pour le look mobile */
+    margin-bottom: 12px; /* Plus d'espace entre les blocs */
+  }
+
+  .project-features li strong,
+  .project-features li span {
+    width: 100%; /* Occupent toute la largeur */
+    padding: 10px 15px; /* Padding généreux pour le tactile */
+  }
+
+  .project-features li strong {
+    border-right: none;
+    border-bottom: 1px solid #fff; /* Séparateur horizontal maintenant */
+    font-size: 0.9rem;
+  }
+
+  .project-features li span {
+    font-size: 0.8rem;
+  }
 }
 /* --- STYLISATION DE LA BARRE DE DÉFILEMENT (MODALE) --- */
 

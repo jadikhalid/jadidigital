@@ -39,7 +39,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           <a href="?lang=fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
           <a href="?lang=en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
         </div>
-        <a href="contact.php" class="btn"><?= __('contact') ?></a>
+        <a href="contact.php?lang=<?= $_GET['lang'] ?? 'fr' ?>" class="btn"><?= __('contact') ?></a>
       </div>
     </nav>
     <header class="hero">
@@ -177,7 +177,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             <div class="project-header">
               <div class="project-icons">
                 <i data-lucide="ticket-check" class="project-icon"></i>
-                <span class="tech-tag">PHP • MySQL</span>
+                <span class="tech-tag">PHP • MySQL • Architecture MVC • PHPMailer</span>
               </div>
               <a href="https://github.com/jadikhalid/helpdesk_saas" target="_blank" class="github-icon-link">
                 <i data-lucide="github" size="20"></i>
@@ -185,16 +185,16 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             </div>
 
             <h4>SaaS Helpdesk & Ticketing</h4>
-            <p>Système de gestion de réclamations clients haute performance. Intègre une logique métier complexe.</p>
+            <p><?= __('project1_desc') ?></p>
 
 
             <ul class="project-features">
-              <li>Base de données relationnelle optimisée</li>
-              <li>Automatisation d'emails (SMTP)</li>
+              <li><?= __('project1_subtitle1') ?></li>
+              <li><?= __('project1_subtitle2') ?></li>
             </ul>
 
-            <a href="projet-helpdesk.php" class="project-link">
-              <span>Voir le projet</span>
+            <a href="projet-helpdesk.php?lang=<?= $lang ?>" class="project-link">
+              <span><?= __('project_details') ?></span>
               <i data-lucide="arrow-right" size="18"></i>
             </a>
           </div>
