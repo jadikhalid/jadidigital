@@ -177,7 +177,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             <div class="project-header">
               <div class="project-icons">
                 <i data-lucide="ticket-check" class="project-icon"></i>
-                <span class="tech-tag">PHP • MySQL • Architecture MVC • PHPMailer</span>
+                <span class="tech-tag">PHP • MySQL</span>
               </div>
               <a href="https://github.com/jadikhalid/helpdesk_saas" target="_blank" class="github-icon-link">
                 <i data-lucide="github" size="20"></i>
@@ -201,8 +201,13 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
           <div class="project-card">
             <div class="project-header">
-              <i data-lucide="bar-chart-3" class="project-icon"></i>
-              <span class="tech-tag">MERN Stack</span>
+              <div class="project-icons">
+                <i data-lucide="bar-chart-3" class="project-icon"></i>
+                <span class="tech-tag">MERN Stack</span>
+              </div>
+              <a href="https://github.com/jadikhalid/helpdesk_saas" target="_blank" class="github-icon-link">
+                <i data-lucide="github" size="20"></i>
+              </a>
             </div>
             <h4>Dashboard d'Inventaire</h4>
             <p>Interface de pilotage pour entrepôts. Visualisation dynamique des stocks critiques.</p>
@@ -210,8 +215,8 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
               <li>State Management avec React</li>
               <li>Reporting graphique interactif</li>
             </ul>
-            <a href="projet-dashboard.php" class="project-link">
-              <span>Voir le projet</span>
+            <a href="projet-dashboard.php?lang=<?= $lang ?>" class="project-link">
+              <span><?= __('project_details') ?></span>
               <i data-lucide="arrow-right" size="18"></i>
             </a>
           </div>

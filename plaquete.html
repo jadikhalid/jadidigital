@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #1a1a1a;
+        overflow-x: hidden;
+      }
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 20mm;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+      }
+
+      /* Cercles nets en arrière-plan */
+      .bg-circle {
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.2;
+      }
+      .circle-1 {
+        top: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background: #c5a893;
+      }
+      .circle-2 {
+        bottom: -50px;
+        left: -50px;
+        width: 400px;
+        height: 400px;
+        background: #c5a893;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="page flex flex-col justify-between">
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
+      <div class="text-6xl font-black tracking-tighter text-gray-900 mt-24">
+        JADI <span class="font-medium" style="color: #c5a893">DIGITAL</span>
+      </div>
+      <div class="mt-32">
+        <h1 class="text-6xl font-extrabold leading-none tracking-tight">
+          Ingénierie<br />Logicielle<br />
+          & Web.
+        </h1>
+        <p class="text-2xl text-gray-600 mt-8 font-light italic">
+          De la conception technique au pilotage métier.
+        </p>
+        <div class="w-20 h-1 bg-black mt-12"></div>
+        <p class="mt-8 text-gray-700 max-w-lg leading-relaxed">
+          Petite structure d'ingénierie agile, nous combinons une
+          <strong>base technique d'excellence au Maroc</strong> avec une
+          <strong>antenne de proximité à Lille (France)</strong>, dédiée au
+          conseil métier et à la gestion de vos projets.
+        </p>
+      </div>
+      <div class="text-gray-400 text-sm border-t pt-4 border-gray-300">
+        Casablanca (Tech Hub) • Lille (Conseil & Commercial)
+      </div>
+    </div>
+
+    <div class="page">
+      <h2 class="text-3xl font-bold mb-16">Notre binôme</h2>
+      <div class="grid grid-cols-1 gap-16">
+        <div class="border-l-4 border-black pl-8">
+          <h3 class="text-2xl font-bold">Khalid JADI</h3>
+          <p
+            class="text-sm uppercase tracking-widest text-gray-500 font-semibold mb-4"
+          >
+            Fondateur & Direction Technique
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Ingénieur d'État diplômé de l'EMI et fort d'une riche expérience de
+            cadre dirigeant, Khalid orchestre la vision technologique de JADI
+            DIGITAL. Sa double compétence — business et technique — lui permet
+            de concevoir des architectures logicielles qui ne sont pas seulement
+            performantes, mais
+            <strong>économiquement rentables et scalables</strong>. Expert en
+            systèmes critiques et en développement "AI-First", il garantit
+            l'excellence de notre pôle technique à Casablanca, veillant à ce que
+            chaque ligne de code réponde aux standards les plus exigeants de
+            l'ingénierie moderne.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-gray-400 pl-8">
+          <h3 class="text-2xl font-bold">Sara JADI</h3>
+          <p
+            class="text-sm uppercase tracking-widest text-gray-500 font-semibold mb-4"
+          >
+            Direction Produit France
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Product Owner certifiée et experte en méthodes agiles, Sara est
+            votre interlocutrice privilégiée à Lille. Elle est le pont
+            stratégique entre vos objectifs métiers et l'exécution technique.
+            Son rôle est d'assurer que votre produit évolue en parfaite
+            adéquation avec les attentes du marché français. De la formalisation
+            des besoins (User Stories) à la gestion de la Roadmap, en passant
+            par le suivi opérationnel quotidien, elle maîtrise l'art de
+            transformer des problématiques métiers complexes en solutions
+            fonctionnelles intuitives, tout en garantissant un time-to-market
+            optimisé.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="mt-16 p-6 border border-dashed border-gray-300 bg-gray-50 rounded-lg"
+      >
+        <p class="text-sm text-gray-600 text-center">
+          <strong>Parcours détaillé :</strong> Vous trouverez les CV complets de
+          Khalid et Sara en <strong>annexe de cette présentation</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2 class="text-3xl font-bold mb-12">Expertises & Stack Technique</h2>
+      <div class="space-y-10">
+        <div class="border-b pb-8 border-gray-200">
+          <h3 class="text-xl font-bold">Développement Web & IA (Full Stack)</h3>
+          <p class="text-gray-600 mt-2">
+            Nous concevons des plateformes web scalables et des solutions
+            "AI-First" performantes.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-sm text-blue-700">
+            <span class="bg-blue-50 px-3 py-1 rounded">React / Next.js</span>
+            <span class="bg-blue-50 px-3 py-1 rounded">Node.js / NestJS</span>
+            <span class="bg-blue-50 px-3 py-1 rounded">PHP / Laravel</span>
+            <span class="bg-blue-50 px-3 py-1 rounded">OpenAI API / RAG</span>
+          </div>
+        </div>
+
+        <div class="border-b pb-8 border-gray-200">
+          <h3 class="text-xl font-bold">Ingénierie Logicielle & Systèmes</h3>
+          <p class="text-gray-600 mt-2">
+            Expertise en couches basses pour une optimisation maximale des
+            ressources et la gestion de systèmes critiques.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-sm text-blue-700">
+            <span class="bg-blue-50 px-3 py-1 rounded">C / C++</span>
+            <span class="bg-blue-50 px-3 py-1 rounded"
+              >Architecture Systèmes</span
+            >
+            <span class="bg-blue-50 px-3 py-1 rounded"
+              >Optimisation Algorithmique</span
+            >
+            <span class="bg-blue-50 px-3 py-1 rounded">Linux / Docker</span>
+          </div>
+        </div>
+
+        <div class="border-b pb-8 border-gray-200">
+          <h3 class="text-xl font-bold">Pilotage Produit & Méthodologie</h3>
+          <p class="text-gray-600 mt-2">
+            Une approche structurée pour garantir la qualité, le respect des
+            délais et l'adéquation aux besoins utilisateurs.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-sm text-blue-700">
+            <span class="bg-blue-50 px-3 py-1 rounded"
+              >Agile (Scrum/Kanban)</span
+            >
+            <span class="bg-blue-50 px-3 py-1 rounded"
+              >CI/CD (GitLab/GitHub)</span
+            >
+            <span class="bg-blue-50 px-3 py-1 rounded"
+              >Gestion de la Dette Technique</span
+            >
+            <span class="bg-blue-50 px-3 py-1 rounded">Clean Code & TDD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page flex flex-col justify-center items-center">
+      <h2 class="text-3xl font-bold mb-16">Contact</h2>
+
+      <div class="w-full max-w-lg space-y-12">
+        <div class="border-b border-gray-200 pb-8">
+          <h3 class="text-2xl font-bold mb-4">Khalid JADI</h3>
+          <p class="text-gray-600">
+            <span class="block font-semibold">Tél :</span> +212 6 22 10 90 76
+          </p>
+          <p class="text-gray-600">
+            <span class="block font-semibold">Email :</span>
+            khalid@jadi-digital.com
+          </p>
+          <p class="text-gray-600">
+            <span class="block font-semibold">Localisation :</span> Casablanca,
+            Maroc
+          </p>
+        </div>
+
+        <div class="border-b border-gray-200 pb-8">
+          <h3 class="text-2xl font-bold mb-4">Sara JADI</h3>
+          <p class="text-gray-600">
+            <span class="block font-semibold">Tél :</span> +33 6 95 20 84 80
+          </p>
+          <p class="text-gray-600">
+            <span class="block font-semibold">Email :</span>
+            sara@jadi-digital.com
+          </p>
+          <p class="text-gray-600">
+            <span class="block font-semibold">Localisation :</span> Lille,
+            France
+          </p>
+        </div>
+
+        <div class="text-center pt-8">
+          <a
+            href="https://www.jadi-digital.com"
+            class="text-xl font-bold hover:text-[#C5A893] transition-colors"
+          >
+            www.jadi-digital.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2 class="text-3xl font-bold mb-12">Parcours : Khalid JADI</h2>
+
+      <div class="space-y-10">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Ingénieur & Entrepreneur Tech</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Fort d'un parcours hybride unique, Khalid allie une rigueur
+            d'<strong>Ingénieur d'État</strong> à une expertise approfondie en
+            <strong>Computer Science</strong> (MS, UMD, US). Son expérience de
+            20 ans en tant que cadre dirigeant (Direction Achats, Direction
+            Commerciale, Gérance) lui confère une vision stratégique et business
+            indispensable pour piloter des projets technologiques complexes et à
+            forte valeur ajoutée.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6">Trajectoire Professionnelle</h3>
+          <div class="space-y-6">
+            <div class="pl-4 border-l-2 border-[#C5A893]">
+              <h4 class="font-bold">Fondateur | JADI DIGITAL</h4>
+              <p class="text-sm text-gray-500 italic">2023 - Présent</p>
+              <p class="text-gray-600 text-sm mt-1">
+                Ingénierie logicielle & Web (Maroc, France, US).
+              </p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">
+                Master of Science in Computer Science | UMD, US
+              </h4>
+              <p class="text-sm text-gray-500 italic">2022 - 2023</p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">Gérant | MPGB SARL (Aménagement)</h4>
+              <p class="text-sm text-gray-500 italic">2018 - 2022</p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">
+                Directeur des Achats Groupe | Groupe Bancaire
+              </h4>
+              <p class="text-sm text-gray-500 italic">2005 - 2018</p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">
+                Directeur Commercial | Acteur Métallurgique
+              </h4>
+              <p class="text-sm text-gray-500 italic">2003 - 2005</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 mt-10">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Formation</h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• MS in Computer Science (UMD, US)</li>
+              <li>• Ingénieur d'État, Génie Industriel (EMI, Rabat)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Compétences</h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• Full Stack Development (Web & Systèmes)</li>
+              <li>• Stratégie & Management de Projet</li>
+              <li>• Expertise IA & Architecture Logicielle</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2 class="text-3xl font-bold mb-12">Parcours : Sara JADI</h2>
+
+      <div class="space-y-10">
+        <div>
+          <h3 class="text-xl font-bold mb-4">
+            Product Owner & Experte Digitale
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            Experte en pilotage de produits digitaux de bout en bout, Sara
+            combine une vision stratégique aiguisée avec une maîtrise technique
+            des environnements FinTech et Télécoms. Sa capacité à naviguer entre
+            contraintes réglementaires et impératifs business lui permet de
+            livrer des solutions à forte valeur ajoutée, avec une expertise
+            confirmée en coordination d'équipes pluridisciplinaires.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6">Trajectoire Professionnelle</h3>
+          <div class="space-y-6">
+            <div class="pl-4 border-l-2 border-[#C5A893]">
+              <h4 class="font-bold">
+                Product Owner Conseil | JADI DIGITAL (Lille, France)
+              </h4>
+              <p class="text-sm text-gray-500 italic">2026 - Présent</p>
+              <p class="text-gray-600 text-sm mt-1">
+                Accompagnement stratégique et pilotage produit pour le marché
+                français.
+              </p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">Product Owner | MT Cash (FinTech)</h4>
+              <p class="text-sm text-gray-500 italic">
+                Octobre 2019 - Décembre 2025
+              </p>
+              <p class="text-gray-600 text-sm mt-1">
+                Pilotage d'un wallet mobile/web réglementé (900K+ utilisateurs).
+              </p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">
+                Chargée de Missions Projets Digitaux | Maroc Telecom
+              </h4>
+              <p class="text-sm text-gray-500 italic">2016 - 2019</p>
+              <p class="text-gray-600 text-sm mt-1">
+                Refonte e-boutique & self-care (1M utilisateurs).
+              </p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">Product Owner IPTV/VOD | Maroc Telecom</h4>
+              <p class="text-sm text-gray-500 italic">2014 - 2016</p>
+              <p class="text-gray-600 text-sm mt-1">
+                Amélioration expérience streaming & gestion catalogues.
+              </p>
+            </div>
+            <div class="pl-4 border-l-2 border-gray-300">
+              <h4 class="font-bold">
+                Chef de Projet Mobile Money | Gabon Telecom
+              </h4>
+              <p class="text-sm text-gray-500 italic">2013 - 2014</p>
+              <p class="text-gray-600 text-sm mt-1">
+                Lancement end-to-end de Mobicash & obtention agrément BEAC.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 mt-10">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Formation</h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• École de Commerce (ENCG, Tanger)</li>
+              <li>• Certifications : PSPO, GenAI</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Compétences</h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• Agile, Scrum, Kanban</li>
+              <li>• Data-driven (GA4, Dashboards)</li>
+              <li>• Product Discovery & Backlog Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
