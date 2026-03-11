@@ -583,7 +583,28 @@ footer {
 .key-point {
   margin-bottom: 20px;
 }
+.bio-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.social-links a:hover {
+  color: var(--gold); /* L'icône prend la couleur dorée au survol */
+}
 @media (max-width: 768px) {
+  .social-links {
+    margin-top: 15px;
+  }
+  .bio-item {
+    flex-direction: column !important; /* Force la colonne */
+    align-items: center; /* Centre l'image et le texte */
+    text-align: center; /* Centre le texte */
+  }
+
+  .bio-item .bio-img {
+    order: -1; /* Place l'image en premier (au-dessus) */
+    margin-bottom: 15px; /* Ajoute un peu d'espace sous l'image */
+  }
   .project-features li {
     flex-direction: column; /* Empile le titre et la description */
     align-items: stretch;

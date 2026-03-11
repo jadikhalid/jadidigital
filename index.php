@@ -109,52 +109,52 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
     <section class="bio">
       <div style="text-align: center; margin-bottom: 50px">
-        <span class="section-tag"><?= __('profile_title') ?></span>
+        <span class="section-tag"><?= __('team_mini_title') ?></span>
         <h2 style="font-size: 2.2rem; color: var(--primary)">
-          <?= __('profile_big_line') ?>
+          <?= __('team_title') ?>
         </h2>
       </div>
-      <div class="timeline">
-        <div class="timeline-item left">
-          <div class="content-box">
-            <span class="date-tag"><?= __("date1") ?></span>
-            <h4>JADI DIGITAL</h4>
-            <p><?= __("date1_what") ?></p>
+
+      <div class="grid">
+        <div class="project-card" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="bio-item">
+            <div style="flex: 1;">
+              <h3 style="color: var(--gold); margin-bottom: 5px;">Khalid JADI</h3>
+              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;">Fondateur & Direction Technique</h4>
+              <p style="font-size: 0.9rem; line-height: 1.5;">
+                Ingénieur d'État diplômé de l'EMI, Khalid orchestre la vision technologique de JADI DIGITAL. Expert en systèmes critiques et en développement "AI-First".
+              </p>
+            </div>
+            <img src="./img/khalid.png" class="bio-img" alt="Khalid JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
+          </div>
+          <a href="#" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
+            <i data-lucide="download" size="18"></i> Télécharger le CV
+          </a>
+          <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/khalid-j-a73662254/" target="_blank" style="color: var(--text); transition: color 0.3s;">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
           </div>
         </div>
-        <div class="timeline-item right">
-          <div class="content-box">
-            <span class="date-tag">2022 - 2023</span>
-            <h4>Master of Science</h4>
-            <p>MS in Computer Science, UMD. MD, US</p>
+
+        <div class="project-card" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="bio-item">
+            <div style="flex: 1;">
+              <h3 style="color: var(--gold); margin-bottom: 5px;">Sara JADI</h3>
+              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;">Direction Produit France</h4>
+              <p style="font-size: 0.9rem; line-height: 1.5;">
+                Product Owner certifiée, Sara est votre interlocutrice privilégiée à Lille. Elle assure le pont stratégique entre vos objectifs métiers et l'exécution technique.
+              </p>
+            </div>
+            <img src="./img/sara.png" class="bio-img" alt="Sara JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
           </div>
-        </div>
-        <div class="timeline-item left">
-          <div class="content-box">
-            <span class="date-tag">2018 - 2022</span>
-            <h4><?= __("date3_title") ?></h4>
-            <p><?= __("date3_what") ?></p>
-          </div>
-        </div>
-        <div class="timeline-item right">
-          <div class="content-box">
-            <span class="date-tag">2005 - 2018</span>
-            <h4><?= __("date4_title") ?></h4>
-            <p><?= __("date4_where") ?>A</p>
-          </div>
-        </div>
-        <div class="timeline-item left">
-          <div class="content-box">
-            <span class="date-tag">2003 - 2005</span>
-            <h4><?= __("date5_title") ?></h4>
-            <p><?= __("date5_where") ?></p>
-          </div>
-        </div>
-        <div class="timeline-item right">
-          <div class="content-box">
-            <span class="date-tag">2000 - 2003</span>
-            <h4><?= __("date6_title") ?></h4>
-            <p><?= __("date6_where") ?></p>
+          <a href="./cv-jadi-sara-po.pdf" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
+            <i data-lucide="download" size="18"></i> Télécharger le CV
+          </a>
+          <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/sara-jadi-68729629/" target="_blank" style="color: var(--text); transition: color 0.3s;">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
           </div>
         </div>
       </div>
