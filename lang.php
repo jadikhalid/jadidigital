@@ -5,7 +5,7 @@ $lang = isset($_GET['lang']) && $_GET['lang'] === 'en' ? 'en' : 'fr';
 $translations = [
     'fr' => [
         'contact' => 'Contact',
-        'auteur' => 'JADI DIGITAL - Ingénierie logicielle & Web',
+        'auteur' => 'JADI DIGITAL - Ingénierie logicielle & Conseil Metier',
         'hero_title' => 'Nous conçevons vos outils numériques de demain.',
         'hero_desc' => 'Forte de son expertise dans l\'ingénierie logicielle et le conseil stratégique, notre agence met son savoir-faire au service de vos projets digitaux les plus ambitieux.',
         'portfolio' => 'Explorer notre Portfolio',
@@ -40,7 +40,7 @@ $translations = [
     ],
     'en' => [
         'contact' => 'Contact',
-        'auteur' => 'JADI DIGITAL - Software Engineering & Web',
+        'auteur' => 'JADI DIGITAL - Software Engineering & Business Consulting',
         'hero_title' => 'We design the digital tools of tomorrow.',
         'hero_desc' => 'With its expertise in software engineering and strategic consulting, our agency provides its expertise to your most ambitious digital projects.',
         'portfolio' => 'Explore Our Portfolio',
