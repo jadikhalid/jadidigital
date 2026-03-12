@@ -91,7 +91,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           </p>
         </div>
         <div class="card">
-          <i data-lucide="database" size="32" color="#b5935b"></i>
+          <i data-lucide="layers" size="32" color="#b5935b"></i>
           <h3><?= __("expertise_descr2_title") ?></h3>
           <p>
             <?= __("expertise_descr2_desc") ?>
@@ -156,6 +156,58 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
               <i data-lucide="linkedin" size="20"></i>
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise" style="background-color: var(--light-bg); padding: 80px 8%;">
+      <div style="text-align: center; margin-bottom: 50px">
+        <span class="section-tag">Outils</span>
+        <h2 style="font-size: 2.2rem; color: var(--primary); margin-top: 10px;">
+          Méthodes & Piles Technologiques
+        </h2>
+      </div>
+
+      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+        <div class="card" style="padding: 30px;">
+          <i data-lucide="box" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
+          <h3 style="color: var(--primary); margin-bottom: 15px;">Stacks Technologiques</h3>
+          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;">Développement Web & IA (Full Stack)</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 15px;">Nous concevons des plateformes web scalables et des solutions "AI-First" performantes.</p>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
+            <li style="margin-bottom: 5px;">• React / Next.js</li>
+            <li style="margin-bottom: 5px;">• Node.js / NestJS || Express.js</li>
+            <li style="margin-bottom: 5px;">• PHP / Laravel</li>
+            <li style="margin-bottom: 5px;">• OpenAI API / RAG</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding: 30px;">
+          <i data-lucide="cpu" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
+          <h3 style="color: var(--primary); margin-bottom: 15px;">Ingénierie Logicielle</h3>
+          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;">Systèmes & Optimisation</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 15px;">Expertise en couches basses pour une optimisation maximale des ressources et la gestion de systèmes critiques.</p>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
+            <li style="margin-bottom: 5px;">• C / C++</li>
+            <li style="margin-bottom: 5px;">• Architecture Systèmes</li>
+            <li style="margin-bottom: 5px;">• Optimisation Algorithmique</li>
+            <li style="margin-bottom: 5px;">• Linux / Docker</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding: 30px;">
+          <i data-lucide="briefcase" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
+          <h3 style="color: var(--primary); margin-bottom: 15px;">Pilotage Produit</h3>
+          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;">Approche Méthodologique</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 15px;">Une approche structurée pour garantir la qualité, le respect des délais et l'adéquation aux besoins utilisateurs.</p>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
+            <li style="margin-bottom: 5px;">• Méthodes Agile / Scrum</li>
+            <li style="margin-bottom: 5px;">• Product Discovery / Users Stories</li>
+            <li style="margin-bottom: 5px;">• MoSCoW ou RICE</li>
+            <li style="margin-bottom: 5px;">• Jira, Figma, etc...</li>
+
+          </ul>
         </div>
       </div>
     </section>
