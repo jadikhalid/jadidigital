@@ -73,6 +73,16 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
                         <li><strong>Sécurité :</strong> <span>Protection contre les injections SQL et failles XSS (Clean Code).</span></li>
                         <li><strong>Notifications :</strong> <span>Système SMTP automatisé pour un suivi en temps réel.</span></li>
                     </ul>
+                    <div style="margin-top: 30px; padding: 20px; border-top: 1px solid #eee;">
+                        <h3 style="color: var(--gold); margin-bottom: 10px;">Accéder à la démonstration</h3>
+                        <a href="https://jadi-digital.com/helpdesk_saas"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style="display: inline-flex; align-items: center; gap: 8px; background-color: var(--gold); color: #000; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: opacity 0.3s;">
+                            <i data-lucide="external-link" size="18"></i>
+                            Lancer l'application Helpdesk
+                        </a>
+                    </div>
                 </div>
 
                 <aside class="project-sidebar">
