@@ -17,8 +17,19 @@ $translations = [
         'expertise_descr2_desc' => 'Conception de structures logicielles modulaires et pérennes, garantissant une maintenance simplifiée et une scalabilité technique optimale.',
         'expertise_descr3_title' => 'Stratégie & Pilotage Produit',
         'expertise_descr3_desc' => 'Accompagnement de bout en bout: de la découverte produit à la livraison agile, garantissant l\'alignement total entre vos enjeux métier et la solution technique.',
+        // Section Equipe
         'team_mini_title' => 'Notre Equipe',
         'team_title' => 'Un Duo gagnant',
+        'khalid_titre' => 'Fondateur & Direction Technique',
+        'khalid_desc' => 'Ingénieur d\'État diplômé de l\'EMI, Khalid orchestre la vision technologique de JADI DIGITAL. Expert en systèmes critiques et en développement "AI-First".',
+        'sara_titre' => 'Direction Produit France',
+        'sara_desc' => 'Product Owner certifiée, Sara est votre interlocutrice privilégiée à Lille. Elle assure le pont stratégique entre vos objectifs métiers et l\'exécution technique.',
+        'cv_download' => 'Télécharger le CV',
+        // Fin Section Equipe
+        // Section OUTILS
+        'tools_mini_title' => 'Outils',
+        'tools_title' => 'Méthodes & Piles Technologiques',
+        // Fin Section OUTILS
         'footer_title' => 'Expertise Tech & Conseil Stratégique.',
         'portfolio_title' => 'Notre Portfolio',
         'portfolio_sub_title' => 'Réalisations',
@@ -52,8 +63,19 @@ $translations = [
         'expertise_descr2_desc' => 'Modular and persistent software structures, ensuring simplified maintenance and optimal technical scalability.',
         'expertise_descr3_title' => 'Product Strategy & Pilotage',
         'expertise_descr3_desc' => 'From product discovery to agile delivery, ensuring alignment between business objectives and technical solution.',
+        // Section Equipe
         'team_mini_title' => 'Our Team',
         'team_title' => 'A Winning Duo',
+        'khalid_titre' => 'Founder & Technical Director',
+        'khalid_desc' => 'EMI graduate, Khalid orchestrates the technological vision of JADI DIGITAL. An expert in critical systems and "AI-First" development.',
+        'sara_titre' => 'France Product Owner',
+        'sara_desc' => 'Certified Product Owner, Sara is your trusted liaison in Lille. She ensures strategic alignment between business objectives and technical execution.',
+        'cv_download' => 'Download CV',
+        // Fin Section Equipe
+        // Section OUTILS
+        'tools_mini_title' => 'Tools',
+        'tools_title' => 'Methods & Technological Stacks',
+        // Fin Section OUTILS
         'footer_title' => 'Tech Expertise & Strategic Consulting.',
         'portfolio_title' => 'Our Portfolio',
         'portfolio_sub_title' => 'Works',

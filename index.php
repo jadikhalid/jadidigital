@@ -120,15 +120,15 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           <div class="bio-item">
             <div style="flex: 1;">
               <h3 style="color: var(--gold); margin-bottom: 5px;">Khalid JADI</h3>
-              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;">Fondateur & Direction Technique</h4>
+              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;"><?= __('khalid_titre') ?></h4>
               <p style="font-size: 0.9rem; line-height: 1.5;">
-                Ingénieur d'État diplômé de l'EMI, Khalid orchestre la vision technologique de JADI DIGITAL. Expert en systèmes critiques et en développement "AI-First".
+                <?= __('khalid_desc') ?>
               </p>
             </div>
             <img src="./img/khalid.png" class="bio-img" alt="Khalid JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
           </div>
           <a href="#" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
-            <i data-lucide="download" size="18"></i> Télécharger le CV
+            <i data-lucide="download" size="18"></i> <?= __('cv_download') ?>
           </a>
           <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
             <a href="https://www.linkedin.com/in/khalid-j-a73662254/" target="_blank" style="color: var(--text); transition: color 0.3s;">
@@ -141,15 +141,15 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           <div class="bio-item">
             <div style="flex: 1;">
               <h3 style="color: var(--gold); margin-bottom: 5px;">Sara JADI</h3>
-              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;">Direction Produit France</h4>
+              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;"><?= __('sara_titre') ?></h4>
               <p style="font-size: 0.9rem; line-height: 1.5;">
-                Product Owner certifiée, Sara est votre interlocutrice privilégiée à Lille. Elle assure le pont stratégique entre vos objectifs métiers et l'exécution technique.
+                <?= __('sara_desc') ?>
               </p>
             </div>
             <img src="./img/sara.png" class="bio-img" alt="Sara JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
           </div>
           <a href="./cv-jadi-sara-po.pdf" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
-            <i data-lucide="download" size="18"></i> Télécharger le CV
+            <i data-lucide="download" size="18"></i> <?= __('cv_download') ?>
           </a>
           <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
             <a href="https://www.linkedin.com/in/sara-jadi-68729629/" target="_blank" style="color: var(--text); transition: color 0.3s;">
@@ -162,9 +162,9 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
     <section class="expertise" style="background-color: var(--light-bg); padding: 80px 8%;">
       <div style="text-align: center; margin-bottom: 50px">
-        <span class="section-tag">Outils</span>
+        <span class="section-tag"><?= __('tools_mini_title') ?></span>
         <h2 style="font-size: 2.2rem; color: var(--primary); margin-top: 10px;">
-          Méthodes & Piles Technologiques
+          <?= __('tools_title') ?>
         </h2>
       </div>
 
