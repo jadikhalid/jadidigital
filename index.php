@@ -172,9 +172,9 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
         <div class="card" style="padding: 30px;">
           <i data-lucide="box" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
-          <h3 style="color: var(--primary); margin-bottom: 15px;">Stacks Technologiques</h3>
-          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;">Développement Web & IA (Full Stack)</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 15px;">Nous concevons des plateformes web scalables et des solutions "AI-First" performantes.</p>
+          <h3 style="color: var(--primary); margin-bottom: 15px;"><?= __('card1_title') ?></h3>
+          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;"><?= __('card1_mini_title') ?></h4>
+          <p style="font-size: 0.9rem; margin-bottom: 15px;"><?= __('card1_desc') ?></p>
           <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
             <li style="margin-bottom: 5px;">• React / Next.js</li>
             <li style="margin-bottom: 5px;">• Node.js / NestJS || Express.js</li>
@@ -185,24 +185,24 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
         <div class="card" style="padding: 30px;">
           <i data-lucide="cpu" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
-          <h3 style="color: var(--primary); margin-bottom: 15px;">Ingénierie Logicielle</h3>
-          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;">Systèmes & Optimisation</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 15px;">Expertise en couches basses pour une optimisation maximale des ressources et la gestion de systèmes critiques.</p>
+          <h3 style="color: var(--primary); margin-bottom: 15px;"><?= __('card2_title') ?></h3>
+          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;"><?= __('card2_mini_title') ?></h4>
+          <p style="font-size: 0.9rem; margin-bottom: 15px;"><?= __('card2_desc') ?></p>
           <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
             <li style="margin-bottom: 5px;">• C / C++</li>
-            <li style="margin-bottom: 5px;">• Architecture Systèmes</li>
-            <li style="margin-bottom: 5px;">• Optimisation Algorithmique</li>
+            <li style="margin-bottom: 5px;">• System Design</li>
+            <li style="margin-bottom: 5px;">• Algorithmic Optimization</li>
             <li style="margin-bottom: 5px;">• Linux / Docker</li>
           </ul>
         </div>
 
         <div class="card" style="padding: 30px;">
           <i data-lucide="briefcase" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
-          <h3 style="color: var(--primary); margin-bottom: 15px;">Pilotage Produit</h3>
-          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;">Approche Méthodologique</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 15px;">Une approche structurée pour garantir la qualité, le respect des délais et l'adéquation aux besoins utilisateurs.</p>
+          <h3 style="color: var(--primary); margin-bottom: 15px;"><?= __('card3_title') ?></h3>
+          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;"><?= __('card3_mini_title') ?></h4>
+          <p style="font-size: 0.9rem; margin-bottom: 15px;"><?= __('card3_desc') ?></p>
           <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
-            <li style="margin-bottom: 5px;">• Méthodes Agile / Scrum</li>
+            <li style="margin-bottom: 5px;">• Agile / Scrum</li>
             <li style="margin-bottom: 5px;">• Product Discovery / Users Stories</li>
             <li style="margin-bottom: 5px;">• MoSCoW ou RICE</li>
             <li style="margin-bottom: 5px;">• Jira, Figma, etc...</li>
@@ -235,16 +235,12 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
                 <i data-lucide="github" size="20"></i>
               </a>
             </div>
-
             <h4>SaaS Helpdesk & Ticketing</h4>
             <p><?= __('project1_desc') ?></p>
-
-
             <ul class="project-features">
               <li><?= __('project1_subtitle1') ?></li>
               <li><?= __('project1_subtitle2') ?></li>
             </ul>
-
             <a href="projet-helpdesk.php?lang=<?= $lang ?>" class="project-link">
               <span><?= __('project_details') ?></span>
               <i data-lucide="arrow-right" size="18"></i>
@@ -252,42 +248,40 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           </div>
 
           <div class="project-card">
-            <div class="project-header">
+            <!-- <div class="project-header">
               <div class="project-icons">
                 <i data-lucide="bar-chart-3" class="project-icon"></i>
-                <span class="tech-tag">MERN Stack</span>
+                <span class="tech-tag">...</span>
               </div>
-              <a href="https://github.com/jadikhalid/helpdesk_saas" target="_blank" class="github-icon-link">
-                <i data-lucide="github" size="20"></i>
-              </a>
             </div>
-            <h4>Dashboard d'Inventaire</h4>
-            <p>Interface de pilotage pour entrepôts. Visualisation dynamique des stocks critiques.</p>
+            <h4>...</h4>
+            <p>...</p>
             <ul class="project-features">
-              <li>State Management avec React</li>
-              <li>Reporting graphique interactif</li>
+              <li>...</li>
+              <li>...</li>
             </ul>
-            <a href="projet-dashboard.php?lang=<?= $lang ?>" class="project-link">
+            <a href="#" class="project-link">
               <span><?= __('project_details') ?></span>
               <i data-lucide="arrow-right" size="18"></i>
-            </a>
+            </a> -->
           </div>
-
           <div class="project-card">
-            <div class="project-header">
-              <i data-lucide="calendar-range" class="project-icon"></i>
-              <span class="tech-tag">POO • Clean Code</span>
+            <!-- <div class="project-header">
+              <div class="project-icons">
+                <i data-lucide="bar-chart-3" class="project-icon"></i>
+                <span class="tech-tag">...</span>
+              </div>
             </div>
-            <h4>Réservation de Ressources</h4>
-            <p>Moteur de réservation intelligent pour salles et équipements. Focus sur l'ingénierie logicielle.</p>
+            <h4>...</h4>
+            <p>...</p>
             <ul class="project-features">
-              <li>Algorithme d'anti-chevauchement</li>
-              <li>Architecture Orientée Objet</li>
+              <li>...</li>
+              <li>...</li>
             </ul>
-            <a href="projet-reservation.php" class="project-link">
-              <span>Voir le projet</span>
+            <a href="#" class="project-link">
+              <span><?= __('project_details') ?></span>
               <i data-lucide="arrow-right" size="18"></i>
-            </a>
+            </a> -->
           </div>
         </div>
       </div>

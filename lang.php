@@ -29,6 +29,15 @@ $translations = [
         // Section OUTILS
         'tools_mini_title' => 'Outils',
         'tools_title' => 'Méthodes & Piles Technologiques',
+        'card1_title' => 'Stacks Technologiques',
+        'card1_mini_title' => 'Développement Web & IA (Full Stack)',
+        'card1_desc' => 'Nous concevons des plateformes web scalables et des solutions "AI-First" performantes.',
+        'card2_title' => 'Ingénierie Logicielle & Systèmes',
+        'card2_mini_title' => 'Systèmes & Optimisation',
+        'card2_desc' => 'Expertise en couches basses pour une optimisation maximale des ressources et la gestion de systèmes critiques.',
+        'card3_title' => 'Pilotage Produit',
+        'card3_mini_title' => 'Approche Méthodologique',
+        'card3_desc' => 'Accompagnement de bout en bout, de la découverte produit à la livraison agile, garantissant l\'alignement total entre vos enjeux métier et la solution technique.',
         // Fin Section OUTILS
         'footer_title' => 'Expertise Tech & Conseil Stratégique.',
         'portfolio_title' => 'Notre Portfolio',
@@ -75,6 +84,15 @@ $translations = [
         // Section OUTILS
         'tools_mini_title' => 'Tools',
         'tools_title' => 'Methods & Technological Stacks',
+        'card1_title' => 'Technological Stacks',
+        'card1_mini_title' => 'Web Development & IA (Full Stack)',
+        'card1_desc' => 'We design scalable and performant web platforms and "AI-First" solutions.',
+        'card2_title' => 'Software Engineering',
+        'card2_mini_title' => 'Systems & Optimization',
+        'card2_desc' => 'Expertise in low-level layers for optimal resource optimization and management of critical systems.',
+        'card3_title' => 'Product Ownership',
+        'card3_mini_title' => 'Methodological Approach',
+        'card3_desc' => 'From product discovery to agile delivery, ensuring alignment between business objectives and technical solution.',
         // Fin Section OUTILS
         'footer_title' => 'Tech Expertise & Strategic Consulting.',
         'portfolio_title' => 'Our Portfolio',
