@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio - Projet MT Cash VISA</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f4f7f6;
+      }
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #3498db;
+        margin-top: 30px;
+      }
+      .tag {
+        display: inline-block;
+        background: #3498db;
+        color: white;
+        padding: 5px 12px;
+        margin-right: 8px;
+        border-radius: 15px;
+        font-size: 0.85em;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: #fff;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #f8f9fa;
+      }
+
+      .technical-note {
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+        border-radius: 5px;
+        font-family: monospace;
+      }
+
+      /* New Support Document Styles */
+      .doc-box {
+        background: #fdfdfd;
+        border-left: 5px solid #27ae60;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+      }
+      .doc-title {
+        font-weight: bold;
+        color: #27ae60;
+        margin-bottom: 5px;
+        display: block;
+      }
+      .highlight {
+        font-weight: bold;
+        color: #e67e22;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <header>
+        <h1>Lancement Carte Virtuelle VISA (MT Cash)</h1>
+        <div>
+          <span class="tag">Product Management</span>
+          <span class="tag">Agile/Scrum</span>
+          <span class="tag">Fintech</span>
+        </div>
+      </header>
+
+      <section>
+        <h2>1. Le Défi</h2>
+        <p>
+          Résoudre l'exclusion e-commerce des utilisateurs MT Cash via une
+          solution sécurisée.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Cadrage et MVP</h2>
+        <table>
+          <tr>
+            <th>Fonctionnalité</th>
+            <th>Priorité</th>
+          </tr>
+          <tr>
+            <td>CVV2 Dynamique</td>
+            <td>Must Have</td>
+          </tr>
+          <tr>
+            <td>3D Secure</td>
+            <td>Must Have</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>3. Technical & Compliance Scope</h2>
+        <div class="technical-note">
+          // Validation VISA & Processeur<br />
+          [Rotation API] : CVV2 (60 min) | [3DS] : Flux ACS Intégré.
+        </div>
+      </section>
+
+      <section>
+        <h2>4. Exécution Agile & Livraison</h2>
+
+        <p>
+          <strong>User Stories :</strong> Critères d'acceptation validés par le
+          métier avant chaque sprint.
+        </p>
+        <div class="doc-box">
+          <span class="doc-title"
+            >Document Support : Extrait Backlog (US-102)</span
+          >
+          <em
+            >En tant que client, je veux générer un CVV2 dynamique pour
+            sécuriser mon paiement.</em
+          ><br />
+          <strong>Critères d'acceptation :</strong>
+          <ul>
+            <li>Affichage compte à rebours 60 min.</li>
+            <li>Rejet immédiat après expiration.</li>
+          </ul>
+        </div>
+
+        <p>
+          <strong>Rythme :</strong> Sprints de 2 semaines (Planning, Daily,
+          Refinement).
+        </p>
+
+        <p><strong>Recette :</strong> Validation stricte des flux 3D Secure.</p>
+        <div class="doc-box">
+          <span class="doc-title"
+            >Document Support : Matrice de Recette QA</span
+          >
+          <ul>
+            <li>
+              <strong>Test 01 :</strong> Paiement e-commerce (Succès 3DS).
+            </li>
+            <li>
+              <strong>Test 02 :</strong> Paiement e-commerce (Erreur CVV
+              expiré).
+            </li>
+            <li><strong>Test 03 :</strong> Latence processeur (Timeout).</li>
+          </ul>
+        </div>
+
+        <p>
+          <span class="highlight">Résultat :</span> Livraison conforme, zéro
+          incident critique en prod.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
