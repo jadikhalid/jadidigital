@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Khalid JADI</title>
+    <style>
+      :root {
+        --primary: #1a2a6c;
+        --secondary: #2c3e50;
+        --accent: #f39c12;
+        --light-bg: #f8f9fa;
+        --text: #333;
+      }
+
+      body {
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background-color: #e9ecef;
+        margin: 0;
+        padding: 20px;
+        color: var(--text);
+      }
+
+      .cv-card {
+        max-width: 950px;
+        margin: 0 auto;
+        background: white;
+        display: flex;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* Barre latérale */
+      .sidebar {
+        width: 320px;
+        background-color: var(--primary);
+        color: white;
+        padding: 30px 25px 40px 25px; /* Ajustement du padding supérieur */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrer le contenu de la sidebar */
+      }
+
+      /* Style élégant pour la photo */
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Image circulaire */
+        object-fit: cover; /* Recadre l'image pour remplir le cercle */
+        border: 4px solid white; /* Bordure élégante */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre portée */
+        margin-bottom: 25px; /* Espace sous la photo */
+      }
+
+      .sidebar h1 {
+        font-size: 26px;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center; /* Centrer le nom */
+      }
+
+      .sidebar .title {
+        color: var(--accent);
+        font-size: 15px;
+        margin-bottom: 30px;
+        font-weight: 600;
+        text-align: center; /* Centrer le titre */
+      }
+
+      .contact-section {
+        width: 100%; /* S'assurer que les contacts prennent toute la largeur */
+      }
+
+      .contact-section p {
+        font-size: 13px;
+        margin: 8px 0;
+        text-align: center;
+      }
+
+      .side-block {
+        margin-top: 35px;
+        width: 100%; /* S'assurer que les blocs prennent toute la largeur */
+      }
+
+      .side-block h3 {
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .skill-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 4px 10px;
+        margin: 2px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .skill-list li {
+        margin-bottom: 5px;
+        padding-left: 10px;
+        border-left: 2px solid var(--accent);
+      }
+
+      /* Contenu principal */
+      .main {
+        flex: 1;
+        padding: 45px;
+      }
+
+      .section {
+        margin-bottom: 35px;
+      }
+
+      .section-header {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary);
+        border-bottom: 2px solid var(--primary);
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+      }
+
+      .job {
+        margin-bottom: 25px;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      .job-title {
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--secondary);
+      }
+
+      .job-company {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .job-date {
+        font-size: 13px;
+        color: #7f8c8d;
+      }
+
+      .job-desc {
+        font-size: 14px;
+        margin-top: 8px;
+        line-height: 1.5;
+      }
+
+      .edu-item {
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .cv-card {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: auto;
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-card">
+      <aside class="sidebar">
+        <img
+          src="./img/khalid.png"
+          alt="Photo de Khalid JADI"
+          class="profile-pic"
+        />
+
+        <h1>Khalid JADI</h1>
+        <div class="title">
+          Ingénieur en Génie logiciel<br />Direction, stratégie et gestion.
+        </div>
+
+        <div class="contact-section">
+          <p>📍 Casablanca, MA, FR, US</p>
+          <p>📞 +212 674 026281</p>
+          <p>📧 jadikhalid@gmail.com</p>
+        </div>
+
+        <div class="side-block">
+          <h3>Développement Web & IA</h3>
+          <ul class="skill-list">
+            <li>React / Next.js</li>
+            <li>Node.js / NestJS || Express.js</li>
+            <li>PHP / Laravel</li>
+            <li>OpenAI API / RAG</li>
+          </ul>
+        </div>
+
+        <div class="side-block">
+          <h3>Systèmes & Optimisation</h3>
+          <ul class="skill-list">
+            <li>C / C++</li>
+            <li>System Design</li>
+            <li>Algorithmic Optimization</li>
+            <li>Linux / Docker</li>
+          </ul>
+        </div>
+
+        <div class="side-block">
+          <h3>Langues</h3>
+          <p style="font-size: 13px">Anglais, Français, Arabe (Courant)</p>
+        </div>
+
+        <div class="side-block">
+          <h3>Loisirs</h3>
+          <p style="font-size: 13px">Running, CrossFit, Musculation</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="section">
+          <div class="section-header">Profil professionnel</div>
+          <p class="job-desc">
+            Ingénieur logiciel et entrepreneur tech, je cumule 15 ans
+            d’expérience en direction stratégique et entrepreneuriale.<br />
+            Expert en développement Full Stack et solutions sur mesure, ma force
+            réside dans ma capacité unique à fusionner une vision business de
+            haut niveau avec une maîtrise technique pointue.<br />
+            Orienté résultats, j'accompagne la transformation digitale des
+            organisations en concevant des architectures logicielles
+            performantes et alignées sur les enjeux financiers et opérationnels.
+          </p>
+        </section>
+
+        <section class="section">
+          <div class="section-header">Expériences Professionnelles</div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="job-title">Entrepreneur en tech</span>
+              <span class="job-date">Sep. 2025 - Présent</span>
+            </div>
+            <div class="job-company">JADI DIGITAL - MA, FR, US</div>
+            <div class="job-desc">
+              Expert en développement web Full Stack & spécialisé dans la
+              création de solutions informatiques sur mesure .
+            </div>
+          </div>
+
+          <div
+            class="job"
+            style="
+              background-color: #f0f7ff;
+              padding: 15px;
+              border-radius: 6px;
+              border-left: 4px solid var(--primary);
+            "
+          >
+            <div class="job-header">
+              <span class="job-title">MPS in Software Engineering</span>
+              <span class="job-date">2024 - 2025</span>
+            </div>
+            <div class="job-company" style="color: var(--primary)">
+              UMBC, MD, US
+            </div>
+            <div class="job-desc" style="margin-top: 5px; font-size: 14px">
+              University of Maryland, Baltimore County.
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="job-title">Gérant</span>
+              <span class="job-date">Avr. 2020 - Sep. 2023</span>
+            </div>
+            <div class="job-company">MPGB SARL AU, MA</div>
+            <div class="job-desc">
+              Pilotage d'une entreprise tous corps d'état spécialisée dans
+              l'aménagement de plateaux de bureaux (second œuvre, CVC,
+              électricité, menuiserie).
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="job-title">Directeur des Achats Groupe</span>
+              <span class="job-date">Déc. 2007 - Mars 2020</span>
+            </div>
+            <div class="job-company">Groupe Bancaire, MA</div>
+            <div class="job-desc">
+              Piloter la stratégie globale d'approvisionnement pour des fins
+              d'optimsation des coûts et de sécurité contre les risques
+              opérationnels liés aux fournisseurs tiers.<br />
+              Assurer la conformité réglementaire des contrats tout en
+              digitalisant les processus pour garantir une agilité financière au
+              service des différentes entités du groupe
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="job-title">Directeur des Ventes</span>
+              <span class="job-date">Avril 2004 - Oct. 2007</span>
+            </div>
+            <div class="job-company">Entreprise de Métallurgie, MA</div>
+            <div class="job-desc">
+              Mise en œuvre de la politique commerciale, suivi de la force de
+              vente et réalisation des objectifs stratégiques.
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-header">Formation Académique</div>
+          <div class="edu-item">
+            <div class="job-header">
+              <span class="job-title"
+                >Diplôme d'Ingénieur d'État - Génie industriel</span
+              >
+              <span class="job-date">2001 - 2004</span>
+            </div>
+            <div class="job-desc">
+              Ecole Mohammadia d'Ingénieurs (EMI), Rabat. Option Gestion de
+              projet.
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="job-header">
+              <span class="job-title"
+                >Classes Préparatoires (Maths Sup / Spé)</span
+              >
+              <span class="job-date">1999 - 2001</span>
+            </div>
+            <div class="job-desc">Lycée Mohamed V, Casablanca.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

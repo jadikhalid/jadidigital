@@ -127,7 +127,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             </div>
             <img src="./img/khalid.png" class="bio-img" alt="Khalid JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
           </div>
-          <a href="#" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
+          <a href="./cv-jadi-khalid.pdf" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
             <i data-lucide="download" size="18"></i> <?= __('cv_download') ?>
           </a>
           <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
