@@ -238,6 +238,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             <h4>SaaS Helpdesk & Ticketing</h4>
             <p><?= __('project1_desc') ?></p>
             <ul class="project-features">
+              <li><?= __('project1_subtitle0') ?></li>
               <li><?= __('project1_subtitle1') ?></li>
               <li><?= __('project1_subtitle2') ?></li>
             </ul>
@@ -248,22 +249,23 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           </div>
 
           <div class="project-card">
-            <!-- <div class="project-header">
+            <div class="project-header">
               <div class="project-icons">
-                <i data-lucide="bar-chart-3" class="project-icon"></i>
-                <span class="tech-tag">...</span>
+                <i data-lucide="credit-card" class="project-icon"></i>
+                <span class="tech-tag">Agile • Fintech • VISA</span>
               </div>
             </div>
-            <h4>...</h4>
-            <p>...</p>
+            <h4><?= __('project2_title') ?></h4>
+            <p><?= __('project2_desc') ?></p>
             <ul class="project-features">
-              <li>...</li>
-              <li>...</li>
+              <li><?= __('project2_subtitle1') ?></li>
+              <li><?= __('project2_subtitle2') ?></li>
+              <li><?= __('project2_subtitle3') ?></li>
             </ul>
-            <a href="#" class="project-link">
+            <a href="projet-visa.php?lang=<?= $lang ?>" class="project-link">
               <span><?= __('project_details') ?></span>
-              <i data-lucide="arrow-right" size="18"></i>
-            </a> -->
+              <i data-lucide=" arrow-right" size="18"></i>
+            </a>
           </div>
           <div class="project-card">
             <!-- <div class="project-header">

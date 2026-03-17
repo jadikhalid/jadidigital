@@ -59,28 +59,28 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
                 <div class="project-content">
                     <h3 style="color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                        <i data-lucide="target" size="20"></i> Le Besoin
+                        <i data-lucide="target" size="20"></i> <?= __('project1-page-header1') ?>
                     </h3>
                     <p style="margin-bottom: 25px;">
-                        Conception d'une plateforme centralisée pour la gestion des réclamations clients, remplaçant les flux d'emails désorganisés par un système de tickets structuré et auditable.
+                        <?= __('project1-page-desc1') ?>
                     </p>
 
                     <h3 style="color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                        <i data-lucide="cpu" size="20"></i> Solutions Techniques
+                        <i data-lucide="cpu" size="20"></i> <?= __('project1-page-header2') ?>
                     </h3>
                     <ul class="project-features">
-                        <li><strong>Moteur de Priorisation :</strong> <span>calculant l'urgence selon le type de contrat (SLA).</span></li>
-                        <li><strong>Sécurité :</strong> <span>Protection contre les injections SQL et failles XSS (Clean Code).</span></li>
-                        <li><strong>Notifications :</strong> <span>Système SMTP automatisé pour un suivi en temps réel.</span></li>
+                        <li><strong><?= __('project1_page-table_1') ?></strong> <span><?= __('project1_page-table_2') ?></span></li>
+                        <li><strong><?= __('project1_page-table_3') ?></strong> <span><?= __('project1_page-table_4') ?></span></li>
+                        <li><strong><?= __('project1_page-table_5') ?></strong> <span><?= __('project1_page-table_6') ?>.</span></li>
                     </ul>
                     <div style="margin-top: 30px; padding: 20px; border-top: 1px solid #eee;">
-                        <h3 style="color: var(--gold); margin-bottom: 10px;">Accéder à la démonstration</h3>
+                        <h3 style="color: var(--gold); margin-bottom: 10px;"><?= __('project1_page_access_title') ?></h3>
                         <a href="https://jadi-digital.com/helpdesk_saas"
                             target="_blank"
                             rel="noopener noreferrer"
                             style="display: inline-flex; align-items: center; gap: 8px; background-color: var(--gold); color: #000; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: opacity 0.3s;">
                             <i data-lucide="external-link" size="18"></i>
-                            Lancer l'application Helpdesk
+                            <?= __('project1_page_access_button') ?>
                         </a>
                     </div>
                 </div>
