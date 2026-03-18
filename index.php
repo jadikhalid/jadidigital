@@ -127,12 +127,27 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             </div>
             <img src="./img/khalid.png" class="bio-img" alt="Khalid JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
           </div>
-          <a href="./cv-jadi-khalid.pdf" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
-            <i data-lucide="download" size="18"></i> <?= __('cv_download') ?>
-          </a>
-          <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
+          <div style="display: flex; flex-direction: column; flex-wrap: wrap; gap: 20px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,215,0,0.1);margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
+              <i data-lucide="binary" size="16" style="color: var(--gold);"></i>
+              <span>Expert Full Stack & IA</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
+              <i data-lucide="trending-up" size="16" style="color: var(--gold);"></i>
+              <span>Strategic Planning & Business Vision</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
+              <i data-lucide="graduation-cap" size="16" style="color: var(--gold);"></i>
+              <span>MS in Software Engineering</span>
+            </div>
+          </div>
+          <hr style="border: 0; height: 1px; background: rgba(0, 0, 0, 0.1); margin: 20px 0 0 0;">
+          <div class="social-links" style="display: flex; gap: 20px; justify-content: center; margin-top: 10px;">
             <a href="https://www.linkedin.com/in/khalid-j-a73662254/" target="_blank" style="color: var(--text); transition: color 0.3s;">
               <i data-lucide="linkedin" size="20"></i>
+            </a> |
+            <a href="https://github.com/jadikhalid" target="_blank" style="color: var(--text); transition: color 0.3s;">
+              <i data-lucide="github" size="20"></i>
             </a>
           </div>
         </div>
@@ -148,9 +163,21 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             </div>
             <img src="./img/sara.png" class="bio-img" alt="Sara JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
           </div>
-          <a href="./cv-jadi-sara-po.pdf" download class="project-link" style="margin-top: 0; justify-content: center; gap: 10px;">
-            <i data-lucide="download" size="18"></i> <?= __('cv_download') ?>
-          </a>
+          <div style="display: flex; flex-direction: column; flex-wrap: wrap; gap: 20px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,215,0,0.1);margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
+              <i data-lucide="layers" size="16" style="color: var(--gold);"></i>
+              <span>Senior Product Owner (10+ years exp.)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
+              <i data-lucide="shield-check" size="16" style="color: var(--gold);"></i>
+              <span>FinTech & Regulatory Expertise</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
+              <i data-lucide="graduation-cap" size="16" style="color: var(--gold);"></i>
+              <span>Master’s Degree in Marketing and Business Management</span>
+            </div>
+          </div>
+          <hr style="border: 0; height: 1px; background: rgba(0, 0, 0, 0.1); margin: 20px 0 0 0;">
           <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
             <a href="https://www.linkedin.com/in/sara-jadi-68729629/" target="_blank" style="color: var(--text); transition: color 0.3s;">
               <i data-lucide="linkedin" size="20"></i>
@@ -189,7 +216,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
           <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;"><?= __('card2_mini_title') ?></h4>
           <p style="font-size: 0.9rem; margin-bottom: 15px;"><?= __('card2_desc') ?></p>
           <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
-            <li style="margin-bottom: 5px;">• C / C++</li>
+            <li style="margin-bottom: 5px;">• C / C++ / Python / Java</li>
             <li style="margin-bottom: 5px;">• System Design</li>
             <li style="margin-bottom: 5px;">• Algorithmic Optimization</li>
             <li style="margin-bottom: 5px;">• Linux / Docker</li>

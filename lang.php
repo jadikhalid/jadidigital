@@ -21,9 +21,9 @@ $translations = [
         'team_mini_title' => 'Notre Equipe',
         'team_title' => 'Un Duo gagnant',
         'khalid_titre' => 'Fondateur & Direction Technique',
-        'khalid_desc' => 'Ingénieur d\'État diplômé de l\'EMI, Khalid orchestre la vision technologique de JADI DIGITAL. Expert en systèmes critiques et en développement "AI-First".',
+        'khalid_desc' => 'Ingénieur de formation et expert tech, Khalid orchestre la vision technologique de JADI DIGITAL. Spécialiste des systèmes critiques et de l\'architecture "AI-Native", il fusionne expertise logicielle et stratégie business pour concevoir des solutions innovantes.',
         'sara_titre' => 'Direction Produit France',
-        'sara_desc' => 'Product Owner certifiée, Sara est votre interlocutrice privilégiée à Lille. Elle assure le pont stratégique entre vos objectifs métiers et l\'exécution technique.',
+        'sara_desc' => 'Product Owner chevronnée avec dix ans d\'expérience, Sara pilote l\'excellence produit chez JADI DIGITAL. Experte en méthodes Agiles et en FinTech, elle transforme les enjeux métiers complexes en solutions digitales performantes, axées sur la croissance et l\'expérience utilisateur.',
         'cv_download' => 'Télécharger le CV',
         // Fin Section Equipe
         // Section OUTILS
@@ -32,7 +32,7 @@ $translations = [
         'card1_title' => 'Stacks Technologiques',
         'card1_mini_title' => 'Développement Web & IA (Full Stack)',
         'card1_desc' => 'Nous concevons des plateformes web scalables et des solutions "AI-First" performantes.',
-        'card2_title' => 'Ingénierie Logicielle & Systèmes',
+        'card2_title' => 'Ingénierie Logicielle',
         'card2_mini_title' => 'Systèmes & Optimisation',
         'card2_desc' => 'Expertise en couches basses pour une optimisation maximale des ressources et la gestion de systèmes critiques.',
         'card3_title' => 'Pilotage Produit',
@@ -56,7 +56,7 @@ $translations = [
         // Page Contact
         'contact_retour' => 'Retour',
         'contact_mini_title' => 'Parlons de votre projet',
-        'contact_title' => 'Contactez-moi',
+        'contact_title' => 'Contact',
         'contact_nom' => 'Nom Complet',
         'contact_objet' => 'Objet',
         'contact_sendButton' => 'Envoyer le message',
@@ -108,9 +108,9 @@ $translations = [
         'team_mini_title' => 'Our Team',
         'team_title' => 'A Winning Duo',
         'khalid_titre' => 'Founder & Technical Director',
-        'khalid_desc' => 'EMI graduate, Khalid orchestrates the technological vision of JADI DIGITAL. An expert in critical systems and "AI-First" development.',
+        'khalid_desc' => 'A trained engineer and tech expert, Khalid orchestrates the technological vision of JADI DIGITAL. Specializing in critical systems and AI-Native architecture, he bridges the gap between software expertise and business strategy to design innovative solutions.',
         'sara_titre' => 'France Product Owner',
-        'sara_desc' => 'Certified Product Owner, Sara is your trusted liaison in Lille. She ensures strategic alignment between business objectives and technical execution.',
+        'sara_desc' => 'A seasoned Product Owner with ten years of experience, Sara drives product excellence at JADI DIGITAL. Expert in Agile methodologies and FinTech, she transforms complex business challenges into high-performance digital solutions, focused on growth and user experience.',
         'cv_download' => 'Download CV',
         // Fin Section Equipe
         // Section OUTILS
@@ -143,7 +143,7 @@ $translations = [
         // Page Contact
         'contact_retour' => 'Back',
         'contact_mini_title' => 'Let\'s talk about your project',
-        'contact_title' => 'Contact Me',
+        'contact_title' => 'Contact',
         'contact_nom' => 'Full Name',
         'contact_objet' => 'Subject',
         'contact_sendButton' => 'Send Message',
