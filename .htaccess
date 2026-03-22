@@ -1,0 +1,24 @@
+RewriteEngine On
+
+# 1. URL pour l'accueil
+RewriteRule ^$ index.php?lang=fr [L,QSA]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^index\.php$ index.php?lang=fr [L,QSA]
+RewriteRule ^accueil$ index.php?lang=fr [L,QSA]
+RewriteRule ^welcome$ index.php?lang=en [L,QSA]
+
+# 2. URL pour le Helpdesk
+RewriteRule ^solutions/helpdesk-fr$ projet-helpdesk.php?lang=fr [L,QSA]
+RewriteRule ^solutions/helpdesk-en$ projet-helpdesk.php?lang=en [L,QSA]
+
+# 3. URL pour le projet VISA
+RewriteRule ^projets/visa-fr$ projet-visa.php?lang=fr [L,QSA]
+RewriteRule ^projects/visa-en$ projet-visa.php?lang=en [L,QSA]
+
+# 4. URL pour le Contact
+RewriteRule ^contact-fr$ contact.php?lang=fr [L,QSA]
+RewriteRule ^contact-en$ contact.php?lang=en [L,QSA]
+
+<IfModule mod_geoip.c>
+    GeoIPEnable On
+</IfModule>

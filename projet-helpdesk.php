@@ -1,14 +1,7 @@
 <?php
 include 'lang.php';
-// $user_ip = $_SERVER['REMOTE_ADDR'];
-$user_ip = $_GET['test_ip'] ?? $_SERVER['REMOTE_ADDR'];
-// 2. Interroger l'API de géolocalisation
-$api_url = "http://ip-api.com/json/" . $user_ip;
-$response = file_get_contents($api_url);
-$details = json_decode($response);
+include 'origineIP.php';
 
-// 3. Vérifier si le pays est le Maroc (code "MA")
-$is_morocco = ($details && $details->status !== 'fail' && $details->countryCode === 'MA');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -16,6 +9,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
     <title>SaaS Helpdesk | JADI DIGITAL</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/lucide@latest"></script>

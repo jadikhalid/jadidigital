@@ -1,14 +1,7 @@
 <?php
 include 'lang.php';
-// $user_ip = $_SERVER['REMOTE_ADDR'];
-$user_ip = $_GET['test_ip'] ?? $_SERVER['REMOTE_ADDR'];
-// 2. Interroger l'API de géolocalisation
-$api_url = "http://ip-api.com/json/" . $user_ip;
-$response = file_get_contents($api_url);
-$details = json_decode($response);
+include 'origineIP.php';
 
-// 3. Vérifier si le pays est le Maroc (code "MA")
-$is_morocco = ($details && $details->status !== 'fail' && $details->countryCode === 'MA');
 ?>
 
 <!doctype html>
@@ -21,8 +14,8 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
   <title>
     JADI DIGITAL | Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack
   </title>
-  <script src="app.js" defer></script>
-  <link rel="stylesheet" href="style.css" />
+  <script src="/app.js" defer></script>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -36,10 +29,10 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
 
       <div class=" nav-right">
         <div class="lang-switcher">
-          <a href="?lang=fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
-          <a href="?lang=en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
+          <a href="/accueil"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
+          <a href="/welcome"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
         </div>
-        <a href="contact.php?lang=<?= $_GET['lang'] ?? 'fr' ?>" class="btn"><?= __('contact') ?></a>
+        <a href="<?= ($lang == 'fr') ? 'contact-fr' : 'contact-en' ?>" class="btn"><?= __('contact') ?></a>
       </div>
     </nav>
     <header class="hero">
