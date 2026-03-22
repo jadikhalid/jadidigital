@@ -1,8 +1,11 @@
 services:
-  php-apache:
+  site-agence:
     image: php:8.2-apache
+    container_name: jadi_digital_apache
     ports:
       - "5005:80"
     volumes:
       - .:/var/www/html
-    restart: always
+    # Cette commande active le module de réécriture pour le .htaccess
+    command: >
+      sh -c "a2enmod rewrite && apache2-foreground"
