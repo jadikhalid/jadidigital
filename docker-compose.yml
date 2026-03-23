@@ -9,3 +9,7 @@ services:
     # Cette commande active le module de réécriture pour le .htaccess
     command: >
       sh -c "a2enmod rewrite && apache2-foreground"
+    # Optionnel mais recommandé pour éviter les soucis de droits sur Linux
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data

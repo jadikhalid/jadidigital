@@ -1,14 +1,7 @@
 <?php
 include 'lang.php';
-// $user_ip = $_SERVER['REMOTE_ADDR'];
-$user_ip = $_GET['test_ip'] ?? $_SERVER['REMOTE_ADDR'];
-// 2. Interroger l'API de géolocalisation
-$api_url = "http://ip-api.com/json/" . $user_ip;
-$response = file_get_contents($api_url);
-$details = json_decode($response);
+include 'origineIP.php';
 
-// 3. Vérifier si le pays est le Maroc (code "MA")
-$is_morocco = ($details && $details->status !== 'fail' && $details->countryCode === 'MA');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -17,8 +10,7 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SaaS Helpdesk | JADI DIGITAL</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body style="background-color: var(--light-bg);">
@@ -28,14 +20,14 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
         </div>
     <?php else: ?>
         <nav>
-            <a href="index.php?lang=<?= $_GET['lang'] ?? 'fr' ?>" class="logo">JADI<span> DIGITAL</span></a>
+            <a href="<?= ($lang == 'fr') ? '/accueil' : '/welcome' ?>" class="logo">JADI<span> DIGITAL</span></a>
 
             <div class=" nav-right">
                 <div class="lang-switcher">
-                    <a href="?lang=fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
-                    <a href="?lang=en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
+                    <a href="visa-fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
+                    <a href="visa-en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
                 </div>
-                <a href="index.php?lang=<?= $_GET['lang'] ?? 'fr' ?>" class="btn" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                <a href="<?= ($lang == 'fr') ? '/accueil' : '/welcome' ?>" class="btn" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
                     <?= __('contact_retour') ?>
                 </a>
             </div>
@@ -190,9 +182,13 @@ $is_morocco = ($details && $details->status !== 'fail' && $details->countryCode 
             </div>
         </footer>
     <?php endif; ?>
+    <script src="https://unpkg.com/lucide@0.473.0/dist/umd/lucide.js"></script>
 
     <script>
-        lucide.createIcons();
+        // On s'assure que le document est prêt
+        window.addEventListener('load', () => {
+            lucide.createIcons();
+        });
     </script>
 </body>
 

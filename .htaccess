@@ -13,7 +13,7 @@ RewriteRule ^solutions/helpdesk-en$ projet-helpdesk.php?lang=en [L,QSA]
 
 # 3. URL pour le projet VISA
 RewriteRule ^projets/visa-fr$ projet-visa.php?lang=fr [L,QSA]
-RewriteRule ^projects/visa-en$ projet-visa.php?lang=en [L,QSA]
+RewriteRule ^projets/visa-en$ projet-visa.php?lang=en [L,QSA]
 
 # 4. URL pour le Contact
 RewriteRule ^contact-fr$ contact.php?lang=fr [L,QSA]

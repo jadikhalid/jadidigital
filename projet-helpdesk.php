@@ -11,8 +11,7 @@ include 'origineIP.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
     <title>SaaS Helpdesk | JADI DIGITAL</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body style="background-color: var(--light-bg);">
@@ -23,14 +22,14 @@ include 'origineIP.php';
     <?php else: ?>
 
         <nav>
-            <a href="index.php?lang=<?= $_GET['lang'] ?? 'fr' ?>" class="logo">JADI<span> DIGITAL</span></a>
+            <a href="<?= ($lang == 'fr') ? '/accueil' : '/welcome' ?>" class="logo">JADI<span> DIGITAL</span></a>
 
             <div class=" nav-right">
                 <div class="lang-switcher">
-                    <a href="?lang=fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
-                    <a href="?lang=en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
+                    <a href="helpdesk-fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
+                    <a href="helpdesk-en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
                 </div>
-                <a href="index.php?lang=<?= $_GET['lang'] ?? 'fr' ?>" class="btn" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                <a href="<?= ($lang == 'fr') ? '/accueil' : '/welcome' ?>" class="btn" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
                     <?= __('contact_retour') ?>
                 </a>
             </div>
@@ -109,9 +108,13 @@ include 'origineIP.php';
             </div>
         </footer>
     <?php endif; ?>
+    <script src="https://unpkg.com/lucide@0.473.0/dist/umd/lucide.js"></script>
 
     <script>
-        lucide.createIcons();
+        // On s'assure que le document est prêt
+        window.addEventListener('load', () => {
+            lucide.createIcons();
+        });
     </script>
 </body>
 

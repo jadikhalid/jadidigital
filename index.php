@@ -262,7 +262,7 @@ include 'origineIP.php';
               <li><?= __('project1_subtitle1') ?></li>
               <li><?= __('project1_subtitle2') ?></li>
             </ul>
-            <a href="projet-helpdesk.php?lang=<?= $lang ?>" class="project-link">
+            <a href="<?= ($lang == 'fr') ? 'solutions/helpdesk-fr' : 'solutions/helpdesk-en' ?>" class="project-link">
               <span><?= __('project_details') ?></span>
               <i data-lucide="arrow-right" size="18"></i>
             </a>
@@ -282,9 +282,9 @@ include 'origineIP.php';
               <li><?= __('project2_subtitle2') ?></li>
               <li><?= __('project2_subtitle3') ?></li>
             </ul>
-            <a href="projet-visa.php?lang=<?= $lang ?>" class="project-link">
+            <a href="<?= ($lang == 'fr') ? 'projets/visa-fr' : 'projets/visa-en' ?>" class="project-link">
               <span><?= __('project_details') ?></span>
-              <i data-lucide=" arrow-right" size="18"></i>
+              <i data-lucide="arrow-right" size="18"></i>
             </a>
           </div>
           <div class="project-card">
@@ -319,9 +319,13 @@ include 'origineIP.php';
       </div>
     </footer>
   <?php endif; ?>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.473.0/dist/umd/lucide.js"></script>
+
   <script>
-    lucide.createIcons();
+    // On s'assure que le document est prêt
+    window.addEventListener('load', () => {
+      lucide.createIcons();
+    });
   </script>
 </body>
 
