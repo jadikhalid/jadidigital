@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Khalid JADI | Full Stack Engineer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #0f172a; /* Bleu nuit moderne */
+        --accent: #38bdf8; /* Bleu ciel type Tailwind/React */
+        --text-main: #334155;
+        --text-light: #64748b;
+        --bg: #f8fafc;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        background-color: var(--bg);
+        margin: 0;
+        padding: 40px 20px;
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      .cv-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        overflow: hidden;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background-color: var(--primary);
+        color: white;
+        padding: 40px 30px;
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--accent);
+        margin-bottom: 20px;
+        object-fit: cover;
+      }
+
+      .sidebar h1 {
+        font-size: 22px;
+        margin: 0;
+        color: white;
+        letter-spacing: 0.5px;
+      }
+
+      .sidebar .tagline {
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .contact-info p {
+        display: flex;
+        align-items: center;
+        gap: 12px; /* Espace entre l'icône et le texte */
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      .contact-info i {
+        width: 18px; /* Largeur fixe pour que les textes soient alignés verticalement */
+        color: var(
+          --accent
+        ); /* Utilise ta couleur d'accentuation (bleu ciel ou orange selon ton choix) */
+        text-align: center;
+      }
+      .contact-info a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      .contact-info {
+        font-size: 13px;
+        margin-bottom: 60px;
+        border-top: 1px solid #334155;
+        padding-top: 15px;
+      }
+      .contact-info p {
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .skill-group {
+        margin-bottom: 60px;
+      }
+      .skill-group h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 1px solid #334155;
+        padding-bottom: 5px;
+      }
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        font-size: 13px;
+      }
+      .skill-list li {
+        margin-bottom: 8px;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 50px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        border-top: 4px solid var(--accent);
+      }
+      .section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary);
+        border-left: 4px solid var(--accent);
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+
+      .experience-item {
+        margin-bottom: 30px;
+      }
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .job-title {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 16px;
+      }
+      .company {
+        color: var(--text-light);
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .date {
+        font-size: 12px;
+        color: var(--text-light);
+      }
+      .description {
+        font-size: 14px;
+        margin-top: 10px;
+        color: var(--text-main);
+      }
+
+      .tech-stack {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      @media (max-width: 768px) {
+        .cv-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-container">
+      <aside class="sidebar">
+        <div style="text-align: center">
+          <img src="./img/khalid.png" alt="Khalid JADI" class="profile-img" />
+          <h1>Khalid JADI</h1>
+          <div class="tagline">
+            Full Stack Engineer<br />Web specialist | AI
+          </div>
+          <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> Casablanca, Maroc</p>
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:jadikhalid@gmail.com">jadikhalid@gmail.com</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-globe"></i>
+              <a href="https://www.jadi-digital.com" target="_blank"
+                >www.jadi-digital.com</a
+              >
+            </p>
+            <p>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/21262109076" target="_blank"
+                >+212 621 090 76</a
+              >
+            </p>
+          </div>
+
+          <div class="skill-group">
+            <h3>Core Stack</h3>
+            <ul class="skill-list">
+              <li>React / Next.js 14+</li>
+              <li>TypeScript / JavaScript</li>
+              <li>Node.js / Express / NestJS</li>
+              <li>PostgreSQL / MongoDB</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Advanced Tech</h3>
+            <ul class="skill-list">
+              <li>OpenAI API / RAG Systems</li>
+              <li>C / C++ / x86 Assembly</li>
+              <li>Docker / Linux Administration</li>
+              <li>System Design & Architecture</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Langues</h3>
+            <p style="font-size: 13px">
+              Anglais (Full Professional)<br />Français (Natif)<br />Arabe
+              (Natif)
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="section">
+          <div class="section-title">Profil</div>
+          <p class="description">
+            Formation d'Ingénieur d'État en génie industriel et puis Master en
+            Software Engineering.<br />
+            <span style="color: var(--accent); font-weight: 900"
+              >Expert dans la conception d'architectures Web Full Stack haute
+              performance avec React, Next.js et Express/Node.js.</span
+            ><br />
+            Ma double culture ingénieur/manager me permet de livrer des
+            solutions techniquement robustes alignées sur vos objectifs ROI.
+          </p>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Expériences Web & Tech</div>
+          <div class="experience-item">
+            <div class="exp-header">
+              <span class="job-title">Auto entrepreneur en web tech</span>
+              <span class="date">2025 - Présent</span>
+            </div>
+            <div class="company">
+              Jadi Digital (pour le MA, la FR et les US)
+            </div>
+            <div class="description">
+              Développement de solutions numériques de bout en bout :
+              <ul style="margin-top: 5px; padding-left: 20px">
+                <li>
+                  <strong>MVPs & SaaS :</strong> Prototypage rapide et
+                  déploiement d'architectures scalables.
+                </li>
+                <li>
+                  <strong>Sites sur mesure :</strong> Plateformes haute
+                  performance optimisées pour les Core Web Vitals.
+                </li>
+                <li>
+                  <strong>Outils Métier & IA :</strong> Tableaux de bord de
+                  pilotage et automatisation via RAG/OpenAI API.
+                </li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              Stack : Next.js, React, Node.js, Express, PostgreSQL, OpenAI,
+              Vercel.
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Expérience Direction & Stratégie</div>
+
+          <div class="experience-item">
+            <div class="exp-header">
+              <span class="job-title">Gérant</span>
+              <span class="date">Avril 2020 - Sept. 2023</span>
+            </div>
+            <div class="company">MPGB SARL AU, MA</div>
+            <div class="description">
+              Direction générale d'une entreprise de second œuvre spécialisée
+              dans l'aménagement de plateaux de bureaux.
+              <ul style="margin-top: 5px; padding-left: 20px">
+                <li>
+                  Pilotage opérationnel et financier (CVC, électricité,
+                  menuiserie).
+                </li>
+                <li>
+                  Gestion de la relation client et négociation de contrats
+                  complexes.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="exp-header">
+              <span class="job-title">Directeur des Achats Groupe</span>
+              <span class="date">Déc. 2007 - Mars 2020</span>
+            </div>
+            <div class="company">Groupe Bancaire, MA</div>
+            <div class="description">
+              Définition et pilotage de la stratégie globale d'approvisionnement
+              pour l'optimisation des coûts et la maîtrise des risques tiers.
+              <ul style="margin-top: 5px; padding-left: 20px">
+                <li>
+                  Digitalisation des processus achats pour accroître l'agilité
+                  financière.
+                </li>
+                <li>
+                  Garantie de la conformité réglementaire et contractuelle au
+                  niveau Groupe.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="exp-header">
+              <span class="job-title">Directeur des Ventes</span>
+              <span class="date">Avril 2004 - Oct. 2007</span>
+            </div>
+            <div class="company">Entreprise de Métallurgie, MA</div>
+            <div class="description">
+              Déploiement de la politique commerciale et management de la force
+              de vente.
+              <ul style="margin-top: 5px; padding-left: 20px">
+                <li>
+                  Définition et suivi des indicateurs de performance (KPI)
+                  stratégiques.
+                </li>
+                <li>
+                  Expansion du portefeuille client et développement du chiffre
+                  d'affaires.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Formation</div>
+          <div class="experience-item">
+            <div class="exp-header">
+              <span class="job-title">MPS in Software Engineering</span>
+              <span class="date">2024 - 2025</span>
+            </div>
+            <div class="company">
+              University of Maryland, Baltimore County (USA)
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="exp-header">
+              <span class="job-title"
+                >Diplôme d'Ingénieur d'État - Génie industriel</span
+              >
+              <span class="date">2001 - 2004</span>
+            </div>
+            <div class="company">Ecole Mohammadia d'Ingénieurs (EMI)</div>
+          </div>
+        </section>
+
+        <!-- <section class="section">
+          <div class="section-title">Portfolio</div>
+          <p class="description">
+            <strong>Eco-Score AI :</strong> SaaS d'analyse d'empreinte carbone
+            via factures (Next.js + OpenAI RAG).<br />
+            <strong>System Architecture :</strong> Optimisation de bas niveau et
+            compilation cross-platform Linux/Windows.
+          </p>
+        </section> -->
+        <section class="section">
+          <div class="section-title">Portfolio & Réalisations</div>
+          <p class="description">
+            Retrouvez l'ensemble de mes projets, incluant mes travaux sur
+            l'<strong>IA</strong>, mes architectures
+            <strong>Full Stack</strong> et mes contributions à l'<strong
+              >optimisation système</strong
+            >, directement sur ma plateforme numérique.
+          </p>
+          <div style="margin-top: 20px; text-align: center">
+            <a
+              href="https://jadi-digital.com"
+              target="_blank"
+              style="
+                display: inline-block;
+                background-color: var(--primary);
+                color: var(--accent);
+                padding: 12px 25px;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: 700;
+                font-size: 14px;
+                border: 1px solid var(--accent);
+                transition: all 0.3s ease;
+              "
+            >
+              Consulter mon Portfolio : jadi-digital.com
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
