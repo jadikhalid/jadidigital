@@ -166,75 +166,10 @@ nav {
   transform: translateY(-5px);
 }
 
-/* Timeline Section */
+/* TEAM SECTION*/
 .bio {
   padding: 100px 8%;
   background: white;
-}
-.timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px 0;
-}
-.timeline::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  background: #f0e9e2;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -1px;
-}
-.timeline-item {
-  padding: 10px 40px;
-  position: relative;
-  width: 50%;
-}
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  right: -8px;
-  background: white;
-  border: 3px solid var(--gold);
-  top: 20px;
-  border-radius: 50%;
-  z-index: 1;
-}
-.left {
-  left: 0;
-  text-align: right;
-  padding-right: 50px;
-}
-.right {
-  left: 50%;
-  text-align: left;
-  padding-left: 50px;
-}
-.right::after {
-  left: -8px;
-}
-.content-box {
-  padding: 20px;
-  background: var(--light-bg);
-  border-radius: 12px;
-  border: 1px solid #f1f5f9;
-  transition: 0.3s;
-}
-.content-box:hover {
-  border-color: var(--gold);
-  background: white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-.date-tag {
-  color: var(--gold);
-  font-weight: 800;
-  font-size: 0.8rem;
-  display: block;
-  margin-bottom: 5px;
 }
 
 /* --- CORRECTION CRUCIALE DE LA MODALE --- */
@@ -823,5 +758,177 @@ footer {
     top: 15px;
     right: 15px;
     font-size: 28px;
+  }
+}
+
+/* 
+* Slider
+*/
+.slider-container {
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0 30px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Cacher la barre de défilement */
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Stylisation des cartes */
+.bio-card-full {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.placeholder-card {
+  border: 2px dashed rgba(181, 147, 91, 0.3) !important;
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.placeholder-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e2e8f0;
+}
+
+.bio-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(181, 147, 91, 0.1);
+}
+
+.bio-skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.bio-skill-item i {
+  color: var(--gold);
+}
+
+.bio-hr {
+  border: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.05);
+  margin: 15px 0;
+}
+
+/* Bouton recrutement */
+.join-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* Dots indicateurs */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--gold);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* Positionnement des flèches */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: 1px solid rgba(181, 147, 91, 0.2);
+  border-radius: 50%;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+}
+
+.nav-btn.prev {
+  left: 10px;
+}
+.nav-btn.next {
+  right: 10px;
+}
+
+/* État désactivé */
+.nav-btn:disabled {
+  opacity: 0;
+  pointer-events: none; /* Disparaît complètement quand inutile */
+}
+
+/* Ajustement pour mobile : on cache les flèches car le swipe suffit */
+@media (max-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+  .slider-container {
+    padding: 0 10px;
   }
 }

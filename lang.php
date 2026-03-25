@@ -19,7 +19,7 @@ $translations = [
         'expertise_descr3_desc' => 'Accompagnement de bout en bout: de la découverte produit à la livraison agile, garantissant l\'alignement total entre vos enjeux métier et la solution technique.',
         // Section Equipe
         'team_mini_title' => 'Notre Equipe',
-        'team_title' => 'Un Duo gagnant',
+        'team_title' => 'On est appelé à grandir',
         'khalid_titre' => 'Fondateur & Direction Technique',
         'khalid_desc' => 'Ingénieur de formation et expert tech, Khalid orchestre la vision technologique de JADI DIGITAL. Spécialiste des systèmes critiques et de l\'architecture "AI-Native", il fusionne expertise logicielle et stratégie business pour concevoir des solutions innovantes.',
         'sara_titre' => 'Direction Produit France',
@@ -106,7 +106,7 @@ $translations = [
         'expertise_descr3_desc' => 'From product discovery to agile delivery, ensuring alignment between business objectives and technical solution.',
         // Section Equipe
         'team_mini_title' => 'Our Team',
-        'team_title' => 'A Winning Duo',
+        'team_title' => 'We are calling for growth',
         'khalid_titre' => 'Founder & Technical Director',
         'khalid_desc' => 'A trained engineer and tech expert, Khalid orchestrates the technological vision of JADI DIGITAL. Specializing in critical systems and AI-Native architecture, he bridges the gap between software expertise and business strategy to design innovative solutions.',
         'sara_titre' => 'France Product Owner',

@@ -35,6 +35,7 @@ include 'origineIP.php';
         <a href="<?= ($lang == 'fr') ? 'contact-fr' : 'contact-en' ?>" class="btn"><?= __('contact') ?></a>
       </div>
     </nav>
+
     <header class="hero">
       <div>
         <span class="section-tag"><?= __('auteur') ?></span>
@@ -108,74 +109,89 @@ include 'origineIP.php';
         </h2>
       </div>
 
-      <div class="grid">
-        <div class="project-card" style="display: flex; flex-direction: column; gap: 20px;">
-          <div class="bio-item">
-            <div style="flex: 1;">
-              <h3 style="color: var(--gold); margin-bottom: 5px;">Khalid JADI</h3>
-              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;"><?= __('khalid_titre') ?></h4>
-              <p style="font-size: 0.9rem; line-height: 1.5;">
-                <?= __('khalid_desc') ?>
-              </p>
+      <div class="slider-container">
+        <button class="nav-btn prev" id="prevBtn" aria-label="Précédent">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="nav-btn next" id="nextBtn" aria-label="Suivant">
+          <i data-lucide="chevron-right"></i>
+        </button>
+        <div class="slider-track">
+          <div class="slide">
+            <div class="project-card bio-card-full">
+              <div class="bio-item">
+                <div style="flex: 1;">
+                  <h3 style="color: var(--gold); margin-bottom: 5px;">Khalid JADI</h3>
+                  <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;"><?= __('khalid_titre') ?></h4>
+                  <p style="font-size: 0.9rem; line-height: 1.5;">
+                    <?= __('khalid_desc') ?>
+                  </p>
+                </div>
+                <img src="./img/khalid.png" class="bio-img" alt="Khalid JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold);">
+              </div>
+
+              <div class="bio-skills-grid">
+                <div class="bio-skill-item">
+                  <i data-lucide="binary" size="16"></i>
+                  <span>Expert Full Stack & IA</span>
+                </div>
+                <div class="bio-skill-item">
+                  <i data-lucide="trending-up" size="16"></i>
+                  <span>Strategic Planning</span>
+                </div>
+                <div class="bio-skill-item">
+                  <i data-lucide="graduation-cap" size="16"></i>
+                  <span>MS in Software Engineering</span>
+                </div>
+              </div>
+
+              <hr class="bio-hr">
+
+              <div class="social-links" style="display: flex; gap: 20px; justify-content: center; margin-top: 10px;">
+                <a href="https://www.linkedin.com/in/khalid-j-a73662254/" target="_blank" class="social-links">
+                  <i data-lucide="linkedin" size="20" color="#b5935b"></i>
+                </a>
+                |
+                <a href="https://github.com/jadikhalid" target="_blank" class="social-links">
+                  <i data-lucide="github" size="20" color="#b5935b"></i>
+                </a>
+              </div>
             </div>
-            <img src="./img/khalid.png" class="bio-img" alt="Khalid JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
           </div>
-          <div style="display: flex; flex-direction: column; flex-wrap: wrap; gap: 20px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,215,0,0.1);margin-bottom: 10px;">
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
-              <i data-lucide="binary" size="16" style="color: var(--gold);"></i>
-              <span>Expert Full Stack & IA</span>
+
+          <div class="slide">
+            <div class="project-card bio-card-full placeholder-card">
+              <div class="bio-item" style="opacity: 0.6;">
+                <div style="flex: 1;">
+                  <h3 style="color: var(--text); margin-bottom: 5px; font-style: italic;">Future Collaboration</h3>
+                  <h4 style="font-size: 0.9rem; color: var(--gold); margin-bottom: 10px;">Senior Software Engineer / Partner</h4>
+                  <p style="font-size: 0.9rem; line-height: 1.5;">
+                    Nous recherchons des talents passionnés par l'innovation et l'excellence technique pour rejoindre l'aventure JADI DIGITAL.
+                  </p>
+                </div>
+                <div class="placeholder-img">
+                  <i data-lucide="user-plus" size="40" style="color: var(--gold); opacity: 0.5;"></i>
+                </div>
+              </div>
+
+              <div class="bio-skills-grid" style="opacity: 0.4;">
+                <div class="bio-skill-item"><i data-lucide="code-2" size="16"></i><span>Cloud Architecture</span></div>
+                <div class="bio-skill-item"><i data-lucide="cpu" size="16"></i><span>AI Systems</span></div>
+                <div class="bio-skill-item"><i data-lucide="globe" size="16"></i><span>International Projects</span></div>
+              </div>
+
+              <hr class="bio-hr">
+
+              <div style="text-align: center; margin-top: 10px;">
+                <a href="mailto:contact@jadidigital.com" class="join-btn">Rejoignez-nous</a>
+              </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
-              <i data-lucide="trending-up" size="16" style="color: var(--gold);"></i>
-              <span>Strategic Planning & Business Vision</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
-              <i data-lucide="graduation-cap" size="16" style="color: var(--gold);"></i>
-              <span>MS in Software Engineering</span>
-            </div>
-          </div>
-          <hr style="border: 0; height: 1px; background: rgba(0, 0, 0, 0.1); margin: 20px 0 0 0;">
-          <div class="social-links" style="display: flex; gap: 20px; justify-content: center; margin-top: 10px;">
-            <a href="https://www.linkedin.com/in/khalid-j-a73662254/" target="_blank" style="color: var(--text); transition: color 0.3s;">
-              <i data-lucide="linkedin" size="20"></i>
-            </a> |
-            <a href="https://github.com/jadikhalid" target="_blank" style="color: var(--text); transition: color 0.3s;">
-              <i data-lucide="github" size="20"></i>
-            </a>
           </div>
         </div>
 
-        <div class="project-card" style="display: flex; flex-direction: column; gap: 20px;">
-          <div class="bio-item">
-            <div style="flex: 1;">
-              <h3 style="color: var(--gold); margin-bottom: 5px;">Sara JADI</h3>
-              <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;"><?= __('sara_titre') ?></h4>
-              <p style="font-size: 0.9rem; line-height: 1.5;">
-                <?= __('sara_desc') ?>
-              </p>
-            </div>
-            <img src="./img/sara.png" class="bio-img" alt="Sara JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--gold);">
-          </div>
-          <div style="display: flex; flex-direction: column; flex-wrap: wrap; gap: 20px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,215,0,0.1);margin-bottom: 10px;">
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
-              <i data-lucide="layers" size="16" style="color: var(--gold);"></i>
-              <span>Senior Product Owner (10+ years exp.)</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
-              <i data-lucide="shield-check" size="16" style="color: var(--gold);"></i>
-              <span>FinTech & Regulatory Expertise</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text);">
-              <i data-lucide="graduation-cap" size="16" style="color: var(--gold);"></i>
-              <span>Master’s Degree in Marketing and Business Management</span>
-            </div>
-          </div>
-          <hr style="border: 0; height: 1px; background: rgba(0, 0, 0, 0.1); margin: 20px 0 0 0;">
-          <div class="social-links" style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
-            <a href="https://www.linkedin.com/in/sara-jadi-68729629/" target="_blank" style="color: var(--text); transition: color 0.3s;">
-              <i data-lucide="linkedin" size="20"></i>
-            </a>
-          </div>
+        <div class="slider-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
         </div>
       </div>
     </section>
@@ -318,6 +334,7 @@ include 'origineIP.php';
         &copy; 2026 JADI DIGITAL | Casablanca | Paris | New York
       </div>
     </footer>
+
   <?php endif; ?>
   <script src="https://unpkg.com/lucide@0.473.0/dist/umd/lucide.js"></script>
 
