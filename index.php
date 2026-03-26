@@ -284,7 +284,7 @@ include 'origineIP.php';
             </a>
           </div>
 
-          <div class="project-card">
+          <!-- <div class="project-card">
             <div class="project-header">
               <div class="project-icons">
                 <i data-lucide="credit-card" class="project-icon"></i>
@@ -302,7 +302,7 @@ include 'origineIP.php';
               <span><?= __('project_details') ?></span>
               <i data-lucide="arrow-right" size="18"></i>
             </a>
-          </div>
+          </div> -->
           <div class="project-card">
             <!-- <div class="project-header">
               <div class="project-icons">
