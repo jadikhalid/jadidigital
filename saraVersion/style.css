@@ -12,7 +12,7 @@ body {
   color: #111827;
 }
 
-/* ── MAQUETTE LABEL RESPONSIVE ── */
+/* ── MAQUETTE LABEL RESPONSIVE ── ********************************************************************************************/
 .maquette-label {
   background: #080d18;
   text-align: center;
@@ -53,9 +53,9 @@ body {
     display: inline-block;
   }
 }
-/* ── FIN MAQUETTE LABEL RESPONSIVE ── */
+/* ── FIN MAQUETTE LABEL RESPONSIVE ── **************************************************************************************/
 
-/* ── NAV ── */
+/* ── NAV ── ***************************************************************************************************************/
 .nav {
   background: #080d18;
   border-bottom: 1px solid #1a2235;
@@ -116,8 +116,87 @@ body {
 .nav-cta:hover {
   opacity: 0.88;
 }
+/* --- Ajustements de base --- */
+.mobile-only {
+  display: none;
+}
+.nav-toggle {
+  display: none;
+}
 
-/* ── HERO ── */
+/* --- RESPONSIVE TABLETTE & MOBILE (< 768px) --- */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .nav {
+    padding: 0 20px; /* Moins de marge sur les côtés */
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .nav-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background-color: #e2e8f0;
+    transition: 0.3s;
+  }
+
+  /* Menu en mode plein écran (Overlay) */
+  .nav-links {
+    position: fixed;
+    top: 64px; /* Hauteur de votre nav */
+    right: -100%; /* Caché par défaut */
+    flex-direction: column;
+    background: #080d18;
+    width: 100%;
+    height: calc(100vh - 64px);
+    padding: 40px 20px;
+    gap: 20px;
+    transition: 0.4s ease-in-out;
+    border-top: 1px solid #1a2235;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    right: 0; /* On affiche le menu */
+  }
+
+  .nav-links a {
+    font-size: 18px; /* Plus grand pour le tactile */
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid #1a2235;
+  }
+
+  /* Animation du bouton Hamburger vers une Croix (Optionnel mais pro) */
+  .nav-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+/* ── FIN NAV ── **************************************************************************************/
+
+/* ── HERO ── **********************************************************************************************************/
 .hero {
   background: #080d18;
   padding: 88px 5% 96px;
@@ -291,8 +370,101 @@ body {
   color: #e2e8f0;
   margin-right: 2px;
 }
+@media (max-width: 768px) {
+  /* --- Section Hero --- */
+  .hero {
+    padding: 60px 20px 80px; /* Réduction des paddings */
+    text-align: center; /* Centrage du contenu pour mobile */
+    min-height: auto;
+  }
 
-/* ── SECTIONS ── */
+  .hero-inner {
+    grid-template-columns: 1fr; /* Passage en une seule colonne */
+    gap: 48px;
+    justify-items: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    margin-bottom: 24px;
+  }
+
+  .hero-h1 {
+    font-size: 32px; /* Réduction de la taille de police */
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  /* Suppression du <br> forcé du HTML sur mobile pour un meilleur flow */
+  .hero-h1 br {
+    display: none;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    margin: 0 auto 32px;
+    max-width: 100%;
+  }
+
+  .hero-cta {
+    justify-content: center; /* Centrage des boutons */
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%; /* Boutons pleine largeur sur petit mobile */
+    max-width: 300px;
+    padding: 12px 20px;
+  }
+
+  /* --- Statistiques --- */
+  .hero-stats {
+    flex-wrap: wrap; /* Les stats passent sur 2 lignes si besoin */
+    justify-content: center;
+    gap: 24px;
+    padding-top: 32px;
+    border-top: 1px solid #1a2235;
+  }
+
+  .stat-num {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  /* --- Tech Chips --- */
+  .tech-chips {
+    flex-direction: row; /* Passage à l'horizontal */
+    flex-wrap: wrap; /* Retour à la ligne automatique */
+    justify-content: center;
+    gap: 8px;
+    padding-top: 0;
+  }
+
+  .chip {
+    padding: 8px 12px;
+    font-size: 11px;
+    white-space: normal; /* Permet le retour à la ligne interne si besoin */
+  }
+}
+
+/* Petit ajustement pour les très petits écrans (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes de stats */
+    text-align: left;
+  }
+}
+/* ── FIN HERO ── **************************************************************************************/
+
+/* ── SECTIONS ── ****************************************************************************************/
 .section-light {
   background: #ffffff;
   padding: 80px 5%;
@@ -362,8 +534,9 @@ body {
   max-width: 600px;
   margin-bottom: 48px;
 }
+/* ── FIN SECTIONS ── ***********************************************************************************/
 
-/* ── NOS SERVICES ── */
+/* ── NOS SERVICES ── ***********************************************************************************/
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -420,8 +593,70 @@ body {
   color: #15803d;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  /* --- Ajustements Généraux des Sections --- */
+  .section-light,
+  .section-gray,
+  .section-dark,
+  .section-navy {
+    padding: 60px 20px; /* Moins de padding latéral sur mobile */
+  }
 
-/* ── À PROPOS ── */
+  .section-h2,
+  .section-h2-dark {
+    font-size: 26px; /* Titre plus compact */
+    line-height: 1.2;
+  }
+
+  .section-intro,
+  .section-intro-dark {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  /* --- Grille des Services --- */
+  .services-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    gap: 16px; /* Espace réduit entre les cartes */
+    margin-bottom: 32px;
+  }
+
+  .service-card {
+    padding: 24px; /* Un peu plus compact */
+    transform: none !important; /* On évite les effets de translation au hover sur tactile */
+  }
+
+  .service-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Effet plus subtil sur mobile */
+    border-color: #e5e7eb; /* On garde la bordure sobre au clic */
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  /* Bouton d'appel à l'action en bas de section */
+  .btn-scroll-contact {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+/* ── FIN NOS SERVICES ── ***********************************************************************************/
+
+/* ── À PROPOS ── *****************************************************************************************/
 .apropos-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -514,8 +749,69 @@ body {
   color: #64748b;
   line-height: 1.7;
 }
+@media (max-width: 768px) {
+  /* --- Grille À Propos --- */
+  .apropos-grid {
+    grid-template-columns: 1fr; /* Passage en colonne unique */
+    gap: 40px;
+  }
 
-/* ── EXPERTISES ── */
+  .apropos-text p {
+    font-size: 14px; /* Un peu plus petit pour le confort de lecture mobile */
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .apropos-blocs {
+    gap: 20px;
+  }
+
+  .apropos-bloc {
+    padding-left: 15px; /* Légère réduction pour gagner de l'espace */
+  }
+
+  /* --- Carte Fondateur --- */
+  .apropos-card {
+    padding: 24px; /* Réduction du padding interne */
+    margin-top: 10px;
+  }
+
+  .team-header {
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .team-avatar {
+    width: 56px; /* Avatar légèrement plus petit */
+    height: 56px;
+    font-size: 18px;
+  }
+
+  .team-name {
+    font-size: 16px;
+  }
+
+  .team-role {
+    font-size: 11px;
+  }
+
+  .team-tags {
+    gap: 5px;
+  }
+
+  .team-tag {
+    padding: 2px 8px;
+    font-size: 10px; /* Typographie "code" plus compacte */
+  }
+
+  .team-bio {
+    font-size: 12px; /* Meilleure densité d'information sur mobile */
+    line-height: 1.6;
+  }
+}
+/* ── FIN À PROPOS ── ***********************************************************************************/
+
+/* ── EXPERTISES ── ***********************************************************************************/
 .exp-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -563,6 +859,52 @@ body {
   border-color: #1a56db;
   color: #93c5fd;
 }
+@media (max-width: 768px) {
+  /* --- Grille Expertises --- */
+  .exp-grid {
+    grid-template-columns: 1fr; /* Passage en colonne unique pour mobile */
+    gap: 12px; /* Réduction légère de l'écart */
+  }
+
+  .exp-card {
+    padding: 20px; /* Padding plus compact sur petit écran */
+  }
+
+  .exp-num {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .exp-title {
+    font-size: 16px; /* Légèrement plus grand pour la lisibilité en scan vertical */
+    margin-bottom: 16px;
+  }
+
+  .exp-tags {
+    gap: 6px; /* Rapprochement des tags pour gagner de l'espace */
+  }
+
+  .exp-tag {
+    padding: 3px 8px;
+    font-size: 10px; /* Typographie "Mono" plus dense pour le mobile */
+  }
+
+  /* Ajustement du bouton secondaire en bas de section */
+  .btn-scroll-portfolio {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+  }
+}
+
+/* Optimisation pour les écrans très étroits (< 360px) */
+@media (max-width: 360px) {
+  .exp-tag {
+    flex-grow: 1; /* Les tags occupent l'espace pour éviter les trous visuels */
+    text-align: center;
+  }
+}
+/* ─── FIN EXPERTISES ── ***********************************************************************************/
 
 /* ── FAQ ── */
 .faq-list {
@@ -604,7 +946,7 @@ body {
   transition: 0.2s;
 }
 
-/* ── RÉASSURANCE ── */
+/* ── RÉASSURANCE ── ***********************************************************************************/
 .reassurance {
   background: #080d18;
   border-top: 1px solid #1a2235;
@@ -639,6 +981,57 @@ body {
   color: #475569;
   line-height: 1.5;
 }
+@media (max-width: 768px) {
+  /* --- Section Réassurance --- */
+  .reassurance {
+    padding: 40px 20px; /* Réduction de l'espace vertical */
+    border-top: 1px solid #1a2235;
+    border-bottom: 1px solid #1a2235;
+  }
+
+  .reassurance-grid {
+    /* Sur tablette et grand mobile, on passe à 2 colonnes */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 20px;
+  }
+
+  .reassurance-item {
+    text-align: center; /* Centrage pour un meilleur équilibre visuel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reassurance-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .reassurance-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .reassurance-sub {
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 200px; /* Évite que le texte ne s'étale trop */
+  }
+}
+
+/* Optimisation pour les petits smartphones (< 480px) */
+@media (max-width: 480px) {
+  .reassurance-grid {
+    /* Sur petit mobile, une seule colonne pour une lecture claire */
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .reassurance-item {
+    padding: 0 10px;
+  }
+}
+/* ── FIN RÉASSURANCE ── ***********************************************************************************/
 
 /* ── NOUS REJOINDRE ── */
 .rejoindre-card {

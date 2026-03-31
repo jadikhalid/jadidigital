@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="maquette-label">
@@ -24,15 +24,26 @@
         <div class="logo-dot"></div>
         JADI <span>DIGITAL</span>
       </a>
-      <div class="nav-links">
+
+      <div class="nav-links" id="nav-menu">
         <a href="#a-propos">À propos</a>
         <a href="#nos-services">Nos services</a>
         <a href="#nos-expertises">Nos expertises</a>
         <a href="#realisations">Réalisations</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Actualités</a>
+        <button class="nav-cta mobile-only">Démarrer un projet →</button>
       </div>
-      <button class="nav-cta" id="cta-nav">Démarrer un projet →</button>
+
+      <button class="nav-cta desktop-only" id="cta-nav">
+        Démarrer un projet →
+      </button>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </nav>
 
     <section class="hero" id="hero">
