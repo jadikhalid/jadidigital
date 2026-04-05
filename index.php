@@ -1,349 +1,621 @@
-<?php
-include 'lang.php';
-include 'origineIP.php';
-
-?>
-
 <!doctype html>
 <html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
-  <title>
-    JADI DIGITAL | Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack
-  </title>
-  <script src="/app.js" defer></script>
-  <link rel="stylesheet" href="/style.css" />
+  <title>JADI DIGITAL | MA-FR-US</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <?php if ($is_morocco): ?>
-    <div style="background-color: #000000; width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
-      <h1>Bienvenue ...</h1>
+  <div class="maquette-label">
+    <span class="label-brand">JADI DIGITAL</span>
+    <span class="label-sep">—</span>
+    <span class="label-version">v1.0 (Mars 2026)</span>
+    <span class="label-sep">—</span>
+    <span class="label-doc">Document de référence design</span>
+  </div>
+
+  <nav class="nav">
+    <a class="nav-logo" href="#">
+      <div class="logo-dot"></div>
+      JADI <span>DIGITAL</span>
+    </a>
+
+    <div class="nav-links" id="nav-menu">
+      <a href="#a-propos">À propos</a>
+      <a href="#nos-services">Nos services</a>
+      <a href="#nos-expertises">Nos expertises</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Actualités</a>
+      <button class="nav-cta mobile-only">Démarrer un projet →</button>
     </div>
-  <?php else: ?>
-    <nav>
-      <a href="#" class="logo" onclick="event.preventDefault();">JADI<span> DIGITAL</span></a>
 
-      <div class=" nav-right">
-        <div class="lang-switcher">
-          <a href="/accueil"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
-          <a href="/welcome"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
-        </div>
-        <a href="<?= ($lang == 'fr') ? 'contact-fr' : 'contact-en' ?>" class="btn"><?= __('contact') ?></a>
-      </div>
-    </nav>
-
-    <header class="hero">
-      <div>
-        <span class="section-tag"><?= __('auteur') ?></span>
-        <h1><?= __("hero_title") ?></h1>
-        <p>
-          <?= __("hero_desc") ?>
-        </p>
-        <button class="btn" onclick="openPortfolio()">
-          <?= __("portfolio") ?>
-        </button>
-      </div>
-      <div style="text-align: right">
-        <div
-          class="conteneur-image"
-          style="
-            width: 100%;
-            height: 350px;
-            background: #e2e8f0;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            /* border: 2px dashed #cbd5e1; */
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-          ">
-          <img
-            src="./img/jadidigitalmeeting.jpg"
-            alt=""
-            style="width: 100%; height: 100%; object-fit: cover" />
-        </div>
-      </div>
-    </header>
-
-    <section class="expertise">
-      <span class="section-tag" style="text-align: center"><?= __("expertise_mini_title") ?></span>
-      <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary)">
-        <?= __("expertise_title") ?>
-      </h2>
-      <div class="grid">
-        <div class="card">
-          <i data-lucide="code-2" size="32" color="#b5935b"></i>
-          <h3><?= __("expertise_descr1_title") ?></h3>
-          <p>
-            <?= __("expertise_descr1_desc") ?>
-          </p>
-        </div>
-        <div class="card">
-          <i data-lucide="layers" size="32" color="#b5935b"></i>
-          <h3><?= __("expertise_descr2_title") ?></h3>
-          <p>
-            <?= __("expertise_descr2_desc") ?>
-          </p>
-        </div>
-        <div class="card">
-          <i data-lucide="briefcase" size="32" color="#b5935b"></i>
-          <h3><?= __("expertise_descr3_title") ?></h3>
-          <p>
-            <?= __("expertise_descr3_desc") ?>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="bio">
-      <div style="text-align: center; margin-bottom: 50px">
-        <span class="section-tag"><?= __('team_mini_title') ?></span>
-        <h2 style="font-size: 2.2rem; color: var(--primary)">
-          <?= __('team_title') ?>
-        </h2>
-      </div>
-
-      <div class="slider-container">
-        <button class="nav-btn prev" id="prevBtn" aria-label="Précédent">
-          <i data-lucide="chevron-left"></i>
-        </button>
-        <button class="nav-btn next" id="nextBtn" aria-label="Suivant">
-          <i data-lucide="chevron-right"></i>
-        </button>
-        <div class="slider-track">
-          <div class="slide">
-            <div class="project-card bio-card-full">
-              <div class="bio-item">
-                <div style="flex: 1;">
-                  <h3 style="color: var(--gold); margin-bottom: 5px;">Khalid JADI</h3>
-                  <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;"><?= __('khalid_titre') ?></h4>
-                  <p style="font-size: 0.9rem; line-height: 1.5;">
-                    <?= __('khalid_desc') ?>
-                  </p>
-                </div>
-                <img src="./img/khalid.png" class="bio-img" alt="Khalid JADI" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold);">
-              </div>
-
-              <div class="bio-skills-grid">
-                <div class="bio-skill-item">
-                  <i data-lucide="binary" size="16"></i>
-                  <span>Expert Full Stack & IA</span>
-                </div>
-                <div class="bio-skill-item">
-                  <i data-lucide="trending-up" size="16"></i>
-                  <span>Strategic Planning</span>
-                </div>
-                <div class="bio-skill-item">
-                  <i data-lucide="graduation-cap" size="16"></i>
-                  <span>MS in Software Engineering</span>
-                </div>
-              </div>
-
-              <hr class="bio-hr">
-
-              <div class="social-links" style="display: flex; gap: 20px; justify-content: center; margin-top: 10px;">
-                <a href="https://www.linkedin.com/in/khalid-j-a73662254/" target="_blank" class="social-links">
-                  <i data-lucide="linkedin" size="20" color="#b5935b"></i>
-                </a>
-                |
-                <a href="https://github.com/jadikhalid" target="_blank" class="social-links">
-                  <i data-lucide="github" size="20" color="#b5935b"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="slide">
-            <div class="project-card bio-card-full placeholder-card">
-              <div class="bio-item" style="opacity: 0.6;">
-                <div style="flex: 1;">
-                  <h3 style="color: var(--text); margin-bottom: 5px; font-style: italic;">Future Collaboration</h3>
-                  <h4 style="font-size: 0.9rem; color: var(--gold); margin-bottom: 10px;">Senior Software Engineer / Partner</h4>
-                  <p style="font-size: 0.9rem; line-height: 1.5;">
-                    Nous recherchons des talents passionnés par l'innovation et l'excellence technique pour rejoindre l'aventure JADI DIGITAL.
-                  </p>
-                </div>
-                <div class="placeholder-img">
-                  <i data-lucide="user-plus" size="40" style="color: var(--gold); opacity: 0.5;"></i>
-                </div>
-              </div>
-
-              <div class="bio-skills-grid" style="opacity: 0.4;">
-                <div class="bio-skill-item"><i data-lucide="code-2" size="16"></i><span>Cloud Architecture</span></div>
-                <div class="bio-skill-item"><i data-lucide="cpu" size="16"></i><span>AI Systems</span></div>
-                <div class="bio-skill-item"><i data-lucide="globe" size="16"></i><span>International Projects</span></div>
-              </div>
-
-              <hr class="bio-hr">
-
-              <div style="text-align: center; margin-top: 10px;">
-                <a href="mailto:contact@jadidigital.com" class="join-btn">Rejoignez-nous</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slider-dots">
-          <div class="dot active"></div>
-          <div class="dot"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="expertise" style="background-color: var(--light-bg); padding: 80px 8%;">
-      <div style="text-align: center; margin-bottom: 50px">
-        <span class="section-tag"><?= __('tools_mini_title') ?></span>
-        <h2 style="font-size: 2.2rem; color: var(--primary); margin-top: 10px;">
-          <?= __('tools_title') ?>
-        </h2>
-      </div>
-
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-
-        <div class="card" style="padding: 30px;">
-          <i data-lucide="box" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
-          <h3 style="color: var(--primary); margin-bottom: 15px;"><?= __('card1_title') ?></h3>
-          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;"><?= __('card1_mini_title') ?></h4>
-          <p style="font-size: 0.9rem; margin-bottom: 15px;"><?= __('card1_desc') ?></p>
-          <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
-            <li style="margin-bottom: 5px;">• React / Next.js</li>
-            <li style="margin-bottom: 5px;">• Node.js / NestJS || Express.js</li>
-            <li style="margin-bottom: 5px;">• PHP / Laravel</li>
-            <li style="margin-bottom: 5px;">• OpenAI API / RAG</li>
-          </ul>
-        </div>
-
-        <div class="card" style="padding: 30px;">
-          <i data-lucide="cpu" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
-          <h3 style="color: var(--primary); margin-bottom: 15px;"><?= __('card2_title') ?></h3>
-          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;"><?= __('card2_mini_title') ?></h4>
-          <p style="font-size: 0.9rem; margin-bottom: 15px;"><?= __('card2_desc') ?></p>
-          <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
-            <li style="margin-bottom: 5px;">• C / C++ / Python / Java</li>
-            <li style="margin-bottom: 5px;">• System Design</li>
-            <li style="margin-bottom: 5px;">• Algorithmic Optimization</li>
-            <li style="margin-bottom: 5px;">• Linux / Docker</li>
-          </ul>
-        </div>
-
-        <div class="card" style="padding: 30px;">
-          <i data-lucide="briefcase" size="32" color="var(--gold)" style="margin-bottom: 15px;"></i>
-          <h3 style="color: var(--primary); margin-bottom: 15px;"><?= __('card3_title') ?></h3>
-          <h4 style="font-size: 0.95rem; color: var(--gold); margin-bottom: 10px;"><?= __('card3_mini_title') ?></h4>
-          <p style="font-size: 0.9rem; margin-bottom: 15px;"><?= __('card3_desc') ?></p>
-          <ul style="list-style: none; font-size: 0.85rem; color: var(--text);">
-            <li style="margin-bottom: 5px;">• Agile / Scrum</li>
-            <li style="margin-bottom: 5px;">• Product Discovery / Users Stories</li>
-            <li style="margin-bottom: 5px;">• MoSCoW ou RICE</li>
-            <li style="margin-bottom: 5px;">• Jira, Figma, etc...</li>
-
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <button id="portfolio-trigger" onclick="openPortfolio()">
-      <i data-lucide="layers" size="20"></i> <span class="btn-text"><?= __("portfolio_title") ?></span>
+    <button class="nav-cta desktop-only" id="cta-nav">
+      Démarrer un projet →
     </button>
 
-    <div id="portfolioModal">
-      <div class="modal-content">
-        <span class="close-modal" onclick="closePortfolio()">&times;</span>
-        <span class="section-tag"><?= __("portfolio_sub_title") ?></span>
-        <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 30px; letter-spacing: -1px;">
-          <?= __("portfolio_sub_title2") ?>
-        </h2>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
 
-        <div class="portfolio-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icons">
-                <i data-lucide="ticket-check" class="project-icon"></i>
-                <span class="tech-tag">PHP • MySQL</span>
-              </div>
-              <a href="https://github.com/jadikhalid/helpdesk_saas" target="_blank" class="github-icon-link">
-                <i data-lucide="github" size="20"></i>
-              </a>
-            </div>
-            <h4>SaaS Helpdesk & Ticketing</h4>
-            <p><?= __('project1_desc') ?></p>
-            <ul class="project-features">
-              <li><?= __('project1_subtitle0') ?></li>
-              <li><?= __('project1_subtitle1') ?></li>
-              <li><?= __('project1_subtitle2') ?></li>
-            </ul>
-            <a href="<?= ($lang == 'fr') ? 'solutions/helpdesk-fr' : 'solutions/helpdesk-en' ?>" class="project-link">
-              <span><?= __('project_details') ?></span>
-              <i data-lucide="arrow-right" size="18"></i>
-            </a>
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-glow"></div>
+    <div class="hero-inner inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Ingénierie logicielle & IA
+        </div>
+        <h1 class="hero-h1">
+          Nous transformons vos idées <br />en produits digitaux
+          <em>performants.</em>
+        </h1>
+        <p class="hero-sub">
+          JADI DIGITAL conçoit et développe vos applications web et solutions
+          IA sur-mesure — avec rigueur, expertise technique et un engagement
+          total sur la qualité de chaque livraison.
+        </p>
+        <div class="hero-cta">
+          <button class="btn-primary" id="cta-hero-start">
+            Démarrer un projet
+          </button>
+          <button class="btn-secondary" id="cta-hero-portfolio">
+            Voir nos réalisations
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">15<span>+</span></div>
+            <div class="stat-label">Ans d'expérience<br />combinée</div>
           </div>
+          <div>
+            <div class="stat-num">3</div>
+            <div class="stat-label">Pays d'intervention</div>
+          </div>
+          <div>
+            <div class="stat-num">100<span>%</span></div>
+            <div class="stat-label">Projets livrés<br />en Agile</div>
+          </div>
+          <div>
+            <div class="stat-num">AI<span>+</span></div>
+            <div class="stat-label">Architecture<br />AI-native</div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-chips">
+        <div class="chip">
+          <div class="chip-dot" style="background: #60a5fa"></div>
+          <span class="chip-label">Full Stack</span> React · Next.js
+        </div>
+        <div class="chip">
+          <div class="chip-dot" style="background: #e8a855"></div>
+          <span class="chip-label">AI-Native</span> OpenAI · RAG
+        </div>
+        <div class="chip">
+          <div class="chip-dot" style="background: #34d399"></div>
+          <span class="chip-label">Intégration</span> REST · GraphQL
+        </div>
+        <div class="chip">
+          <div class="chip-dot" style="background: #a78bfa"></div>
+          <span class="chip-label">Cloud</span> Docker · CI/CD
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <!-- <div class="project-card">
-            <div class="project-header">
-              <div class="project-icons">
-                <i data-lucide="credit-card" class="project-icon"></i>
-                <span class="tech-tag">Agile • Fintech • VISA</span>
+  <section class="section-light" id="nos-services">
+    <div class="inner">
+      <div class="section-tag">Nos services</div>
+      <h2 class="section-h2">Ce que nous faisons concrètement</h2>
+      <p class="section-intro">
+        Trois domaines complémentaires qui couvrent l'intégralité du cycle de
+        vie d'un produit digital.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="card-icon" style="background: #ebf0ff">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect
+                x="2"
+                y="5"
+                width="18"
+                height="13"
+                rx="2.5"
+                stroke="#1A56DB"
+                stroke-width="1.5" />
+              <path
+                d="M7 9l3.5 3.5L17 6"
+                stroke="#1A56DB"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="card-title">Développement Web Full Stack</div>
+          <div class="card-text">
+            De la landing page à la plateforme SaaS, nous développons vos
+            applications web et mobile sur-mesure avec React, Next.js, Node.js
+            ou PHP/Laravel selon vos besoins.
+          </div>
+          <div class="card-link">En savoir plus →</div>
+        </div>
+        <div class="service-card">
+          <div class="card-icon" style="background: #ede9fe">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <circle
+                cx="11"
+                cy="11"
+                r="8"
+                stroke="#7C3AED"
+                stroke-width="1.5" />
+              <path
+                d="M8 11c0-1.66 1.34-3 3-3s3 1.34 3 3"
+                stroke="#7C3AED"
+                stroke-width="1.5"
+                stroke-linecap="round" />
+              <circle cx="11" cy="15" r="1" fill="#7C3AED" />
+            </svg>
+          </div>
+          <div class="card-title">Architecture IA</div>
+          <div class="card-text">
+            Nous intégrons l'intelligence artificielle dans vos projets de
+            façon concrète et utile : LLM, RAG, automatisation intelligente —
+            pas de promesse, des résultats mesurables.
+          </div>
+          <div class="card-link-purple">En savoir plus →</div>
+        </div>
+        <div class="service-card">
+          <div class="card-icon" style="background: #dcfce7">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path
+                d="M5 11h12M13 7l4 4-4 4"
+                stroke="#15803D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="card-title">Intégration & API</div>
+          <div class="card-text">
+            Nous connectons vos systèmes, outils métier et services tiers via
+            des APIs robustes, sécurisées et bien documentées. Pour que vos
+            outils communiquent sans friction.
+          </div>
+          <div class="card-link-green">En savoir plus →</div>
+        </div>
+      </div>
+      <div style="text-align: center">
+        <button class="btn-primary btn-scroll-contact">
+          Discuter de votre projet
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gray" id="a-propos">
+    <div class="inner">
+      <div class="section-tag">À propos</div>
+      <h2 class="section-h2">À propos de JADI DIGITAL</h2>
+      <div class="apropos-grid">
+        <div class="apropos-text">
+          <p>
+            JADI DIGITAL est une société d'ingénierie logicielle fondée par
+            Khalid JADI. Nous concevons et développons des applications web et
+            des solutions IA sur-mesure pour les entreprises qui veulent des
+            produits digitaux fiables, performants et évolutifs.
+          </p>
+          <div class="apropos-blocs">
+            <div class="apropos-bloc">
+              <div class="apropos-bloc-title">Notre vision</div>
+              <div class="apropos-bloc-text">
+                La technologie ne crée de la valeur que lorsqu'elle résout un
+                vrai problème métier. Chaque projet commence par une écoute
+                attentive de vos enjeux, avant d'écrire une seule ligne de
+                code.
               </div>
             </div>
-            <h4><?= __('project2_title') ?></h4>
-            <p><?= __('project2_desc') ?></p>
-            <ul class="project-features">
-              <li><?= __('project2_subtitle1') ?></li>
-              <li><?= __('project2_subtitle2') ?></li>
-              <li><?= __('project2_subtitle3') ?></li>
-            </ul>
-            <a href="<?= ($lang == 'fr') ? 'projets/visa-fr' : 'projets/visa-en' ?>" class="project-link">
-              <span><?= __('project_details') ?></span>
-              <i data-lucide="arrow-right" size="18"></i>
-            </a>
-          </div> -->
-          <div class="project-card">
-            <!-- <div class="project-header">
-              <div class="project-icons">
-                <i data-lucide="bar-chart-3" class="project-icon"></i>
-                <span class="tech-tag">...</span>
+            <div class="apropos-bloc">
+              <div class="apropos-bloc-title">Notre approche</div>
+              <div class="apropos-bloc-text">
+                Rigueur technique, communication transparente, engagement sur
+                les résultats. Nous ne livrons pas un projet — nous
+                construisons une relation.
               </div>
             </div>
-            <h4>...</h4>
-            <p>...</p>
-            <ul class="project-features">
-              <li>...</li>
-              <li>...</li>
-            </ul>
-            <a href="#" class="project-link">
-              <span><?= __('project_details') ?></span>
-              <i data-lucide="arrow-right" size="18"></i>
-            </a> -->
+            <div class="apropos-bloc">
+              <div class="apropos-bloc-title">Notre engagement</div>
+              <div class="apropos-bloc-text">
+                Chaque produit que nous livrons est testé, documenté et conçu
+                pour durer. Pas de raccourcis, pas de compromis sur la qualité
+                — parce que votre réussite est la nôtre.
+              </div>
+            </div>
+          </div>
+          <button class="btn-primary btn-scroll-contact">
+            Démarrer un projet
+          </button>
+        </div>
+        <div class="apropos-card">
+          <div
+            style="
+                font-size: 11px;
+                color: #475569;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+              ">
+            Fondateur
+          </div>
+          <div class="team-header">
+            <div class="team-avatar">KJ</div>
+            <div>
+              <div class="team-name">Khalid JADI</div>
+              <div class="team-role">Fondateur & CTO</div>
+            </div>
+          </div>
+          <div class="team-tags">
+            <span class="team-tag">Expert Full Stack & IA</span>
+            <span class="team-tag">MS Software Engineering</span>
+          </div>
+          <div class="team-bio">
+            Ingénieur logiciel spécialisé en systèmes critiques et
+            architecture AI-native. Il a conçu et livré des plateformes à
+            forte exigence technique : applications web et mobile, systèmes à
+            haute disponibilité, solutions intégrant l'intelligence
+            artificielle. Chez JADI DIGITAL, il pilote chaque décision
+            d'architecture avec une conviction constante : la technologie ne
+            crée de la valeur que si elle résout un vrai problème métier.
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <footer>
-      <a href="#" class="logo" style="color: white; font-size: 2rem">JADI<span> DIGITAL</span></a>
-      <p style="margin: 20px 0; opacity: 0.7">
-        <?= __("footer_title") ?>
+  <section class="section-dark" id="nos-expertises">
+    <div class="inner">
+      <div class="section-tag-gold">Nos expertises</div>
+      <h2 class="section-h2-dark">Technologies maîtrisées en profondeur</h2>
+      <p class="section-intro-dark">
+        Au-delà des services que nous proposons, voici les technologies et
+        domaines que nous maîtrisons en profondeur.
       </p>
-      <div style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4">
-        &copy; 2026 JADI DIGITAL | Casablanca | Paris | New York
+      <div class="exp-grid">
+        <div class="exp-card">
+          <div class="exp-num">01 /</div>
+          <div class="exp-title">Développement Web & IA</div>
+          <div class="exp-tags">
+            <span class="exp-tag">React</span><span class="exp-tag">Next.js</span><span class="exp-tag">Node.js</span><span class="exp-tag">NestJS</span><span class="exp-tag">Express.js</span><span class="exp-tag">PHP / Laravel</span><span class="exp-tag">OpenAI API</span><span class="exp-tag">RAG</span><span class="exp-tag">LangChain</span>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-num">02 /</div>
+          <div class="exp-title">Ingénierie logicielle</div>
+          <div class="exp-tags">
+            <span class="exp-tag">C / C++</span><span class="exp-tag">Python</span><span class="exp-tag">Java</span><span class="exp-tag">System Design</span><span class="exp-tag">Algorithmic Optimization</span><span class="exp-tag">Linux</span><span class="exp-tag">Docker</span>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-num">03 /</div>
+          <div class="exp-title">Intégration & API</div>
+          <div class="exp-tags">
+            <span class="exp-tag">REST API</span><span class="exp-tag">GraphQL</span><span class="exp-tag">Webhooks</span><span class="exp-tag">Event-driven</span><span class="exp-tag">OAuth 2.0</span><span class="exp-tag">JWT</span><span class="exp-tag">Swagger / OpenAPI</span><span class="exp-tag">Postman</span>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-num">04 /</div>
+          <div class="exp-title">Cloud & DevOps</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Déploiement cloud</span><span class="exp-tag">Hébergement</span><span class="exp-tag">CI/CD</span><span class="exp-tag">Scalabilité</span><span class="exp-tag">Monitoring</span><span class="exp-tag">Environnements production</span>
+          </div>
+        </div>
       </div>
-    </footer>
+      <div style="text-align: center; margin-top: 40px">
+        <button class="btn-secondary btn-scroll-portfolio">
+          Voir nos réalisations
+        </button>
+      </div>
+    </div>
+  </section>
 
-  <?php endif; ?>
-  <script src="https://unpkg.com/lucide@0.473.0/dist/umd/lucide.js"></script>
+  <div class="reassurance">
+    <div class="reassurance-grid">
+      <div class="reassurance-item">
+        <div class="reassurance-icon">🔒</div>
+        <div class="reassurance-title">Engagement qualité</div>
+        <div class="reassurance-sub">
+          Code testé, documenté et maintenable
+        </div>
+      </div>
+      <div class="reassurance-item">
+        <div class="reassurance-icon">⏱️</div>
+        <div class="reassurance-title">Réponse sous 24h</div>
+        <div class="reassurance-sub">
+          Premier échange gratuit et sans engagement
+        </div>
+      </div>
+      <div class="reassurance-item">
+        <div class="reassurance-icon">🌍</div>
+        <div class="reassurance-title">International</div>
+        <div class="reassurance-sub">
+          Nous intervenons partout où vos projets nous emmènent
+        </div>
+      </div>
+      <div class="reassurance-item">
+        <div class="reassurance-icon">🤝</div>
+        <div class="reassurance-title">Partenariat durable</div>
+        <div class="reassurance-sub">
+          Maintenance, hébergement et évolutions post-lancement
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    // On s'assure que le document est prêt
-    window.addEventListener('load', () => {
-      lucide.createIcons();
-    });
-  </script>
+  <section class="section-light" id="realisations">
+    <div class="inner">
+      <div class="section-tag">Réalisations</div>
+      <h2 class="section-h2">Projets JADI DIGITAL</h2>
+      <p class="section-intro">
+        Des projets livrés avec rigueur, de la spec à la mise en production.
+      </p>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-header">
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">PHP</span>
+              <span class="portfolio-tag">MySQL</span>
+              <span class="portfolio-tag">SMTP</span>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <div class="portfolio-title">SaaS Helpdesk & Ticketing</div>
+            <div class="portfolio-text">
+              Système de gestion de réclamations clients haute performance.
+              Logique métier complexe, base de données relationnelle
+              optimisée, automatisation d'emails.
+            </div>
+            <a class="portfolio-link" href="#">Voir le projet →</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-header">
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">IA</span>
+              <span class="portfolio-tag">RAG</span>
+              <span class="portfolio-tag">Python</span>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <div class="portfolio-title">
+              Intégration RAG — Application métier
+            </div>
+            <div class="portfolio-text">
+              Intégration d'un système RAG (Retrieval-Augmented Generation)
+              dans une application métier existante pour automatiser le
+              traitement documentaire.
+            </div>
+            <a class="portfolio-link" href="#">Voir le projet →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gray" id="faq">
+    <div class="inner" style="max-width: 760px">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-h2">Questions fréquentes</h2>
+      <p class="section-intro">
+        Tout ce que vous voulez savoir avant de nous contacter.
+      </p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Travaillez-vous avec des startups ou uniquement des grandes
+              entreprises ?</span><span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            Nous accompagnons tous types de structures : startups en phase de
+            lancement, scale-ups en croissance rapide et PME en transformation
+            digitale. Nous adaptons notre approche et notre investissement à
+            votre stade de maturité — pas de modèle unique.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Comment se déroule un projet chez JADI DIGITAL ?</span><span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            Chaque projet commence par un échange pour comprendre vos besoins
+            et définir le périmètre. Nous établissons ensuite une feuille de
+            route claire avec des étapes et des livrables définis — pour
+            avancer de façon structurée et transparente.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Proposez-vous des prestations en régie ou au forfait ?</span><span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            Les deux, selon votre situation. Un projet avec un périmètre
+            défini ? Nous travaillons au forfait. Vous avez besoin d'un
+            renfort technique sur la durée ? Nous intervenons en régie avec
+            une disponibilité adaptée à vos besoins.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Proposez-vous du développement intégrant l'intelligence
+              artificielle ?</span><span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            Oui, c'est l'un de nos axes forts. Nous concevons des applications
+            AI-native intégrant des modèles de langage (LLM), des systèmes RAG
+            et des pipelines d'automatisation intelligente — depuis la
+            définition du cas d'usage jusqu'au déploiement en production.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Combien coûte un projet avec JADI DIGITAL ?</span><span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            Le coût dépend du périmètre et de la complexité du projet. Nous
+            proposons un premier échange gratuit pour comprendre votre besoin
+            et vous soumettre une estimation claire avant tout engagement.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark" id="nous-rejoindre">
+    <div class="inner">
+      <div class="rejoindre-card">
+        <div class="rejoindre-content">
+          <h3>Rejoignez l'aventure JADI DIGITAL</h3>
+          <p>
+            Nous construisons une équipe d'experts passionnés par la
+            technologie et l'innovation. Si vous êtes développeur Full Stack,
+            ingénieur IA ou architecte logiciel et que vous souhaitez
+            travailler sur des projets ambitieux, nous serions ravis
+            d'échanger avec vous.
+          </p>
+        </div>
+        <button class="btn-or">Candidater →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark" id="contact">
+    <div class="contact-grid inner">
+      <div class="contact-form">
+        <h3 class="form-title">Discutons de votre projet</h3>
+        <p class="form-subtitle">
+          Premier échange gratuit et sans engagement. Réponse sous 24h.
+        </p>
+
+        <div class="form-group">
+          <label class="form-label">Nom complet *</label>
+          <input class="form-input" type="text" placeholder="Votre nom" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email professionnel *</label>
+          <input class="form-input" type="email" placeholder="votre@email.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Entreprise</label>
+          <input class="form-input" type="text" placeholder="Nom de votre entreprise" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sujet *</label>
+          <select class="form-select">
+            <option value="">Sélectionnez un sujet</option>
+            <option>Projet de développement web</option>
+            <option>Projet IA / Intelligence artificielle</option>
+            <option>Intégration & API</option>
+            <option>Audit technique</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Votre message *</label>
+          <textarea class="form-textarea" placeholder="Décrivez votre projet..."></textarea>
+        </div>
+
+        <div class="form-privacy">
+          En soumettant ce formulaire, vous acceptez notre
+          <a href="#">politique de confidentialité</a>.
+        </div>
+
+        <button class="form-submit">Envoyer le message</button>
+      </div>
+
+      <div class="contact-info">
+        <h3>Nos coordonnées</h3>
+        <p>
+          Basés au Maroc avec une présence en France, nous accompagnons des
+          clients à l'international. Réponse garantie sous 24h ouvrées.
+        </p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📧</div>
+            <span>contact@jadidigital.com</span>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">⏱️</div>
+            <span>Réponse sous 24h ouvrées</span>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🌍</div>
+            <span>Maroc · France · International</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">JADI <span>DIGITAL</span></div>
+          <div class="footer-desc">
+            Ingénierie logicielle & solutions IA sur-mesure. Des produits
+            digitaux fiables, performants et évolutifs.
+          </div>
+          <div class="footer-email">contact@jadidigital.com</div>
+        </div>
+        <div>
+          <div class="footer-h">Services</div>
+          <div class="footer-links">
+            <a href="#">Développement Web Full Stack</a>
+            <a href="#">Architecture IA</a>
+            <a href="#">Intégration & API</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-h">Entreprise</div>
+          <div class="footer-links">
+            <a href="#">À propos</a>
+            <a href="#">Réalisations</a>
+            <a href="#">Actualités</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-h">Légal</div>
+          <div class="footer-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 JADI DIGITAL — Tous droits réservés
+        </div>
+        <div class="footer-lang">
+          <a href="#">FR</a>
+          <a href="#">EN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

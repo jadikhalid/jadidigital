@@ -1,73 +1,73 @@
-/*
- * PORTFOLIO
- */
-const modal = document.getElementById("portfolioModal");
+document.addEventListener("DOMContentLoaded", () => {
+  // ── GESTION DE LA FAQ ──
+  const faqQuestions = document.querySelectorAll(".faq-q");
 
-function openPortfolio() {
-  console.log("Ouverture du portfolio");
-  // Force l'affichage du bloc
-  modal.style.display = "flex";
-  // Petit délai pour déclencher l'animation de transition
-  setTimeout(() => {
-    modal.classList.add("active");
-  }, 10);
-  // document.body.style.overflow = "hidden"; // Empêche le scroll derrière
-}
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector(".faq-icon");
+      const isOpen = answer.classList.contains("open");
 
-function closePortfolio() {
-  modal.classList.remove("active");
-  // On attend 400ms (durée de la transition) avant de repasser en display none
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 400);
-  document.body.style.overflow = "auto";
-}
+      // Fermer toutes les autres réponses
+      document.querySelectorAll(".faq-a.open").forEach((openAnswer) => {
+        openAnswer.classList.remove("open");
+        const associatedIcon =
+          openAnswer.previousElementSibling.querySelector(".faq-icon");
+        if (associatedIcon) associatedIcon.textContent = "+";
+      });
 
-// Fermeture au clic à l'extérieur du contenu blanc
-window.onclick = function (event) {
-  if (event.target === modal) {
-    closePortfolio();
-  }
-};
-
-/*
- * SLIDER
- */
-const track = document.querySelector(".slider-track");
-const dots = document.querySelectorAll(".dot");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-
-function updateSliderControls() {
-  const scrollLeft = track.scrollLeft;
-  const maxScroll = track.scrollWidth - track.clientWidth;
-  const index = Math.round(scrollLeft / track.clientWidth);
-
-  // Mise à jour des points (dots)
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
+      // Ouvrir/Fermer l'élément actuel
+      if (!isOpen) {
+        answer.classList.add("open");
+        icon.textContent = "−";
+      } else {
+        answer.classList.remove("open");
+        icon.textContent = "+";
+      }
+    });
   });
 
-  // Désactivation/Masquage des flèches
-  // On utilise un seuil de 5px pour éviter les erreurs d'arrondi
-  prevBtn.disabled = scrollLeft <= 5;
-  nextBtn.disabled = scrollLeft >= maxScroll - 5;
-}
+  // ── GESTION DES SCROLLS (NAVIGATION) ──
 
-if (track && prevBtn && nextBtn) {
-  // Clic sur bouton Suivant
-  nextBtn.addEventListener("click", () => {
-    track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+  const scrollToId = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Boutons "Contact"
+  document
+    .querySelectorAll(".btn-scroll-contact, #cta-nav, #cta-hero-start")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => scrollToId("contact"));
+    });
+
+  // Boutons "Réalisations"
+  document
+    .querySelectorAll(".btn-scroll-portfolio, #cta-hero-portfolio")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => scrollToId("realisations"));
+    });
+});
+
+// gstion du menu de la section nav
+const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+// Toggle du menu
+navToggle.addEventListener("click", () => {
+  navToggle.classList.toggle("active");
+  navMenu.classList.toggle("active");
+  // Empêcher le scroll quand le menu est ouvert
+  document.body.classList.toggle("no-scroll");
+});
+
+// Fermer le menu quand on clique sur un lien (utile pour les ancres)
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navToggle.classList.remove("active");
+    navMenu.classList.remove("active");
   });
-
-  // Clic sur bouton Précédent
-  prevBtn.addEventListener("click", () => {
-    track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
-  });
-
-  // Écouter le scroll pour mettre à jour les boutons en temps réel
-  track.addEventListener("scroll", updateSliderControls);
-
-  // Initialisation au chargement
-  window.addEventListener("load", updateSliderControls);
-}
+});
