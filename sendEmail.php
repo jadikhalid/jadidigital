@@ -1,8 +1,11 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php'; // Charge PHPMailer via Composer
+
+header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
@@ -18,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = 587;
 
         // --- DESTINATAIRES ---
-        $mail->setFrom('sara@jadi-digital.com', 'JADI DIGITAL'); 
+        $mail->setFrom('sara@jadi-digital.com', 'JADI DIGITAL');
         $mail->addAddress('sara@jadi-digital.com'); // Où tu reçois le message
         $mail->addReplyTo($_POST['email'], $_POST['name']); // Pour répondre au client
 
@@ -26,14 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isHTML(true);
         $mail->Subject = "Nouveau contact : " . $_POST['subject'];
         $mail->Body    = "<h3>Nouveau message de " . htmlspecialchars($_POST['name']) . "</h3>" .
-                         "<p><strong>Email :</strong> " . htmlspecialchars($_POST['email']) . "</p>" .
-                         "<p><strong>Message :</strong><br>" . nl2br(htmlspecialchars($_POST['message'])) . "</p>";
+            "<p><strong>Email :</strong> " . htmlspecialchars($_POST['email']) . "</p>" .
+            "<p><strong>Entreprise :</strong> " . htmlspecialchars($_POST['company']) . "</p>" .
+            "<p><strong>Message :</strong><br>" . nl2br(htmlspecialchars($_POST['message'])) . "</p>";
 
         $mail->send();
-        header("Location: contact.php?status=success");
+        echo json_encode(['status' => 'success']);
     } catch (Exception $e) {
-        header("Location: contact.php?status=error");
+        echo json_encode(['status' => 'error']);
     }
 } else {
-    header("Location: contact.php");
+    echo json_encode(['status' => 'invalid']);
 }

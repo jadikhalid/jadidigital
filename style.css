@@ -1340,6 +1340,19 @@ body {
   transition: 0.2s;
 }
 
+.form-select {
+  /* Masque la flèche native du navigateur */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Ajoute une icône SVG personnalisée comme flèche */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23e2e8f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevron-down'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center; /* Positionne la flèche à 16px du bord droit */
+  background-size: 16px; /* Taille de la flèche */
+  padding-right: 40px; /* Augmente le padding droit pour éviter que le texte ne chevauche la flèche */
+}
+
 .form-input:focus,
 .form-textarea:focus {
   border-color: #e8a855; /* Changé pour cohérence avec le bouton */

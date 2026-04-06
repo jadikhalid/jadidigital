@@ -501,7 +501,7 @@
 
   <section class="section-dark" id="contact">
     <div class="contact-grid inner">
-      <div class="contact-form">
+      <form class="contact-form" id="contact-form" action="sendEmail.php" method="POST">
         <h3 class="form-title">Discutons de votre projet</h3>
         <p class="form-subtitle">
           Premier échange gratuit et sans engagement. Réponse sous 24h.
@@ -509,19 +509,19 @@
 
         <div class="form-group">
           <label class="form-label">Nom complet *</label>
-          <input class="form-input" type="text" placeholder="Votre nom" />
+          <input class="form-input" type="text" name="name" placeholder="Votre nom" required />
         </div>
         <div class="form-group">
           <label class="form-label">Email professionnel *</label>
-          <input class="form-input" type="email" placeholder="votre@email.com" />
+          <input class="form-input" type="email" name="email" placeholder="votre@email.com" required />
         </div>
         <div class="form-group">
           <label class="form-label">Entreprise</label>
-          <input class="form-input" type="text" placeholder="Nom de votre entreprise" />
+          <input class="form-input" type="text" name="company" placeholder="Nom de votre entreprise" />
         </div>
         <div class="form-group">
           <label class="form-label">Sujet *</label>
-          <select class="form-select">
+          <select class="form-select" name="subject" required>
             <option value="">Sélectionnez un sujet</option>
             <option>Projet de développement web</option>
             <option>Projet IA / Intelligence artificielle</option>
@@ -532,7 +532,7 @@
         </div>
         <div class="form-group">
           <label class="form-label">Votre message *</label>
-          <textarea class="form-textarea" placeholder="Décrivez votre projet..."></textarea>
+          <textarea class="form-textarea" name="message" placeholder="Décrivez votre projet..." required></textarea>
         </div>
 
         <div class="form-privacy">
@@ -540,8 +540,8 @@
           <a href="#">politique de confidentialité</a>.
         </div>
 
-        <button class="form-submit">Envoyer le message</button>
-      </div>
+        <button type="submit" class="form-submit">Envoyer le message</button>
+      </form>
 
       <div class="contact-info">
         <h3>Nos coordonnées</h3>
@@ -616,6 +616,45 @@
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const submitBtn = form.querySelector('.form-submit');
+      const originalBtnText = submitBtn.innerText;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Envoi en cours...';
+
+      fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(response => response.json())
+        .then(data => {
+          const isSuccess = data.status === 'success';
+          const alertDiv = document.createElement('div');
+          alertDiv.style.cssText = `position: fixed; top: 80px; right: 20px; z-index: 1000; padding: 15px 25px; border-radius: 8px; color: white; background-color: ${isSuccess ? '#10b981' : '#ef4444'}; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;`;
+          alertDiv.innerText = isSuccess ? '✅ Message envoyé avec succès !' : '❌ Erreur lors de l\'envoi du message.';
+
+          document.body.appendChild(alertDiv);
+          if (isSuccess) form.reset();
+
+          setTimeout(() => alertDiv.remove(), 5000);
+        })
+        .catch(() => {
+          const errorDiv = document.createElement('div');
+          errorDiv.style.cssText = "position: fixed; top: 80px; right: 20px; z-index: 1000; padding: 15px 25px; border-radius: 8px; color: white; background-color: #ef4444; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;";
+          errorDiv.innerText = '❌ Erreur réseau. Veuillez réessayer.';
+          document.body.appendChild(errorDiv);
+          setTimeout(() => errorDiv.remove(), 5000);
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalBtnText;
+        });
+    });
+  </script>
 </body>
 
 </html>

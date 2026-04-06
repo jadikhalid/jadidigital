@@ -15,7 +15,7 @@ include 'origineIP.php';
     JADI DIGITAL | Khalid Jadi - Entrepreneur Tech & Ingénieur Full Stack
   </title>
   <script src="/app.js" defer></script>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
