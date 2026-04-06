@@ -50,24 +50,3 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", () => scrollToId("realisations"));
     });
 });
-
-// gstion du menu de la section nav
-const navToggle = document.getElementById("nav-toggle");
-const navMenu = document.getElementById("nav-menu");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-// Toggle du menu
-navToggle.addEventListener("click", () => {
-  navToggle.classList.toggle("active");
-  navMenu.classList.toggle("active");
-  // Empêcher le scroll quand le menu est ouvert
-  document.body.classList.toggle("no-scroll");
-});
-
-// Fermer le menu quand on clique sur un lien (utile pour les ancres)
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navToggle.classList.remove("active");
-    navMenu.classList.remove("active");
-  });
-});

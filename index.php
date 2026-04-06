@@ -25,27 +25,32 @@
   <nav class="nav">
     <a class="nav-logo" href="#">
       <div class="logo-dot"></div>
-      JADI <span>DIGITAL</span>
+      <span class="logo-text">JADI <span>DIGITAL</span></span>
     </a>
 
     <div class="nav-links" id="nav-menu">
-      <a href="#a-propos">À propos</a>
-      <a href="#nos-services">Nos services</a>
-      <a href="#nos-expertises">Nos expertises</a>
-      <a href="#realisations">Réalisations</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Actualités</a>
-      <button class="nav-cta mobile-only">Démarrer un projet →</button>
+      <a href="#a-propos" title="À propos">
+        <i data-lucide="info"></i><span>À propos</span>
+      </a>
+      <a href="#nos-services" title="Services">
+        <i data-lucide="layers"></i><span>Nos services</span>
+      </a>
+      <a href="#nos-expertises" title="Expertises">
+        <i data-lucide="cpu"></i><span>Nos expertises</span>
+      </a>
+      <a href="#realisations" title="Réalisations">
+        <i data-lucide="folder-git-2"></i><span>Réalisations</span>
+      </a>
+      <a href="#faq" title="FAQ">
+        <i data-lucide="message-circle-question"></i><span>FAQ</span>
+      </a>
+      <a href="#contact" title="Contact">
+        <i data-lucide="mail"></i><span>Contact</span>
+      </a>
     </div>
 
     <button class="nav-cta desktop-only" id="cta-nav">
       Démarrer un projet →
-    </button>
-
-    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
     </button>
   </nav>
 
@@ -616,6 +621,10 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
   <script>
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();

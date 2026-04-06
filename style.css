@@ -10,6 +10,7 @@ body {
   font-family: "Space Grotesk", system-ui, sans-serif;
   background: #f8fafc;
   color: #111827;
+  overflow-x: hidden; /* Empêche tout défilement horizontal parasite sur mobile */
 }
 
 /* ── MAQUETTE LABEL RESPONSIVE ── ********************************************************************************************/
@@ -97,10 +98,21 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: 0.2s;
+  display: flex;
+  align-items: center; /* Centre verticalement l'icône et le texte */
+  gap: 10px; /* Espace entre l'icône et le texte */
 }
 .nav-links a:hover {
   color: #e2e8f0;
 }
+.nav-links a i,
+.nav-links a svg {
+  display: inline-flex; /* Affichage des icônes sur desktop pour un look moderne */
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+}
+
 .nav-cta {
   background: #e8a855;
   color: #080d18;
@@ -120,9 +132,6 @@ body {
 .mobile-only {
   display: none;
 }
-.nav-toggle {
-  display: none;
-}
 
 /* --- RESPONSIVE TABLETTE & MOBILE (< 768px) --- */
 @media (max-width: 768px) {
@@ -136,62 +145,48 @@ body {
   }
 
   .nav {
-    padding: 0 20px; /* Moins de marge sur les côtés */
+    padding: 0 15px;
+    justify-content: space-between;
   }
 
-  .nav-toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
+  .logo-text {
+    display: none; /* Cache le texte complet du logo pour laisser place aux icônes */
   }
 
-  .nav-toggle .bar {
-    width: 25px;
-    height: 2px;
-    background-color: #e2e8f0;
-    transition: 0.3s;
+  .nav-logo {
+    padding: 10px;
   }
 
-  /* Menu en mode plein écran (Overlay) */
   .nav-links {
-    position: fixed;
-    top: 64px; /* Hauteur de votre nav */
-    right: -100%; /* Caché par défaut */
-    flex-direction: column;
-    background: #080d18;
-    width: 100%;
-    height: calc(100vh - 64px);
-    padding: 40px 20px;
-    gap: 20px;
-    transition: 0.4s ease-in-out;
-    border-top: 1px solid #1a2235;
-    text-align: center;
-  }
-
-  .nav-links.active {
-    right: 0; /* On affiche le menu */
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    gap: 5px;
+    border: none;
+    flex: 1;
+    justify-content: flex-end;
   }
 
   .nav-links a {
-    font-size: 18px; /* Plus grand pour le tactile */
-    padding: 10px 0;
-    display: block;
-    border-bottom: 1px solid #1a2235;
+    padding: 10px;
+    border: none;
+    justify-content: center; /* Centre l'icône seule sur mobile */
+    color: #94a3b8;
   }
 
-  /* Animation du bouton Hamburger vers une Croix (Optionnel mais pro) */
-  .nav-toggle.active .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+  .nav-links a span {
+    display: none; /* Cache le texte sur mobile */
   }
-  .nav-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle.active .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+
+  .nav-links a:active i,
+  .nav-links a:hover i,
+  .nav-links a:active svg,
+  .nav-links a:hover svg {
+    color: #e8a855;
+    transform: scale(1.1);
   }
 }
 /* ── FIN NAV ── **************************************************************************************/
