@@ -104,7 +104,7 @@ body {
 /* Optimisation pour Tablettes (moins de 768px) */
 @media (max-width: 768px) {
   .maquette-label {
-    font-size: 10px;
+    font-size: 15px;
     padding: 8px 12px;
   }
   .label-brand {
@@ -116,7 +116,7 @@ body {
 /* Optimisation pour Mobiles (moins de 480px) */
 @media (max-width: 480px) {
   .maquette-label {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: -0.02em; /* Resserrage léger pour gagner de la place */
   }
 
@@ -205,7 +205,7 @@ body {
   align-items: center;
   gap: 4px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -569,6 +569,10 @@ body {
     font-size: 11px;
   }
 
+  .hero-stats > div {
+    text-align: center; /* Centre le contenu de chaque bloc de statistique */
+  }
+
   /* --- Tech Chips --- */
   .tech-chips {
     flex-direction: row; /* Passage à l'horizontal */
@@ -590,7 +594,7 @@ body {
   .hero-stats {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 colonnes de stats */
-    text-align: left;
+    /* La propriété text-align est maintenant gérée par .hero-stats > div */
   }
 }
 /* ── FIN HERO ── **************************************************************************************/
