@@ -1,3 +1,4 @@
+<?php include 'lang.php'; ?>
 <!doctype html>
 <html lang="fr">
 
@@ -6,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
-  <title>JADI DIGITAL | MA-FR-US</title>
+  <title><?= __('meta_title') ?></title>
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
@@ -19,7 +20,13 @@
     <span class="label-sep">—</span>
     <span class="label-version">v1.0 (Mars 2026)</span>
     <span class="label-sep">—</span>
-    <span class="label-doc">Document de référence design</span>
+    <!-- <span class="label-doc">Document de référence design</span>
+    <span class="label-sep">—</span> -->
+    <div class="lang-switcher">
+      <a href="<?= lang_url('fr') ?>" class="<?= $lang == 'fr' ? 'active' : '' ?>">FR</a>
+      <span class="lang-sep">/</span>
+      <a href="<?= lang_url('en') ?>" class="<?= $lang == 'en' ? 'active' : '' ?>">EN</a>
+    </div>
   </div>
 
   <nav class="nav">
@@ -30,28 +37,30 @@
 
     <div class="nav-links" id="nav-menu">
       <a href="#a-propos" title="À propos">
-        <i data-lucide="info"></i><span>À propos</span>
+        <i data-lucide="info"></i><span><?= __('nav_about') ?></span>
       </a>
       <a href="#nos-services" title="Services">
-        <i data-lucide="layers"></i><span>Nos services</span>
+        <i data-lucide="layers"></i><span><?= __('nav_services') ?></span>
       </a>
       <a href="#nos-expertises" title="Expertises">
-        <i data-lucide="cpu"></i><span>Nos expertises</span>
+        <i data-lucide="cpu"></i><span><?= __('nav_expertises') ?></span>
       </a>
       <a href="#realisations" title="Réalisations">
-        <i data-lucide="folder-git-2"></i><span>Réalisations</span>
+        <i data-lucide="folder-git-2"></i><span><?= __('nav_realisations') ?></span>
       </a>
       <a href="#faq" title="FAQ">
-        <i data-lucide="message-circle-question"></i><span>FAQ</span>
+        <i data-lucide="message-circle-question"></i><span><?= __('nav_faq') ?></span>
       </a>
       <a href="#contact" title="Contact">
-        <i data-lucide="mail"></i><span>Contact</span>
+        <i data-lucide="mail"></i><span><?= __('nav_contact') ?></span>
       </a>
     </div>
 
-    <button class="nav-cta desktop-only" id="cta-nav">
-      Démarrer un projet →
-    </button>
+    <div class="nav-right">
+      <button class="nav-cta desktop-only" id="cta-nav">
+        <?= __('nav_cta') ?> →
+      </button>
+    </div>
   </nav>
 
   <section class="hero" id="hero">
@@ -61,41 +70,38 @@
       <div class="hero-content">
         <div class="hero-badge">
           <div class="hero-badge-dot"></div>
-          Ingénierie logicielle & IA
+          <?= __('hero_badge') ?>
         </div>
         <h1 class="hero-h1">
-          Nous transformons vos idées <br />en produits digitaux
-          <em>performants.</em>
+          <?= __('hero_title') ?>
         </h1>
         <p class="hero-sub">
-          JADI DIGITAL conçoit et développe vos applications web et solutions
-          IA sur-mesure — avec rigueur, expertise technique et un engagement
-          total sur la qualité de chaque livraison.
+          <?= __('hero_sub') ?>
         </p>
         <div class="hero-cta">
           <button class="btn-primary" id="cta-hero-start">
-            Démarrer un projet
+            <?= __('hero_cta_start') ?>
           </button>
           <button class="btn-secondary" id="cta-hero-portfolio">
-            Voir nos réalisations
+            <?= __('hero_cta_portfolio') ?>
           </button>
         </div>
         <div class="hero-stats">
           <div>
             <div class="stat-num">15<span>+</span></div>
-            <div class="stat-label">Ans d'expérience<br />combinée</div>
+            <div class="stat-label"><?= __('stat_exp_label') ?></div>
           </div>
           <div>
             <div class="stat-num">3</div>
-            <div class="stat-label">Pays d'intervention</div>
+            <div class="stat-label"><?= __('stat_countries_label') ?></div>
           </div>
           <div>
             <div class="stat-num">100<span>%</span></div>
-            <div class="stat-label">Projets livrés<br />en Agile</div>
+            <div class="stat-label"><?= __('stat_agile_label') ?></div>
           </div>
           <div>
             <div class="stat-num">AI<span>+</span></div>
-            <div class="stat-label">Architecture<br />AI-native</div>
+            <div class="stat-label"><?= __('stat_ai_label') ?></div>
           </div>
         </div>
       </div>
@@ -122,15 +128,12 @@
 
   <section class="section-light" id="nos-services">
     <div class="inner">
-      <div class="section-tag">Nos services</div>
-      <h2 class="section-h2">Ce que nous faisons concrètement</h2>
-      <p class="section-intro">
-        Trois domaines complémentaires qui couvrent l'intégralité du cycle de
-        vie d'un produit digital.
-      </p>
+      <div class="section-tag"><?= __('services_tag') ?></div>
+      <h2 class="section-h2"><?= __('services_title') ?></h2>
+      <p class="section-intro">...</p>
       <div class="services-grid">
         <div class="service-card">
-          <div class="card-icon" style="background: #ebf0ff">
+          <div class="card-icon icon-bg-blue">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <rect
                 x="2"
@@ -157,7 +160,7 @@
           <div class="card-link">En savoir plus →</div>
         </div>
         <div class="service-card">
-          <div class="card-icon" style="background: #ede9fe">
+          <div class="card-icon icon-bg-purple">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <circle
                 cx="11"
@@ -173,16 +176,14 @@
               <circle cx="11" cy="15" r="1" fill="#7C3AED" />
             </svg>
           </div>
-          <div class="card-title">Architecture IA</div>
+          <div class="card-title"><?= __('service_ai_title') ?></div>
           <div class="card-text">
-            Nous intégrons l'intelligence artificielle dans vos projets de
-            façon concrète et utile : LLM, RAG, automatisation intelligente —
-            pas de promesse, des résultats mesurables.
+            <?= __('service_ai_desc') ?>
           </div>
           <div class="card-link-purple">En savoir plus →</div>
         </div>
         <div class="service-card">
-          <div class="card-icon" style="background: #dcfce7">
+          <div class="card-icon icon-bg-green">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path
                 d="M5 11h12M13 7l4 4-4 4"
@@ -192,16 +193,14 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <div class="card-title">Intégration & API</div>
+          <div class="card-title"><?= __('service_api_title') ?></div>
           <div class="card-text">
-            Nous connectons vos systèmes, outils métier et services tiers via
-            des APIs robustes, sécurisées et bien documentées. Pour que vos
-            outils communiquent sans friction.
+            <?= __('service_api_desc') ?>
           </div>
           <div class="card-link-green">En savoir plus →</div>
         </div>
       </div>
-      <div style="text-align: center">
+      <div class="u-text-center">
         <button class="btn-primary btn-scroll-contact">
           Discuter de votre projet
         </button>
@@ -253,15 +252,7 @@
           </button>
         </div>
         <div class="apropos-card">
-          <div
-            style="
-                font-size: 11px;
-                color: #475569;
-                font-weight: 700;
-                letter-spacing: 0.08em;
-                text-transform: uppercase;
-                margin-bottom: 20px;
-              ">
+          <div class="card-label-mini">
             Fondateur
           </div>
           <div class="team-header">
@@ -327,7 +318,7 @@
           </div>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 40px">
+      <div class="u-text-center u-mt-40">
         <button class="btn-secondary btn-scroll-portfolio">
           Voir nos réalisations
         </button>
@@ -419,7 +410,7 @@
   </section>
 
   <section class="section-gray" id="faq">
-    <div class="inner" style="max-width: 760px">
+    <div class="inner faq-inner-width">
       <div class="section-tag">FAQ</div>
       <h2 class="section-h2">Questions fréquentes</h2>
       <p class="section-intro">
@@ -507,36 +498,33 @@
   <section class="section-dark" id="contact">
     <div class="contact-grid inner">
       <form class="contact-form" id="contact-form" action="sendEmail.php" method="POST">
-        <h3 class="form-title">Discutons de votre projet</h3>
+        <h3 class="form-title"><?= __('contact_title') ?></h3>
         <p class="form-subtitle">
-          Premier échange gratuit et sans engagement. Réponse sous 24h.
+          <?= __('contact_subtitle') ?>
         </p>
 
         <div class="form-group">
-          <label class="form-label">Nom complet *</label>
+          <label class="form-label"><?= __('form_name') ?></label>
           <input class="form-input" type="text" name="name" placeholder="Votre nom" required />
         </div>
         <div class="form-group">
-          <label class="form-label">Email professionnel *</label>
+          <label class="form-label"><?= __('form_email') ?></label>
           <input class="form-input" type="email" name="email" placeholder="votre@email.com" required />
         </div>
         <div class="form-group">
-          <label class="form-label">Entreprise</label>
+          <label class="form-label"><?= __('form_company') ?></label>
           <input class="form-input" type="text" name="company" placeholder="Nom de votre entreprise" />
         </div>
         <div class="form-group">
-          <label class="form-label">Sujet *</label>
+          <label class="form-label"><?= __('form_subject') ?></label>
           <select class="form-select" name="subject" required>
             <option value="">Sélectionnez un sujet</option>
-            <option>Projet de développement web</option>
-            <option>Projet IA / Intelligence artificielle</option>
-            <option>Intégration & API</option>
-            <option>Audit technique</option>
-            <option>Autre demande</option>
+            <option>Web Dev</option>
+            <option>AI / LLM</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Votre message *</label>
+          <label class="form-label"><?= __('form_message') ?></label>
           <textarea class="form-textarea" name="message" placeholder="Décrivez votre projet..." required></textarea>
         </div>
 
@@ -545,7 +533,7 @@
           <a href="#">politique de confidentialité</a>.
         </div>
 
-        <button type="submit" class="form-submit">Envoyer le message</button>
+        <button type="submit" class="form-submit"><?= __('form_submit') ?></button>
       </form>
 
       <div class="contact-info">
@@ -578,8 +566,7 @@
         <div>
           <div class="footer-logo">JADI <span>DIGITAL</span></div>
           <div class="footer-desc">
-            Ingénierie logicielle & solutions IA sur-mesure. Des produits
-            digitaux fiables, performants et évolutifs.
+            <?= __('footer_desc') ?>
           </div>
           <div class="footer-email">contact@jadidigital.com</div>
         </div>
@@ -610,11 +597,7 @@
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">
-          © 2026 JADI DIGITAL — Tous droits réservés
-        </div>
-        <div class="footer-lang">
-          <a href="#">FR</a>
-          <a href="#">EN</a>
+          <?= __('footer_copyright') ?>
         </div>
       </div>
     </div>
@@ -622,48 +605,6 @@
 
   <script src="app.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons();
-  </script>
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = this;
-      const submitBtn = form.querySelector('.form-submit');
-      const originalBtnText = submitBtn.innerText;
-
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Envoi en cours...';
-
-      fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form)
-        })
-        .then(response => response.json())
-        .then(data => {
-          const isSuccess = data.status === 'success';
-          const alertDiv = document.createElement('div');
-          alertDiv.style.cssText = `position: fixed; top: 80px; right: 20px; z-index: 1000; padding: 15px 25px; border-radius: 8px; color: white; background-color: ${isSuccess ? '#10b981' : '#ef4444'}; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;`;
-          alertDiv.innerText = isSuccess ? '✅ Message envoyé avec succès !' : '❌ Erreur lors de l\'envoi du message.';
-
-          document.body.appendChild(alertDiv);
-          if (isSuccess) form.reset();
-
-          setTimeout(() => alertDiv.remove(), 5000);
-        })
-        .catch(() => {
-          const errorDiv = document.createElement('div');
-          errorDiv.style.cssText = "position: fixed; top: 80px; right: 20px; z-index: 1000; padding: 15px 25px; border-radius: 8px; color: white; background-color: #ef4444; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;";
-          errorDiv.innerText = '❌ Erreur réseau. Veuillez réessayer.';
-          document.body.appendChild(errorDiv);
-          setTimeout(() => errorDiv.remove(), 5000);
-        })
-        .finally(() => {
-          submitBtn.disabled = false;
-          submitBtn.innerText = originalBtnText;
-        });
-    });
-  </script>
 </body>
 
 </html>

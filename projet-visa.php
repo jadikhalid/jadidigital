@@ -13,9 +13,9 @@ include 'origineIP.php';
     <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body style="background-color: var(--light-bg);">
+<body class="bg-light-variant">
     <?php if ($is_morocco): ?>
-        <div style="background-color: #000000; width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
+        <div class="morocco-gate">
             <h1>Bienvenue ...</h1>
         </div>
     <?php else: ?>
@@ -27,7 +27,7 @@ include 'origineIP.php';
                     <a href="visa-fr"><img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="FR" width="24" height="18"></a>
                     <a href="visa-en"><img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="EN" width="24" height="18"></a>
                 </div>
-                <a href="<?= ($lang == 'fr') ? '/accueil' : '/welcome' ?>" class="btn" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                <a href="<?= ($lang == 'fr') ? '/accueil' : '/welcome' ?>" class="btn btn-nav-back">
                     <?= __('contact_retour') ?>
                 </a>
             </div>
@@ -50,15 +50,15 @@ include 'origineIP.php';
 
                 <div class="content">
                     <section class="project-content">
-                        <h3 style="color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <h3 class="title-gold-flex">
                             <i data-lucide="target" size="20"></i> <?= __('project1-page-header1') ?>
                         </h3>
-                        <p style="margin-bottom: 25px;">
+                        <p class="u-mb-25">
                             <?= __('project2_page_desc1') ?>
                         </p>
                     </section>
 
-                    <h3 style="color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                    <h3 class="title-gold-flex">
                         <i data-lucide="cpu" size="20"></i> <?= __('project1-page-header2') ?>
                     </h3>
                     <ul class="project-features">

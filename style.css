@@ -1,3 +1,23 @@
+:root {
+  --color-primary: #1a56db;
+  --color-accent: #e8a855;
+  --color-dark: #080d18;
+  --color-navy: #040810;
+  --color-light: #f8fafc;
+  --color-white: #ffffff;
+  --color-text-main: #111827;
+  --color-text-light: #e2e8f0;
+  --color-text-muted: #64748b;
+  --color-text-dim: #475569;
+  --color-border: #1a2235;
+  --color-border-light: #e5e7eb;
+  --color-border-card: #1e2a40;
+
+  --font-main: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --transition: 0.2s ease;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,18 +30,69 @@ body {
   font-family: "Space Grotesk", system-ui, sans-serif;
   background: #f8fafc;
   color: #111827;
+  font-family: var(--font-main);
+  background: var(--color-light);
+  color: var(--color-text-main);
   overflow-x: hidden; /* Empêche tout défilement horizontal parasite sur mobile */
+}
+
+/* ── CLASSES UTILITAIRES ── */
+.u-text-center {
+  text-align: center;
+}
+.u-mt-40 {
+  margin-top: 40px;
+}
+.u-mt-60 {
+  margin-top: 60px;
+}
+.u-mb-15 {
+  margin-bottom: 15px;
+}
+.u-mb-25 {
+  margin-bottom: 25px;
+}
+
+.icon-bg-blue {
+  background: #ebf0ff;
+  background: rgba(26, 86, 219, 0.1);
+}
+.icon-bg-purple {
+  background: #ede9fe;
+  background: rgba(124, 58, 237, 0.1);
+}
+.icon-bg-green {
+  background: #dcfce7;
+  background: rgba(21, 128, 61, 0.1);
+}
+
+.faq-inner-width {
+  max-width: 760px;
+}
+
+.card-label-mini {
+  font-size: 11px;
+  color: #475569;
+  color: var(--color-text-dim);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 /* ── MAQUETTE LABEL RESPONSIVE ── ********************************************************************************************/
 .maquette-label {
   background: #080d18;
+  background: var(--color-dark);
   text-align: center;
   padding: 10px 15px; /* Padding latéral pour éviter que le texte touche les bords */
   font-size: 11px;
   color: #475569; /* Légèrement plus clair pour la lisibilité sur fond sombre */
   font-family: "JetBrains Mono", monospace;
   border-bottom: 1px solid #1a2235;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  border-bottom: 1px solid var(--color-border);
   line-height: 1.5;
   display: flex;
   justify-content: center;
@@ -35,6 +106,10 @@ body {
   .maquette-label {
     font-size: 10px;
     padding: 8px 12px;
+  }
+  .label-brand {
+    color: var(--color-accent); /* #e8a855 */
+    font-weight: 900;
   }
 }
 
@@ -60,6 +135,8 @@ body {
 .nav {
   background: #080d18;
   border-bottom: 1px solid #1a2235;
+  background: var(--color-dark);
+  border-bottom: 1px solid var(--color-border);
   padding: 0 5%;
   display: flex;
   align-items: center;
@@ -73,6 +150,7 @@ body {
   font-size: 17px;
   font-weight: 700;
   color: #e2e8f0;
+  color: var(--color-text-light);
   letter-spacing: -0.01em;
   display: flex;
   align-items: center;
@@ -84,9 +162,11 @@ body {
   height: 9px;
   border-radius: 50%;
   background: #e8a855;
+  background: var(--color-accent);
 }
 .nav-logo span {
   color: #e8a855;
+  color: var(--color-accent);
 }
 .nav-links {
   display: flex;
@@ -111,6 +191,41 @@ body {
   width: 20px;
   height: 20px;
   stroke-width: 2px;
+}
+
+/* ── LANG SWITCHER NAV ── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: var(--color-text-dim);
+  transition: var(--transition);
+  padding: 2px 4px;
+}
+
+.lang-switcher a:hover,
+.lang-switcher a.active {
+  color: var(--color-accent);
+}
+
+.lang-sep {
+  color: var(--color-border);
+  opacity: 0.5;
 }
 
 .nav-cta {
@@ -170,6 +285,10 @@ body {
     justify-content: flex-end;
   }
 
+  .nav-right {
+    gap: 10px;
+  }
+
   .nav-links a {
     padding: 10px;
     border: none;
@@ -186,6 +305,7 @@ body {
   .nav-links a:active svg,
   .nav-links a:hover svg {
     color: #e8a855;
+    color: var(--color-accent);
     transform: scale(1.1);
   }
 }
@@ -194,6 +314,7 @@ body {
 /* ── HERO ── **********************************************************************************************************/
 .hero {
   background: #080d18;
+  background: var(--color-dark);
   padding: 88px 5% 96px;
   position: relative;
   overflow: hidden;
@@ -246,6 +367,7 @@ body {
   font-size: 11px;
   font-weight: 600;
   color: #60a5fa;
+  color: var(--color-primary);
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 32px;
@@ -255,11 +377,13 @@ body {
   height: 6px;
   border-radius: 50%;
   background: #60a5fa;
+  background: var(--color-primary);
 }
 .hero-h1 {
   font-size: 48px;
   font-weight: 700;
   color: #e2e8f0;
+  color: var(--color-text-light);
   line-height: 1.1;
   letter-spacing: -0.025em;
   margin-bottom: 22px;
@@ -267,10 +391,12 @@ body {
 .hero-h1 em {
   font-style: normal;
   color: #e8a855;
+  color: var(--color-accent);
 }
 .hero-sub {
   font-size: 17px;
   color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.75;
   max-width: 560px;
   margin-bottom: 40px;
@@ -286,6 +412,7 @@ body {
   color: #080d18;
   border: none;
   border-radius: 8px;
+  composes: btn-base;
   padding: 14px 28px;
   font-size: 15px;
   font-weight: 700;
@@ -298,10 +425,13 @@ body {
   transform: translateY(-1px);
 }
 .btn-secondary {
+  composes: btn-base;
   background: transparent;
   color: #94a3b8;
   border: 1px solid #1e2a40;
   border-radius: 8px;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-card);
   padding: 14px 28px;
   font-size: 15px;
   font-weight: 500;
@@ -312,25 +442,31 @@ body {
 .btn-secondary:hover {
   border-color: #2a3a56;
   color: #e2e8f0;
+  border-color: var(--color-accent);
+  color: var(--color-text-light);
 }
 .hero-stats {
   display: flex;
   gap: 44px;
   padding-top: 40px;
   border-top: 1px solid #1a2235;
+  border-top: 1px solid var(--color-border);
 }
 .stat-num {
   font-size: 30px;
   font-weight: 700;
   color: #e2e8f0;
+  color: var(--color-text-light);
   letter-spacing: -0.02em;
 }
 .stat-num span {
   color: #e8a855;
+  color: var(--color-accent);
 }
 .stat-label {
   font-size: 12px;
   color: #475569;
+  color: var(--color-text-dim);
   margin-top: 3px;
   line-height: 1.4;
 }
@@ -1547,10 +1683,6 @@ body {
   .footer-copyright {
     font-size: 11px;
     order: 2; /* Met le copyright en dernier */
-  }
-
-  .footer-lang {
-    order: 1;
   }
 }
 /*FIN FOOTER ── ***********************************************************************************/
